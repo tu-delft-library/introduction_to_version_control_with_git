@@ -1,0 +1,6 @@
+title:  Readiness Quiz - Introduction to Version Control with Git
+description: This quiz tests your knowledge of Git, including how to create and clone a repository, add/commit changes to it and to push to/pull from a remote repository.
+theme: null 
+markdown: kramdown 
+kramdown: 
+  input: GFM 
