@@ -25,6 +25,3 @@ title: Readiness Quiz - Introduction to Version Control with Git
 
  
 --- 
-
-
-https://tudelft.h5p.com/content/1292810526601181087
