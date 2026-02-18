@@ -7,7 +7,9 @@
 - Set up the feedback survey
     - TODO more specific instructions on this step
 - Set up collaborative document:
-    - Duplicate the document form the previous workshop
+    - Ask @catactg for a duplicate of the document from the previous workshop
+        - Word document in OneDrive that is shared to everyone in TUDelft
+        - [This doc](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/collaborative_documents_links.docx?d=we39fc1d5691343b185c0c5f8104a9269&csf=1&web=1&e=thh4BO) holds links to previous collaborative documents 
     - Adapt the links:
         - Vevox
         - Feedback survey
@@ -16,7 +18,7 @@
 - Update the [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b)
     - Names of trainers/helpers
     - Modify schedule (if needed)
-    - Add collaborative document QR code **short link** 
+    - Add collaborative document **edu.nl** QR code PNG 
         - On workshop day, also write this link on whiteboard 
 
 - Pick an icebreaker from the [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
