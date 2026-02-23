@@ -20,7 +20,7 @@ A list:
 - this is an item
 - another item
 
-[Remove the lines above. Included to get used to markdown formatting]
+[The text above was included as reference. You can remove it when you are done with the tasks below.]
 
 # Nana's `recipes`
 [Modify the title above to make it more descriptive]
@@ -50,7 +50,7 @@ Each recipe comes in a separate `.md` file. Click on the desired recipe in GitHu
 
 
 ## License
-This software is distributed under a [Pick the license that best fits this repository: Creative Commons, MIT, Apache] license. 
+This software is distributed under a [Pick the license that best fits this repository: MIT, Creative Commons, Apache] license. 
 
 ## Copyright
 
