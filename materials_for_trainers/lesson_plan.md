@@ -345,19 +345,59 @@ Magic!
 - Some people prefer to use a GUI to work with Git.
 - Let's explore that using VSCode
 
-## Demo git operations in VSCode - 15'
+## Demo git operations in VSCode - 20'
+### Git by default
 - Open VSCode
 - Open folder -> recipes folder
-- Open `guacamole.md` from explorer
-- Make a change (e.g. smash avocado) and save
 - Go to git tab (left)
+- Explain GUI:
+    - log -> hover for details
+    - click on +- icon on the right to show changes
+    - right click for more options
+### Commit changes
+- Open `guacamole.md` from explorer
+- Make a change (e.g. smash avocado, add salt, pepper and lime)
+- Save `guacamole.md` (CTRL + S)
+- Notice badge on git icon
+- Click on `guacamole.md` to see the changes on the right
+    - red deleted
+    - green added
+- Click on plus to stage
+- Write message and click on commit
+- Notice the update on the log
+- Push by clicking "sync changes"
+- Confirm in GitHub
 
-## 💪 Exercise `GitGraph` - 20'
-Try [GitGraph extension](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+
+## 💪 Exercise `Try Git Graph extension` - 15'
+- Install `Git Graph` extension in VS Code
+    - Go the marketplace tab in VS code 
+    - Search for `Git Graph` and click install
+- Go back to the Git tab and click on the `Git Graph` icon on the changes section
+- Use `Git Graph` window to explore differences between the latest commit and “Modify guacamole to the traditional recipe” 
+    - Open each modified file to see the changes
+- Go to the file explorer and open your new recipe file
+    - Add a line to the instructions
+    - Add the changes and commit using the git in VS Code
+- Go back to the `Git Graph` window
+    - Click on your new recipe file to see the differences in a new window 
+- Sync with remote
 
 ## Key points - 15'
-* Use the cheat sheet to make sure you revise all the commands
-* Use this file to make sure you revise all topics
+```
+git config          # configure
+git init            # initialize locally
+git clone           # download from github
+git status          # always check the status
+git log             # history of commits
+git log --online    # a shorter version
+git add             # add changes
+git commit          # commit locally
+git diff            # differences between to commits
+git show            # shows changes made on that commit (rather than differences)
+git push            # uploads local changes to remote
+git pull            # downloads changes from remote to local
+```
 
 ## Feedback - 10'
 * Ask participants to fill in the feedback survey
