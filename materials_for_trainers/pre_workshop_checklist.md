@@ -26,4 +26,9 @@
 
 - Prepare a separate device to have during the lesson.
     - Use it to visualize `materials_for_trainers/lesson_plan.md` file (in this repo).
+    
+- HEAD/TAG game:
+    - Bring physical objects to be passe around (e.g. balls, fruits)
+    - Prepare 2 x number of rows with git short hashes (e.g.f22b25e, b36abfd)
+
 
