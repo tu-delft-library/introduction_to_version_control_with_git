@@ -35,7 +35,7 @@ Important to mention:
 - Git uses branches. 
     - We work on the main branch and no more details for now.
 
-### Code along
+### Live coding
 ```
 git version
 git help
@@ -52,7 +52,7 @@ git config --list --global
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
-### Code along - 10'
+### Live coding - 10'
 ```
 cd Desktop
 mkdir recipes   # create a new directory for repository
@@ -66,9 +66,9 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-### Challenges `init` - 5'
-- TODO
+### Challenge `init` - 5'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+- Vevox question 1
 - Start poll -> wait for answers -> discuss -> next question
 
 ## Perform multiple “add → commit” cycles
@@ -77,7 +77,7 @@ ls .git         # some files and subfolders inside .git
     - We will work with a text file in this course. It will work the same with code. 
     - Code is a text file that is *interpreted* by another program (e.g. python)
 
-### Code along - 20'
+### Live coding - 20'
 ```
 cd ~/Desktop/recipes        # ensure inside recipes dir
 ls                          # dir is empty
@@ -114,9 +114,9 @@ git add guacamole.md        # explain stating area: like framing for a photo
 git commit -m "Add ingredients to guacamole recipe"
 git log
 ```
-### Challenges `changes` - 5'
-- TODO
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+### 💪 Challenge `changes` - 5'
+- Continue with the same vevox
+- Vevox question 2
 - Start poll -> wait for answers -> discuss -> next question
 
 ## Break - 15'
@@ -132,7 +132,7 @@ git log
         - `git commit` then actually takes the snapshot
         - `git commit -a` is like gathering everyone to take a group photo
 
-### Code along - 10'
+### Live coding - 10'
 ```
 git status
 nano guacamole.md           # change lemon for lime
@@ -151,10 +151,12 @@ git commit -m "Modify guacamole to traditional recipe"
 git status
 git log
 ```
-### Challenges `staging` - 10'
-- TODO
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Start poll -> wait for answers -> discuss -> next question
+### 💪 Challenge `staging` - 10'
+`bio Repository` challenge explained in collaborative document
+- Create a new Git repository on your computer called bio.
+- Write a three-line biography for yourself in a file called me.txt, commit your changes
+- Modify one line, add a fourth line
+- Display the differences between its updated state and its original state. 
 
 ## git HEAD/TAG game - 15'
 - Game explained in [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
@@ -163,7 +165,7 @@ git log
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore`
 - HEAD is the *most recent commit*
 
-### Code along - 15'
+### Live coding - 25'
 ```
 git status
 git log --oneline                   # summarized view
@@ -194,16 +196,16 @@ cat guacamole.md
 ```
 ## Break - 15'
 
-### Challenges `history` - 10'
-- TODO
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+### 💪 Challenges `history` - 10'
+- Continue with the same vevox
+- Vevox question 3 and 4
 - Start poll -> wait for answers -> discuss -> next question
 
 
 ## Git ignore
 Emphasize importance of `.ignore` file to keep repository clean.
 
-### Type along - 10'
+### Live coding - 10'
 ```
 git status                          # always check the status of git
 ls                                  # what is inside this directory
@@ -225,85 +227,117 @@ git add a.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
 
 ```
-### Challenges `ignore` - 10'
-- TODO
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+### 💪 Challenges `ignore` - 10'
+- Continue with the same vevox
+- Vevox question 5 and 6
 - Start poll -> wait for answers -> discuss -> next question
 
 ## Lunch break - 60'
 
-## GitHub - 20'
+## Remote repository
 
-### Demo steps in GitHub - 20'
-For full instructions with images go to [SWC](https://swcarpentry.github.io/git-novice/instructor/07-github.html)
+### SSH key - 20'
+
 - Log into GitHub
+- Create Secure Shell Protocol (SSH) key
+    - SSH key in GitHub is paired to key in your computer
+```
+ls -al ~/.ssh                   # possible keys id_ed25519/id_ed25519.pub
+ssh-keygen -t ed25519 -C "email_used_in_github@address.com" # skip this if key exists
+cat ~/.ssh/id_ed25519.pub       # prints content of key to terminal
+ssh -T git@github.com           # test the connection
+```
+- If your connection is already set up: you're done. 
+- Otherwise, we add the key to GitHub.
+    - Copy output of terminal (using mouse to select the text)
+    - Go to GitHub:
+        - Click on profile icon -> `Settings` -> `SSH and GPG keys` -> `New SSH key`
+        - Paste your SSH key into field -> `Add SSH key` 
+
+```
+ssh -T git@github.com           # test the connection
+```
+### Create remote repository - 15'
+
 - Create a new repository called `recipes`
     - Public
     - Empty: no README, no .gitignore, no license
-- Create Secure Shell Protocol (SSH) key
-    - SSH key in GitHub is paired to key in your computer
-- Connect local to remote repository
-    - Use SSH link
+    - Copy SSH link
 
 ```
-ls -al ~/.ssh                   # possible keys id_ed25519/id_ed25519.pub
-ssh-keygen -t ed25519 -C "youremail@address" # skip this is key already exists
-cat ~/.ssh/id_ed25519.pub 
-ssh -T git@github.com
-```
-
-
-```
-git remote add origin git@github.com:[username]/recipes.git
-git remote -v
-```
-
-
-
-
-### GitHub GUI - 10'
-- Explore GitHub GUI
-
-## Remote repository
-
-### Type along - 20'
-```
+git remote add origin git@github.com:[username]/recipes.git # use SSH link
+git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
-git pull                        # explain pull from remote
-ls
-pwd
-cd ..                           
-rm -rf recipes/                 # practice loosing repository
-git status
-git clone git@github.com:halfordd/recipes.git # practice cloning repository
-cd recipes
-ls
-ls -a
-git status
 ```
+- Show repository in GitHub
 
-### Challenges `` - 10'
-- TODO
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+### 💪  Challenges `GitHub` - 10'
+Challenges explained in collaborative document:
+- `GitHub GUI`
+    - Browse to your recipes repository on GitHub.
+    - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
+    - Hover over, and click on, the three buttons to the right of each commit.
+    - What information can you gather/explore from these buttons?
+    - How would you get that same information in the shell? 
+
+- `GitHub Timestamps` 
+    - Go to the repo you just created on GitHub and check the timestamps of the files.  
+    - How does GitHub record times, and why?  
+    - Hover over the timestamp, you can see the exact time at which the last change to the file occurred. 
+
+### 💪 Challenges `remotes` - 10'
+- Continue with the same vevox
+- Vevox question 7 and 8
 - Start poll -> wait for answers -> discuss -> next question
+
 
 ## Break - 15'
 
 ## TU Delft FAIR software guidelines - 15'
-- TODO add slides for FAIR
 - 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 
-## Modify a README - 30'
-- TODO make empty repo from manuel's template-> simplified version -> https://github.com/manuGil/fair-code
-- Copy content from template (zip file with README.md, CONTRIBUTING.md, folders)
-- Adapt the README template (a little bit at least)
+## 💪 Challenge `Modify a README` - 15'
+`Modify a README` challenge explained in collaborative document
+- Download the README file from [GitHub](
+https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/main/material_for_participants/README.md)
+- Add it to your local recipes repository 
+- Open file with nano 
+- Complete the tasks included between [] in the README file 
+- Add and commit changes to your local recipes repository 
 
-## Fresh copy of remote - 15'
+## Live coding - 10'
+
 Experience loosing your local repo and getting your code back from remote:
-- Push changes
-- Confirm all files are in remote
-- Delete your local repo
-- Clone repository from github
+
+```
+git status                      # ensure no uncommitted changes
+git push origin main            # push changes
+git pull origin main            # explain pull from remote
+```
+- Confirm all files are in remote (visit GitHub)
+- Admire the new README file
+
+```
+ls
+pwd
+cd ..                           
+rm -rf recipes/                 # loose repository
+git status                      # no git repository here
+git clone git@github.com:halfordd/recipes.git # clone repository
+cd recipes
+ls
+ls -a                           # notice the difference: no .png files as they were not tracked
+git status
+```
+Magic!
+
+## 💪 Challenge `A new recipe` - 15'
+`A new recipe` challenge explained in collaborative document.
+- Add another recipe file to your local repository (e.g. `hummus.md`, `pesto.md`) 
+- Edit to the new file with ingredients and instructions 
+- Add and commit changes 
+- Push changes to the remote repository 
+- Confirm that you see the latest changes in GitHub 
 
 ## Break - 15'
 
@@ -312,14 +346,18 @@ Experience loosing your local repo and getting your code back from remote:
 - Let's explore that using VSCode
 
 ## Demo git operations in VSCode - 15'
-- TODO demo script
+- Open VSCode
+- Open folder -> recipes folder
+- Open `guacamole.md` from explorer
+- Make a change (e.g. smash avocado) and save
+- Go to git tab (left)
 
-### Exercise - 20'
+## 💪 Exercise `GitGraph` - 20'
 Try [GitGraph extension](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 ## Key points - 15'
 * Use the cheat sheet to make sure you revise all the commands
 * Use this file to make sure you revise all topics
 
-## Feedback - 5'
+## Feedback - 10'
 * Ask participants to fill in the feedback survey
