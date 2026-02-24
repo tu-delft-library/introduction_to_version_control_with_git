@@ -11,18 +11,18 @@ Nothing special needed for a normal paragraph.
 ```
 This is a code block
 ```
+This is an inline `code` word.
 
-### This is a subsubsection 
-
-**Bold** and *emphasized*. 
+Other formats are **Bold** and *emphasized*. 
 
 A list:
 - this is an item
 - another item
+    - an indented item
 
 [The text above was included as reference. You can remove it when you are done with the tasks below.]
 
-# Nana's `recipes`
+# Nana's recipes
 [Modify the title above to make it more descriptive]
 
 ## Description
@@ -39,15 +39,21 @@ These recipes have been tested under the following circumstances:
 
 ## Requirements
 - Kitchen
+- Utensils
+    - Bowls
+    - Spoon
+    - 
 - Ingredients
-- 
-- 
-[Complete the list of requirements]
+    - Salt
+    - 
+
+[Complete the list of requirements. Use indented lists too.]
 
 ## How to install
 
-Each recipe comes in a separate `.md` file. Click on the desired recipe in GitHub to visualize online. Alternatively, clone this repository locally and use your favorite text editor to preview file.
+Each recipe comes in a separate .md file. Click on the desired recipe in GitHub to visualize online. Alternatively, clone this repository locally and use your favorite text editor to preview each .md file.
 
+[Highlight .md words using `inline code` quotes]
 
 ## License
 This software is distributed under a [Pick the license that best fits this repository: MIT, Creative Commons, Apache] license. 
