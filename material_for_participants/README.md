@@ -8,6 +8,9 @@ A list:
 - this is an item
 - another item
     - an indented item
+* this is a new list with a different bullet
+* another item of the asterisk list 
+
 
 [Nothing else to do here :) Continue below to find tasks]
 
@@ -20,9 +23,10 @@ I often found myself searching over and over again for certain recipes. Sometime
 So I decided to start a collection of my most beloved recipes for my *future-self* to enjoy that perfect guacamole.
 
 These recipes have been tested under the following circumstances:
-- Dinner for two
-- Family birthday
-- PhD graduation party
+* Dinner for two
+* Family birthday
+* PhD graduation party
+
 [Add to the list other circumstances to test the recipes]
 
 ## Requirements
