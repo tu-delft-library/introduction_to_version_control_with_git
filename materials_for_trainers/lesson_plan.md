@@ -66,7 +66,7 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-### Challenge `init` - 5'
+### 💪 Challenge `init` - 5'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 1
 - Start poll -> wait for answers -> discuss -> next question
