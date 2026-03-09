@@ -1,7 +1,7 @@
 ## Land - 10'
 ☕ Coffee/tea 🫖
 
-## Installation check, housekeeping - 15'
+## Installation check, housekeeping - 15' - CATA
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install git
@@ -9,11 +9,11 @@
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
-## Icebreaker - 5'
+## Icebreaker - 5' - CATA
 A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 
 
-## Introduction to version control - 10'
+## Introduction to version control - 10' - CATA
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - What is version control and why should I use it?
   - Do it for your future self
@@ -22,12 +22,7 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
 - What is a git repo: 
     - folder with files + subfolders + `.git` hidden folder
 
-## Preparing Your Working Directory - 5'
-- Users with Windows 10 will probably save the data in `OneDrive` Desktop.  
-    - First make a symbolic link to make our lives easier.
-    - `ln -s "/c/Users/[username]/OneDrive\ -\ Delft\ University\ of\ Technology\Desktop" "Desktop"`
-
-## Setting up git - 5'
+## Setting up git - 5' - HALFORD
 Important to mention:
 - End of a line:
     - Windows: Uses CRLF (\r\n) to mark the end of a line. 
@@ -35,7 +30,6 @@ Important to mention:
 - Git uses branches. 
     - We work on the main branch and no more details for now.
 
-### Live coding
 ```
 git version
 git help
@@ -48,11 +42,10 @@ git config --global init.defaultBranch main
 git config --list --global
 ```
 
-## Initialize a local Git repository
+## Initialize a local Git repository - 10' - HALFORD
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
-### Live coding - 10'
 ```
 cd Desktop
 mkdir recipes   # create a new directory for repository
@@ -66,18 +59,17 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-### 💪 Challenge `init` - 5'
+### 💪 Challenge `init` - 5' - HALFORD
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 1
 - Start poll -> wait for answers -> discuss -> next question
 
-## Perform multiple “add → commit” cycles
+## “add → commit” cycles - 20' - HALFORD
 - Commands: `status, add, commit, log, diff`
 - Important: 
     - We will work with a text file in this course. It will work the same with code. 
     - Code is a text file that is *interpreted* by another program (e.g. python)
 
-### Live coding - 20'
 ```
 cd ~/Desktop/recipes        # ensure inside recipes dir
 ls                          # dir is empty
@@ -114,13 +106,13 @@ git add guacamole.md        # explain stating area: like framing for a photo
 git commit -m "Add ingredients to guacamole recipe"
 git log
 ```
-### 💪 Challenge `changes` - 5'
+### 💪 Challenge `changes` - 5' - HALFORD
 - Continue with the same vevox
 - Vevox question 2
 - Start poll -> wait for answers -> discuss -> next question
 
 ## Break - 15'
-## Working directory and staging area
+## Working directory and staging area - 10' - CATA
 - Working directory -> staging area -> commit history (database)
 - Useful ANALOGIES: 
     - Mailing a letter:
@@ -132,7 +124,6 @@ git log
         - `git commit` then actually takes the snapshot
         - `git commit -a` is like gathering everyone to take a group photo
 
-### Live coding - 10'
 ```
 git status
 nano guacamole.md           # change lemon for lime
@@ -151,21 +142,20 @@ git commit -m "Modify guacamole to traditional recipe"
 git status
 git log
 ```
-### 💪 Challenge `staging` - 10'
+### 💪 Challenge `staging` - 10' - CATA
 `bio Repository` challenge explained in collaborative document
 - Create a new Git repository on your computer called bio.
 - Write a three-line biography for yourself in a file called me.txt, commit your changes
 - Modify one line, add a fourth line
 - Display the differences between its updated state and its original state. 
 
-## git HEAD/TAG game - 15'
+## git HEAD/TAG game - 15' - CATA
 - Game explained in [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 
-## Git history
+## Git history - 25' - CATA
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore`
 - HEAD is the *most recent commit*
 
-### Live coding - 25'
 ```
 git status
 git log --oneline                   # summarized view
@@ -196,16 +186,15 @@ cat guacamole.md
 ```
 ## Break - 15'
 
-### 💪 Challenges `history` - 10'
+### 💪 Challenges `history` - 10' - HALFORD
 - Continue with the same vevox
 - Vevox question 3 and 4
 - Start poll -> wait for answers -> discuss -> next question
 
 
-## Git ignore
+## Git ignore - 10' - HALFORD
 Emphasize importance of `.ignore` file to keep repository clean.
-
-### Live coding - 10'
+ 
 ```
 git status                          # always check the status of git
 ls                                  # what is inside this directory
@@ -227,16 +216,14 @@ git add a.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
 
 ```
-### 💪 Challenges `ignore` - 10'
+### 💪 Challenges `ignore` - 10' - HALFORD
 - Continue with the same vevox
 - Vevox question 5 and 6
 - Start poll -> wait for answers -> discuss -> next question
 
 ## Lunch break - 60'
 
-## Remote repository
-
-### SSH key - 20'
+## SSH key - 20' - CATA
 
 - Log into GitHub
 - Create Secure Shell Protocol (SSH) key
@@ -257,7 +244,7 @@ ssh -T git@github.com           # test the connection
 ```
 ssh -T git@github.com           # test the connection
 ```
-### Create remote repository - 15'
+## Create remote repository - 15' - CATA
 
 - Create a new repository called `recipes`
     - Public
@@ -271,7 +258,7 @@ git push origin main            # explain push vs commit
 ```
 - Show repository in GitHub
 
-### 💪  Challenges `GitHub` - 10'
+### 💪  Challenges `GitHub` - 10' - CATA
 Challenges explained in collaborative document:
 - `GitHub GUI`
     - Browse to your recipes repository on GitHub.
@@ -285,7 +272,7 @@ Challenges explained in collaborative document:
     - How does GitHub record times, and why?  
     - Hover over the timestamp, you can see the exact time at which the last change to the file occurred. 
 
-### 💪 Challenges `remotes` - 10'
+### 💪 Challenges `remotes` - 10' - CATA
 - Continue with the same vevox
 - Vevox question 7 and 8
 - Start poll -> wait for answers -> discuss -> next question
@@ -293,10 +280,10 @@ Challenges explained in collaborative document:
 
 ## Break - 15'
 
-## TU Delft FAIR software guidelines - 15'
+## TU Delft FAIR software guidelines - 15' - HALFORD
 - 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 
-## 💪 Challenge `Modify a README` - 15'
+## 💪 Challenge `Modify a README` - 15' - HALFORD
 `Modify a README` challenge explained in collaborative document
 - Download the README file from [GitHub](
 https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/main/material_for_participants/README.md)
@@ -305,7 +292,7 @@ https://github.com/tu-delft-library/introduction_to_version_control_with_git/blo
 - Complete the tasks included between [] in the README file 
 - Add and commit changes to your local recipes repository 
 
-## Live coding - 10'
+## Pulling a fresh copy of repo - 10' - HALFORD
 
 Experience loosing your local repo and getting your code back from remote:
 
@@ -331,7 +318,7 @@ git status
 ```
 Magic!
 
-## 💪 Challenge `A new recipe` - 15'
+## 💪 Challenge `A new recipe` - 15' - HALFORD
 `A new recipe` challenge explained in collaborative document.
 - Add another recipe file to your local repository (e.g. `hummus.md`, `pesto.md`) 
 - Edit to the new file with ingredients and instructions 
@@ -341,11 +328,11 @@ Magic!
 
 ## Break - 15'
 
-## Version control with VSCode
+## Version control with VSCode - CATA
 - Some people prefer to use a GUI to work with Git.
 - Let's explore that using VSCode
 
-## Demo git operations in VSCode - 20'
+## Demo git operations in VSCode - 20' - CATA
 ### Git by default
 - Open VSCode
 - Open folder -> recipes folder
@@ -369,7 +356,7 @@ Magic!
 - Confirm in GitHub
 
 
-## 💪 Exercise `Try Git Graph extension` - 15'
+## 💪 Exercise `Try Git Graph extension` - 15' - CATA
 - Install `Git Graph` extension in VS Code
     - Go the marketplace tab in VS code 
     - Search for `Git Graph` and click install
@@ -383,7 +370,7 @@ Magic!
     - Click on your new recipe file to see the differences in a new window 
 - Sync with remote
 
-## Key points - 15'
+## Key points - 15' - CATA
 ```
 git config          # configure
 git init            # initialize locally
