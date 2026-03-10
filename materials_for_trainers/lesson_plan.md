@@ -191,7 +191,7 @@ git diff me.txt                     # show differences
 
 
 ## 11:20 - Git history - 25' - CATA
-- Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore`
+- Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
 ```console
@@ -221,7 +221,11 @@ cat guacamole.md                    # restored file
 git status                          # restored file is not staged!
 git restore guacamole.md            # overwrites working copy with last committed version
 git status
-cat guacamole.md                       
+cat guacamole.md   
+git tag -a nana [short_hash] -m "Nana's recipe"   # add a tag -> easier than hash
+git log --oneline
+git restore -s nana guacamole.md    # -s same as with the hash -> source
+git status                          # restored file is not staged!
 ```
 ## 11:45 - Break - 15'
 
