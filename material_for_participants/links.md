@@ -2,7 +2,7 @@
 A collection of all the links you will need for this course
 
 ## Live code documentation 
-If you are running behind, visit the [material_for_participants/commands.log](https://github.com/tu-delft-library/introduction_to_version_control_with_git/tree/2026-03-11/material_for_participants/commands.log) 
+If you are running behind, visit the [material_for_participants/command.log](https://github.com/tu-delft-library/introduction_to_version_control_with_git/tree/2026-03-11/material_for_participants/command.log) 
 
 
 ## Exercises
