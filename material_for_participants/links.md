@@ -86,6 +86,7 @@ Please fill out the [feedback form](https://eur03.safelinks.protection.outlook.c
 ## Other resources  
 
 - [Link for DCC guides](https://tu-delft-dcc.github.io/docs/software/fair_software/fair.html)
+- [TU Delft FAIR software checklist](https://tu-delft-dcc.github.io/docs/software/fair_software/checklist.html)
 - [TU Delft License guidelines](https://zenodo.org/records/4629635)
 - Example of FAIR software practices: 
     - [Not so FAIR](https://github.com/carpentries-incubator/astronaut-data-analysis-not-so-fair)
