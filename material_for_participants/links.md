@@ -51,6 +51,8 @@ Vevox link: https://vevox.app/181857001
 - Add another recipe file to your local repository (e.g. `hummus.md`, `pesto.md`)
 - Edit to the new file with ingredients and instructions
 - Add and commit changes
+- Make new changes to the recipe
+- Add and commit changes again
 - Push changes to the remote repository
 - Confirm that you see the latest changes in GitHub 
 
@@ -76,6 +78,8 @@ Vevox link: https://vevox.app/181857001
 - Some extra exercises for you to play with are found in [material_for_participants/optional_excercises.md](https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/2026-03-11/material_for_participants/optional_excercises.md)
 
 - Solutions to exercises above are found in [material_for_participants/solutions.md](https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/2026-03-11/material_for_participants/solutions.md)
+
+- Interactive tool for [learning git branches](https://learngitbranching.js.org/)
 
 ## Feedback survey 
 
