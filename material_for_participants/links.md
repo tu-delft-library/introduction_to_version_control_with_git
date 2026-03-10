@@ -1,12 +1,20 @@
 # Links document
 A collection of all the links you will need for this course
 
+## Icebreaker
+
+Turn to your neighbor and ask one of these questions:
+- If you could have any superpower, what would it be and why? 
+- What is the most unexpected job you’ve ever had? 
+
+Finished? Find another person to ask these questions to
+
 ## Live code documentation 
 If you are running behind, visit the [material_for_participants/commands.log](https://github.com/tu-delft-library/introduction_to_version_control_with_git/tree/2026-03-11/material_for_participants/commands.log) 
 
 
 ## Exercises
-Vevox link for challenges: https://vevox.app/138887056 
+Vevox link: https://vevox.app/138887056 
 
 ### bio Repository 
 
