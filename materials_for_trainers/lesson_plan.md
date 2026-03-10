@@ -164,7 +164,23 @@ git log
 - Display the differences between its updated state and its original state. 
 
 ## 11:05 - git HEAD/TAG game - 15' - CATA
-- Game explained in [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
+    HEAD 
+    - We use a physical object to represent the HEAD (a ball, a stuff animal, a fruit)
+    - Teacher will call HEAD~1, HEAD~5
+    - Marker of HEAD starts in one edge of the row
+    - The teacher calls ‘git restore HEAD~[X]’. 
+        - The HEAD marker is passed hand by hand until it reaches the corresponding HEAD position. 
+
+    TAGS 
+    - Marker of HEAD starts in one edge of the row
+    - Some people get a paper with a short hash (e.g. f22b25e, b36abfd) 
+    - The teacher calls ‘git  restore [hash]’. 
+        - HEAD marker is passed hand by hand until it reaches the corresponding hash. 
+    - Teacher comments on how hard it is for humans to remember this hash. Enter TAGs 
+    - Some other people will get a post it with a TAG (e.g. for guacamole – original, spicy, no onion) 
+    - The teacher calls ‘git  restore [tag]’. 
+        - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
+
 
 ## 11:20 - Git history - 25' - CATA
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore`
