@@ -19,6 +19,7 @@ Vevox link: https://vevox.app/138887056
 ### bio Repository 
 
 - Create a new Git repository on your computer called bio.
+    - **tip** remember to step out of your current `recipe` repository
 - Write a three-line biography for yourself in a file called me.txt, commit your changes
 - Modify one line, add a fourth line
 - Display the differences between its updated state and its original state. 
