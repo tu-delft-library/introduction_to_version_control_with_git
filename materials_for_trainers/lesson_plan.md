@@ -398,7 +398,7 @@ git push origin main
 - Click on plus to stage
 - Write message and click on commit
 - Notice the update on the log
-- Push by clicking "sync changes"
+- Push by clicking "Publish Branch"
 - Confirm in GitHub
 
 
