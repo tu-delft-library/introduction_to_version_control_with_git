@@ -157,11 +157,19 @@ git status
 git log
 ```
 ### 10:55 - 💪 Challenge `staging` - 10' - CATA
-`bio Repository` challenge explained in collaborative document
-- Create a new Git repository on your computer called bio.
-- Write a three-line biography for yourself in a file called me.txt, commit your changes
-- Modify one line, add a fourth line
-- Display the differences between its updated state and its original state. 
+`bio Repository` challenge explained in `links` document
+#### Solution
+```console
+cd ..     # move out of recipes folder
+mkdir bio                           # Create a new folder called bio
+cd bio                              # step into bio
+git init                            # initialise git
+nano me.txt                         # create file and add three lines
+git add me.txt                      # add file
+git commit -m "Add biography file"  # commit changes
+nano me.txt                         # modify one line, add a fourth line
+git diff me.txt                     # show differences
+```
 
 ## 11:05 - git HEAD/TAG game - 15' - CATA
     HEAD 
@@ -206,6 +214,7 @@ git diff [long_hash] guacamole.md   # another way to reference a commit
 git log --oneline                   # shows short hashes
 git diff [short_hash] guacamole.md  # use short hash to point to a specific commit  
 git status                          # shows modified file
+git restore guacamole.md            # restores to latest commit
 git log --oneline
 git restore -s [short_hash] guacamole.md # -s for source
 cat guacamole.md                    # restored file
@@ -283,21 +292,24 @@ git remote add origin git@github.com:[username]/recipes.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
-Show repository in GitHub
+- Explain push vs commit: 
+    - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
+    - Commit only updates your local repository.
+- Show repository in GitHub
 
 ### 14:05 - 💪  Challenges `GitHub` - 10' - CATA
-Challenges explained in collaborative document:
-- `GitHub GUI`
-    - Browse to your recipes repository on GitHub.
-    - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
-    - Hover over, and click on, the three buttons to the right of each commit.
-    - What information can you gather/explore from these buttons?
-    - How would you get that same information in the shell? 
+Challenges explained in `links` document:
+#### `GitHub GUI` solution:
 
-- `GitHub Timestamps` 
-    - Go to the repo you just created on GitHub and check the timestamps of the files.  
-    - How does GitHub record times, and why?  
-    - Hover over the timestamp, you can see the exact time at which the last change to the file occurred. 
+When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
+
+The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit to the clipboard. In the shell, git log will show you the full commit identifier for each commit.
+
+The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we’d need to checkout the repository at that particular time. We can do this with git checkout ID where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+
+#### `GitHub Timestamps` solution:
+
+GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 
 ### 14:15 - 💪 Challenges `remotes` - 10' - CATA
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
@@ -309,7 +321,7 @@ Challenges explained in collaborative document:
 - 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 
 ## 14:55 - 💪 Challenge `Modify a README` - 15' - HALFORD
-`Modify a README` challenge explained in collaborative document
+`Modify a README` challenge explained in `links` document
 - Download the README file from [GitHub](
 https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/main/material_for_participants/README.md)
 - Add it to your local recipes repository 
@@ -344,12 +356,22 @@ git status
 Magic!
 
 ## 15:20 - 💪 Challenge `A new recipe` - 15' - HALFORD
-`A new recipe` challenge explained in collaborative document.
-- Add another recipe file to your local repository (e.g. `hummus.md`, `pesto.md`) 
-- Edit to the new file with ingredients and instructions 
-- Add and commit changes 
-- Push changes to the remote repository 
-- Confirm that you see the latest changes in GitHub 
+`A new recipe` challenge explained in `links` document.
+#### solution
+```console
+nano hummus.md              # add headers ingredients, instructions
+git add hummus.md
+git commit -m "Add hummus recipe"
+git status
+nano hummus.md              # add chickpeas, lemon, tahini, garlic
+git add hummus.md
+git commit -m "Add ingredients to hummus"
+nano hummus.md              # add all to food processor
+git add hummus.md
+git commit -m "Add instructions to hummus"
+git log --oneline
+git push origin main
+```
 
 ## 15:35 - Break - 15'
 
