@@ -14,7 +14,7 @@ If you are running behind, visit the [material_for_participants/commands.log](ht
 
 
 ## Exercises
-Vevox link: https://vevox.app/138887056 
+Vevox link: https://vevox.app/181857001
 
 ### bio Repository 
 
