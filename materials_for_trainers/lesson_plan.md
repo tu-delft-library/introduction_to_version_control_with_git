@@ -10,8 +10,12 @@
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
 ## 9:25 - Icebreaker - 5' - CATA
-A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 
+Turn to your neighbor and ask one of these questions:
+- If you could have any superpower, what would it be and why? 
+- What is the most unexpected job you’ve ever had? 
+
+Finished? Find another person to ask these questions to
 
 ## 9:30 - Introduction to version control - 10' - CATA
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
