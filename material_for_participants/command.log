@@ -19,3 +19,4 @@ ls
 ls -a
 git init
 ls
+ls -a
