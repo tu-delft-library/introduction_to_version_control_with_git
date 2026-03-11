@@ -154,3 +154,4 @@ git diff HEAD~2 guacamole.md
 git diff HEAD~2 guacamole.md 
 git log
 git diff 15a9e83c7d97139076083d31652d0c52a4d0ebd4 guacamole.md 
+git diff HEAD~1 guacamole.md 
