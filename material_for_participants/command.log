@@ -212,3 +212,5 @@ touch newdir/file
 git status
 git add newdir
 git commit -m "added folder"
+touch newdir/anotherfile
+git status
