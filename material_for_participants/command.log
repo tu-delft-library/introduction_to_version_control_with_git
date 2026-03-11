@@ -53,3 +53,4 @@ git status
 cd ..
 rm -rf recipes2
 cd recipes/
+cat guacamole.md 
