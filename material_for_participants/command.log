@@ -168,3 +168,4 @@ nano guacamole.md
 git status
 git diff guacamole.md 
 git log --oneline
+git tag -a traditional 15a9e83 -m "Add tag for traditional recipe"
