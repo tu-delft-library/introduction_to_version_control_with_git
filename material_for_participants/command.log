@@ -270,3 +270,4 @@ cd recipes/
 ls
 ls -a
 git status
+git log --oneline
