@@ -87,3 +87,4 @@ git diff
 ls
 git add .
 git status
+git diff
