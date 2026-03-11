@@ -47,3 +47,4 @@ cd recipes2/
 cp ../recipes/guacamole.md .
 git status
 ls
+git init
