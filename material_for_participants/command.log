@@ -214,3 +214,5 @@ git add newdir
 git commit -m "added folder"
 touch newdir/anotherfile
 git status
+cat .gitignore 
+git restore .
