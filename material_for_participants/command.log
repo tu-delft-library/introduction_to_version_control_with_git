@@ -243,3 +243,5 @@ git commit -m "Added extra ingredients"
 git log --oneline
 git push
 git push --set-upstream origin mai
+git push --set-upstream origin main
+git push
