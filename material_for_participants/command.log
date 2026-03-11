@@ -193,3 +193,4 @@ nano .gitignore
 ls
 ls -a
 cat .gitignore 
+git status
