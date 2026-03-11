@@ -117,3 +117,4 @@ ls
 git status
 git restore --staged .
 git status
+git diff guacamole.md 
