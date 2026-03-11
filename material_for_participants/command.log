@@ -174,3 +174,5 @@ git diff traditional guacamole.md
 git restore -s traditional guacamole.md 
 git status
 cat guacamole.md 
+git status
+cat guacamole.md 
