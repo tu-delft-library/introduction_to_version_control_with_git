@@ -43,3 +43,4 @@ git log
 cd ..
 mkdir recipes2
 cd recips2
+cd recipes2/
