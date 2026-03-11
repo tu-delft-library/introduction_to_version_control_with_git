@@ -247,3 +247,4 @@ git push --set-upstream origin main
 git push
 git status
 git pull origin main
+git push origin main
