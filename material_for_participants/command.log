@@ -206,3 +206,4 @@ rmdir anotherfolder/
 nano .gitignore 
 git status
 touch pictures/new.jpg
+git status
