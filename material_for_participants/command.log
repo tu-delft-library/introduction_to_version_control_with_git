@@ -129,3 +129,5 @@ pwd
 git init
 nano me.txt
 git status
+git add me.txt 
+git status
