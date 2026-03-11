@@ -275,3 +275,5 @@ git remote -v
 ls
 clear
 nano hummus.md
+git status
+git add hummus.md 
