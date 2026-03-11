@@ -59,3 +59,4 @@ git log
 nano guacamole.md 
 cat guacamole.md 
 git status
+git diff
