@@ -51,3 +51,4 @@ git init
 git log
 git status
 cd ..
+rm -rf recipes2
