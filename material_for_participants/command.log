@@ -88,3 +88,4 @@ ls
 git add .
 git status
 git diff
+git diff --stagd
