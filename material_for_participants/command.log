@@ -64,3 +64,4 @@ git add guacamole.md
 git status
 git commit -m "Add ingredients to guacamole recipe"
 git status
+git log
