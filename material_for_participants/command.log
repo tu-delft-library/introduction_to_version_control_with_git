@@ -207,3 +207,6 @@ nano .gitignore
 git status
 touch pictures/new.jpg
 git status
+mkdir newdir
+touch newdir/file
+git status
