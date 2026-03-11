@@ -80,3 +80,4 @@ git log
 git log --oneline
 touch pesto.md
 ls 
+git status
