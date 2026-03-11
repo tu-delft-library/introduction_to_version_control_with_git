@@ -31,3 +31,4 @@ git status
 cd recipes
 git status
 nano guacamole.md
+ls
