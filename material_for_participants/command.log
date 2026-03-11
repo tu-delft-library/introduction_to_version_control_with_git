@@ -137,3 +137,5 @@ cat me.txt
 git status
 git diff
 git add me.txt 
+git diff
+git diff --staged
