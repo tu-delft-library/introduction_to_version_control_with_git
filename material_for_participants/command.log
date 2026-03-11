@@ -236,3 +236,5 @@ git help remote
 nano guacamole.md 
 git status
 git add guacamole.md 
+git commit "Added extra ingredients
+"
