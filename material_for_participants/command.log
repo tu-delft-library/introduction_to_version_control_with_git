@@ -144,3 +144,4 @@ ls
 cd recipes/
 pwd
 git log --oneline
+git status
