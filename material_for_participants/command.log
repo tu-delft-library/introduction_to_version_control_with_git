@@ -263,3 +263,4 @@ pwd
 cd ..
 rm -rf recipes/
 git status
+cd recipes
