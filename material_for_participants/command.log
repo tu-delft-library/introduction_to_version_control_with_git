@@ -52,3 +52,4 @@ git log
 git status
 cd ..
 rm -rf recipes2
+cd recipes/
