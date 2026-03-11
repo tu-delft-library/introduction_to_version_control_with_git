@@ -159,3 +159,4 @@ git show 15a9e83c7d97139076083d31652d0c52a4d0ebd4 guacamole.md
 git log 
 git show 15a9e83c7d97139076083d31652d0c52a4d0ebd4 guacamole.md 
 git log --oneline
+git diff 15a9e83 guacamole.md 
