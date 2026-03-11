@@ -230,3 +230,5 @@ git commit -m "cleaning up"
 git status
 clear
 git remote add origin git@github.com:halfordd/recipes.git
+git remote -v
+git push origin main
