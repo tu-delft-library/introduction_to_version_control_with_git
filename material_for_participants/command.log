@@ -266,3 +266,6 @@ git status
 cd recipes
 git clone git@github.com:halfordd/recipes.git
 ls
+cd recipes/
+ls
+ls -a
