@@ -8,3 +8,4 @@ clear
 git config --global user.name "Halford Dace"
 git config --global user.email "h.j.w.dace@tudelft.nl"
 git config --global core.editor "nano -w"
+git config --global core.autocrlf input
