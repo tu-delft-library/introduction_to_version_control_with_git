@@ -25,3 +25,5 @@ ls .git
 clear
 pwd
 ls
+git status
+cd ..
