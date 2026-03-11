@@ -94,3 +94,4 @@ git status
 git restore --staged .
 git status
 cat guacamole.md 
+ls
