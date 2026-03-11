@@ -279,3 +279,5 @@ git status
 git add hummus.md 
 git commit -m "Added hummus recipe"
 git status
+nano hummus.md 
+git status
