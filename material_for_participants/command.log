@@ -48,3 +48,5 @@ cp ../recipes/guacamole.md .
 git status
 ls
 git init
+git log
+git status
