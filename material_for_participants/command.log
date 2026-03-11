@@ -203,3 +203,5 @@ git status --ignored
 mkdir anotherfolder
 git status
 rmdir anotherfolder/
+nano .gitignore 
+git status
