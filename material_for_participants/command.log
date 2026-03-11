@@ -1,3 +1,4 @@
 clear
 git version
 git help
+git help init
