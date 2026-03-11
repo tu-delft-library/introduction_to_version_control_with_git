@@ -255,3 +255,4 @@ git status
 nano README.md 
 git status
 git add README.md 
+git commit -m "Project documentation"
