@@ -103,3 +103,4 @@ touch pesto.md
 ls
 git add pesto.md 
 git status
+git restore pesto.md
