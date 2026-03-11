@@ -171,3 +171,5 @@ git log --oneline
 git tag -a traditional 15a9e83 -m "Add tag for traditional recipe"
 git log --oneline
 git diff traditional guacamole.md 
+git restore -s traditional guacamole.md 
+git status
