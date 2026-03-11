@@ -41,3 +41,5 @@ git commit -m "Create initial structure for guacamole recipe."
 git status
 git log
 cd ..
+mkdir recipes2
+cd recips2
