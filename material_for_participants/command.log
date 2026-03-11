@@ -242,3 +242,4 @@ git commit "Added extra ingredients"
 git commit -m "Added extra ingredients"
 git log --oneline
 git push
+git push --set-upstream origin mai
