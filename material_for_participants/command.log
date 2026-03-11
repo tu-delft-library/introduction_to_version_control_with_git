@@ -106,3 +106,5 @@ git status
 git restore pesto.md
 git status
 nano guacamole.md 
+cat guacamole.md 
+git add guacamole.md 
