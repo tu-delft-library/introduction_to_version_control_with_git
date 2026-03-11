@@ -216,3 +216,6 @@ touch newdir/anotherfile
 git status
 cat .gitignore 
 git restore .
+git status
+rm -rf newdir/
+git status
