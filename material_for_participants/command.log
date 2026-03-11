@@ -189,3 +189,5 @@ touch a.png b.png c.png pictures/cake1.jpg pictures/cake2.jpg
 ls
 ls pictures
 git status
+nano .gitignore
+ls
