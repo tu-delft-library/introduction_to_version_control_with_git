@@ -44,3 +44,6 @@ cd ..
 mkdir recipes2
 cd recips2
 cd recipes2/
+cp ../recipes/guacamole.md .
+git status
+ls
