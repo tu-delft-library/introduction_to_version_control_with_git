@@ -178,3 +178,5 @@ git status
 cat guacamole.md 
 git restore guacamole.md 
 git status
+cler
+clear
