@@ -252,3 +252,4 @@ git status
 clear
 cp ~/Downloads/README.md .
 git status
+nano README.md 
