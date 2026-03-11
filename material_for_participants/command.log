@@ -4,3 +4,4 @@ git help
 git help init
 clear
 git config --list
+clear
