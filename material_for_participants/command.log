@@ -222,3 +222,5 @@ git status
 git rm newdir/file
 git rm -f newdir
 ls
+git rm --cached newdir
+git rm --cached newdir/file
