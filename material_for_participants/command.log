@@ -127,3 +127,4 @@ ls
 cd bio
 pwd
 git init
+nano me.txt
