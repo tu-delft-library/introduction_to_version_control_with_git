@@ -167,3 +167,4 @@ git status
 nano guacamole.md 
 git status
 git diff guacamole.md 
+git log --oneline
