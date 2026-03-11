@@ -13,3 +13,4 @@ git config --global init.defaultBranch main
 git config --list --global
 git config --global --edit
 mkdir recipes
+cd recipes/
