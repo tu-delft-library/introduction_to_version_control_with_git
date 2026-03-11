@@ -99,3 +99,5 @@ rm pesto.md
 ls
 git restore guacamole.md 
 cat guacamole.md 
+touch pesto.md
+ls
