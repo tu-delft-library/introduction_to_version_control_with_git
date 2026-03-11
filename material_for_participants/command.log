@@ -182,3 +182,5 @@ cler
 clear
 git status
 ls
+mkdir pictures
+ls
