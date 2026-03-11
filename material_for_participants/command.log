@@ -131,3 +131,4 @@ nano me.txt
 git status
 git add me.txt 
 git status
+git commit -m "Add a summary about Catalina"
