@@ -162,3 +162,5 @@ git log --oneline
 git diff 15a9e83 guacamole.md 
 git status
 git diff guacamole.md 
+git restore guacamole.md 
+git status
