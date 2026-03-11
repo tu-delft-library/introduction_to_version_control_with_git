@@ -28,3 +28,5 @@ ls
 git status
 cd ..
 git status
+cd recipes
+git status
