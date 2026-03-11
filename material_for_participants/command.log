@@ -251,3 +251,4 @@ git push origin main
 git status
 clear
 cp ~/Downloads/README.md .
+git status
