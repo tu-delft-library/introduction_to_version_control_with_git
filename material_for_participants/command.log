@@ -95,3 +95,5 @@ git restore --staged .
 git status
 cat guacamole.md 
 ls
+rm pesto.md
+ls
