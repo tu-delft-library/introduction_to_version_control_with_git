@@ -274,3 +274,4 @@ git log --oneline
 git remote -v
 ls
 clear
+nano hummus.md
