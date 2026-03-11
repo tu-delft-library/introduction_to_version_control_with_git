@@ -114,3 +114,4 @@ git status
 cat guacamole.md 
 rm pesto.md 
 ls
+git status
