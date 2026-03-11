@@ -120,3 +120,5 @@ git status
 git diff guacamole.md 
 git restore guacamole.md 
 cat guacamole.md 
+cd ..
+pwd
