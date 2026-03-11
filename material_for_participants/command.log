@@ -86,3 +86,4 @@ cat guacamole.md
 git diff
 ls
 git add .
+git status
