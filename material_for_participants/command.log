@@ -254,3 +254,4 @@ cp ~/Downloads/README.md .
 git status
 nano README.md 
 git status
+git add README.md 
