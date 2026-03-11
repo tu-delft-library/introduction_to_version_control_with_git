@@ -101,3 +101,5 @@ git restore guacamole.md
 cat guacamole.md 
 touch pesto.md
 ls
+git add pesto.md 
+git status
