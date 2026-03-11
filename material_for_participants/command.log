@@ -226,3 +226,6 @@ git rm --cached newdir
 git rm --cached newdir/file
 git restore newdir/file
 git status
+git commit -m "cleaning up"
+git status
+clear
