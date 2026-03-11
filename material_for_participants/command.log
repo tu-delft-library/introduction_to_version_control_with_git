@@ -20,3 +20,4 @@ ls -a
 git init
 ls
 ls -a
+ls -aF
