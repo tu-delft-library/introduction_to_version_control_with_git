@@ -245,3 +245,4 @@ git push
 git push --set-upstream origin mai
 git push --set-upstream origin main
 git push
+git status
