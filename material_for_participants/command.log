@@ -119,3 +119,4 @@ git restore --staged .
 git status
 git diff guacamole.md 
 git restore guacamole.md 
+cat guacamole.md 
