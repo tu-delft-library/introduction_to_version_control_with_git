@@ -238,3 +238,5 @@ git status
 git add guacamole.md 
 git commit "Added extra ingredients
 "
+git commit "Added extra ingredients"
+git commit -m "Added extra ingredients"
