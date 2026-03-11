@@ -221,3 +221,4 @@ rm -rf newdir/
 git status
 git rm newdir/file
 git rm -f newdir
+ls
