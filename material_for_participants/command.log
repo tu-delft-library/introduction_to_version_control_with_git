@@ -234,3 +234,5 @@ git remote -v
 git push origin main
 git help remote
 nano guacamole.md 
+git status
+git add guacamole.md 
