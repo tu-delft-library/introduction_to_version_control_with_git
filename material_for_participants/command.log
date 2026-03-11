@@ -128,3 +128,4 @@ cd bio
 pwd
 git init
 nano me.txt
+git status
