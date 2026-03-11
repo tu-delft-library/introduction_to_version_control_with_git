@@ -27,3 +27,4 @@ pwd
 ls
 git status
 cd ..
+git status
