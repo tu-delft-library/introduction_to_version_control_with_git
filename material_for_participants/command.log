@@ -116,3 +116,4 @@ rm pesto.md
 ls
 git status
 git restore --staged .
+git status
