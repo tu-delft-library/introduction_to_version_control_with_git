@@ -34,3 +34,4 @@ nano guacamole.md
 ls
 cat guacamole.md 
 git status
+git add guacamole.md 
