@@ -65,3 +65,4 @@ git status
 git commit -m "Add ingredients to guacamole recipe"
 git status
 git log
+git log --oneline
