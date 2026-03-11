@@ -84,3 +84,4 @@ git status
 nano guacamole.md 
 cat guacamole.md
 git diff
+ls
