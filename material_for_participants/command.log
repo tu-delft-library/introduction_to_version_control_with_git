@@ -210,3 +210,4 @@ git status
 mkdir newdir
 touch newdir/file
 git status
+git add newdir
