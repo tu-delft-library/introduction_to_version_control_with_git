@@ -277,3 +277,5 @@ clear
 nano hummus.md
 git status
 git add hummus.md 
+git commit -m "Added hummus recipe"
+git status
