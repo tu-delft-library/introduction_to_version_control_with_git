@@ -72,3 +72,4 @@ git diff guacamole.md
 git add guacamole.md 
 git status
 git status
+git diff
