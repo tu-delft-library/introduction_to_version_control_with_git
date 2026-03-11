@@ -126,3 +126,4 @@ mkdir bio
 ls
 cd bio
 pwd
+git init
