@@ -224,3 +224,4 @@ git rm -f newdir
 ls
 git rm --cached newdir
 git rm --cached newdir/file
+git restore newdir/file
