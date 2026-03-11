@@ -288,3 +288,4 @@ git add hummus.md
 git commit -m "Added ingredients for hummus"
 git status
 cat hummus.md 
+git log --oneline
