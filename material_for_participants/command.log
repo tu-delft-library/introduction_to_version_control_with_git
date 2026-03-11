@@ -219,3 +219,4 @@ git restore .
 git status
 rm -rf newdir/
 git status
+git rm newdir/file
