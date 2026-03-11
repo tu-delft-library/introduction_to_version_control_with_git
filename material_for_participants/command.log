@@ -24,3 +24,4 @@ ls -aF
 ls .git
 clear
 pwd
+ls
