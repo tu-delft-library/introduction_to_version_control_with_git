@@ -146,3 +146,4 @@ pwd
 git log --oneline
 git status
 git log --oneline
+nano guacamole.md 
