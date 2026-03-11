@@ -77,3 +77,4 @@ git diff --staged
 git commit -m "Modify guacamole to traditional recipe"
 git log --oneline
 git log
+git log --oneline
