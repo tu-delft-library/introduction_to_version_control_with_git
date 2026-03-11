@@ -35,3 +35,4 @@ ls
 cat guacamole.md 
 git status
 git add guacamole.md 
+git status
