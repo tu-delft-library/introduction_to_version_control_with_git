@@ -191,3 +191,5 @@ ls pictures
 git status
 nano .gitignore
 ls
+ls -a
+cat .gitignore 
