@@ -122,3 +122,5 @@ git restore guacamole.md
 cat guacamole.md 
 cd ..
 pwd
+mkdir bio
+ls
