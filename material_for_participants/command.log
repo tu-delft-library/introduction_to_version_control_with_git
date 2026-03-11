@@ -143,3 +143,4 @@ cd ..
 ls
 cd recipes/
 pwd
+git log --oneline
