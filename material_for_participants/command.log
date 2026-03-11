@@ -14,3 +14,4 @@ git config --list --global
 git config --global --edit
 mkdir recipes
 cd recipes/
+pwd
