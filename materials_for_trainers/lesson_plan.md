@@ -192,11 +192,25 @@ git commit -m "Modify guacamole to traditional recipe"
 git status
 git log
 ```
+**OPTIONAL:** add all changes
+```console
+touch pesto.md           # create a new file
+nano guacamole.md        # make another change to guacamole.md
+ls -a                    # two files now
+git status               # modified:   guacamole.md + untracked file: pesto.md
+git diff                 # only shows tracked file (guacamole.md)
+git add .                # adds everything (avoid since it makes history messy)
+git status               # modified:   guacamole.md + new file:   pesto.md
+git diff --staged        # shows staged changes
+git restore --staged .   # changed my mind about messy commit
+rm pesto.md
+ls -a                    # all clean now
+```
+
 #### pilot
 start at 10:50
 did the optional: git add . -> to show them how not to do things.
 added messynes but realism
-
 
 ### 10:55 - 💪 Challenge `staging` - 10' - CATA
 `bio Repository` challenge explained in `links` document
