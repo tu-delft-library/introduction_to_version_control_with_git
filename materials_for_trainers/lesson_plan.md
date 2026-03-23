@@ -8,10 +8,16 @@
     - install VSCode
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
+#### pilot
+everyone was prepared so this too no time
 
 ## 9:25 - Icebreaker - 5' - CATA
 - Instructions for the icebreaker in the links document
 - When finished ask the group to share some of the answers they got
+#### pilot
+- used name tags to find someone with the same initials
+- people were quite chatty already so didn't want to stop
+- added questions to slides so that's easier to explain
 
 ## 9:30 - Introduction to version control - 10' - CATA
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
@@ -29,19 +35,25 @@
         - type `command + spacebar` search for `Terminal` and press `Return`
         - type `bash`
     - Linux: Open `Gnome Terminal` or `KDE Konsole` or `xterm`
+     
 - Navigate to `Desktop`:
 ```console
 cd ~/Desktop
 cd "/c/Users/[username]/OneDrive - Delft University of Technology\Desktop"
 cd "/c/Users/[username]/OneDrive - Delft University of Technology\Bureaublad"
 ```
+#### pilot
+halford skipped this (or at least did the setting up first)
 
 ## 9:45 - Setting up git - 5' - HALFORD
+
 Important to mention:
 - End of a line:
     - Windows: Uses CRLF (\r\n) to mark the end of a line. 
     - Unix/Linux/macOS: Uses LF (\n).
-- Git uses branches. 
+- Git uses branches
+    - A branch is a separate timeline
+    - You will learn about branches later (in the intermediate course??)
     - We work on the main branch and no more details for now.
 
 ```console
@@ -50,11 +62,19 @@ git help
 git config --list
 git config --global user.name "Name Lastname"
 git config --global user.email "netid@tudelft.nl"
-git config --global core.editor nano
-git config --global core.autocrlf input
+git config --global core.editor "nano -w"
+## For mac and linux
+git config --global core.autocrlf input             # auto carriage return line feed 
+## for windows do
+git config --global TODOTODODODOD                   # TODO
 git config --global init.defaultBranch main
 git config --list --global
 ```
+#### pilot
+- from which version is git ok?
+- ask halford to add explanation of history of crlf-> typewritter "carriage return line feed"
+- started at 9:27 (so we are 10 minutes ahead)
+- this part took 15mins because halford teaches also history and branches
 
 ## 9:50 - Initialize a local Git repository - 10' - HALFORD
 - `git init` initializes a repository
@@ -65,7 +85,7 @@ cd Desktop
 mkdir recipes   # create a new directory for repository
 cd recipes/     # change to new directory to initialize git repo
 ls              # show directory is empty
-ls -a           # show directory has no hidden folders
+ls -a           # show directory has no hidden folders. remind about shortcuts . and ..
 git init        # initialize git repo
 ls              # appears as if nothing has changed
 ls -a           # but hidden item .git was created
@@ -120,11 +140,27 @@ git add guacamole.md        # explain stating area: like framing for a photo
 git commit -m "Add ingredients to guacamole recipe"
 git log
 ```
+#### pilot
+started at 9:55
+tips: engage by asking before typing structure of recipe
+there were questions about "end of line" warning?
+there were questions about working tree already after first commit
+lots of questions at 10:15. once they floor opened they went wild. AND probably ready for a coffee break at 10:15 (maybe cause we started content 10mins before?)
+questions (and worries) about `git blame`
+
 ### 10:25 - 💪 Challenge `changes` - 5' - HALFORD
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 2
 
+#### pilot
+5mins is enough per question including reading the question 
+- question: is it too disrupting to stop just for one question? maybe better to lump Q1 and Q2
+- question 2 -> too early we have not make the lime. Change the question text!
+
 ## 10:30 - Break - 15'
+#### pilot
+start at 10:40 because of lots of questions. Is it better to talk about staging area earlier? like in the intro slides?
+clearly some people had git experience cause they were asking about conflicts and dependencies
 
 ## 10:45 - Working directory and staging area - 10' - CATA
 - Working directory -> staging area -> commit history (database)
@@ -156,6 +192,12 @@ git commit -m "Modify guacamole to traditional recipe"
 git status
 git log
 ```
+#### pilot
+start at 10:50
+did the optional: git add . -> to show them how not to do things.
+added messynes but realism
+
+
 ### 10:55 - 💪 Challenge `staging` - 10' - CATA
 `bio Repository` challenge explained in `links` document
 #### Solution
@@ -170,6 +212,10 @@ git commit -m "Add biography file"  # commit changes
 nano me.txt                         # modify one line, add a fourth line
 git diff me.txt                     # show differences
 ```
+#### pilot
+start at 11:!5
+best to show exercise on the screen (show links file). Voice instructions is not enough.
+about half the people put up the green post it after 8 minutes. 
 
 ## 11:05 - git HEAD/TAG game - 15' - CATA
     HEAD 
@@ -227,11 +273,15 @@ git log --oneline
 git restore -s nana guacamole.md    # -s same as with the hash -> source
 git status                          # restored file is not staged!
 ```
+
 ## 11:45 - Break - 15'
+#### pilot 
+started at 11:55 -> 12:05
 
 ### 12:00 - 💪 Challenges `history` - 10' - HALFORD
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 3 and 4
+some wait to hear the explanation to answer the vevox -> TODO add "I don't know"
 
 ## 12:10 - Git ignore - 10' - HALFORD
 Emphasize importance of `.ignore` file to keep repository clean.
@@ -249,22 +299,37 @@ nano .gitignore                     # type lines below
         pictures/
 cat .gitignore                      # confirm content of .gitignore
 git status                          # no pictures but yes new .gitignore file
-git add .gitignore                  # let's track this file
+git add .gitignore                  # let's track this file. it won't ignore itself
 git commit -m "Ignore png files and the pictures folder"
 git status                          # all clean
 ls                                  # files are in folder but not tracked by git
 git add a.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
-
+mkdir anotherfolder                 # empty folder
+git status                          # nothing! git does not see empty folder
 ```
+#### pilot
+started at 12:14
+
+
 ### 12:20 - 💪 Challenges `ignore` - 10' - HALFORD
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 5 and 6
 
+#### pilot
+started at 12:27 -> ended 12:33 ~ 5mins
+there were more questions about .gitignore -> multiple .gitignore files?
+in general it seems vevox questions becuase they are multiple choice are quick to be answered -> 2mins per question
+the hands on exercise can use more time (e.g. bio repository)
+3 more minutes on extra question -> so still safest to leave 10minutes
+
 ## 12:30 - Lunch break - 60'
 
 ## 13:30 - SSH key - 20' - CATA
-
+- Why SSH key?
+    - go though the option of writing password everytime
+    - we can bypass this by adding a key
+    - tells github that is safe to communicate with your machine
 - Log into GitHub
 - Create Secure Shell Protocol (SSH) key
     - SSH key in GitHub is paired to key in your computer
@@ -318,11 +383,30 @@ GitHub displays timestamps in a human readable relative format (i.e. “22 hours
 ### 14:15 - 💪 Challenges `remotes` - 10' - CATA
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 7 and 8
+#### pilot
+Q7 talks about "pull" when has not been covered yet
 
 ## 14:25 - Break - 15'
 
 ## 14:40 - TU Delft FAIR software guidelines - 15' - HALFORD
 - 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+
+#### pilot
+- started at 14:42
+from halford's talk
+- cutting edge technology with specific data
+- they can't reprocude our results
+- how can they cite us if they can not find it
+- reusable -> relevant
+- we consume a wild amount of money doing research -> or granny is paying tax for this -> we owe to people to be accountable and transparent
+- fair data and fair software
+    they're not quite the same
+- fair vs open science
+    - e.g. personal data can not be open but it can be fair
+    - as open as possible but as closed as necessary
+- TODO ask Heather to add details of license and copyright to slides
+    - note to trainer -> Add importance to talk about the common licenses
+- ended at 15:00
 
 ## 14:55 - 💪 Challenge `Modify a README` - 15' - HALFORD
 `Modify a README` challenge explained in `links` document
@@ -332,6 +416,9 @@ https://github.com/tu-delft-library/introduction_to_version_control_with_git/blo
 - Open file with nano 
 - Complete the tasks included between [] in the README file 
 - Add and commit changes to your local recipes repository 
+
+#### pilot
+ended at 15:15
 
 ## 15:10 - Pulling a fresh copy of repo - 10' - HALFORD
 
@@ -351,7 +438,7 @@ pwd
 cd ..                           
 rm -rf recipes/                 # loose repository
 git status                      # no git repository here
-git clone git@github.com:halfordd/recipes.git # clone repository
+git clone git@github.com:[username]/recipes.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd recipes
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
@@ -376,12 +463,17 @@ git commit -m "Add instructions to hummus"
 git log --oneline
 git push origin main
 ```
+#### pilot
+started at 15:23 ended at 15:35
 
 ## 15:35 - Break - 15'
 
 ## 15:50 - Demo git operations in VSCode - 20' - CATA
 - Some people prefer to use a GUI to work with Git.
 - Let's explore that using VSCode
+#### pilot
+more explanation about VS code --> what it is and why it has a terminal etc
+
 
 ### Git by default
 - Open VSCode
@@ -437,6 +529,14 @@ git show            # shows changes made on that commit (rather than differences
 git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
+#### pilots
+quite fast
 
 ## 16:35 - Feedback - 10' - CATA
 Ask participants to fill in the feedback survey
+feedback 16:27: <5mins
+
+
+#### pilot
+general note -> make desktop single background so that its less distracting than a photo of the beach where we are not right now
+remember to clear terminal more often
