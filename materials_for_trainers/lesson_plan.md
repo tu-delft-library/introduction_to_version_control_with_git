@@ -69,6 +69,7 @@ git config --global core.autocrlf input             # auto carriage return line 
 git config --global TODOTODODODOD                   # TODO
 git config --global init.defaultBranch main
 git config --list --global
+git config --global --edit
 ```
 #### pilot
 - from which version is git ok?
@@ -210,7 +211,7 @@ ls -a                    # all clean now
 #### pilot
 start at 10:50
 did the optional: git add . -> to show them how not to do things.
-added messynes but realism
+added messyness but realism
 
 ### 10:55 - 💪 Challenge `staging` - 10' - CATA
 `bio Repository` challenge explained in `links` document
