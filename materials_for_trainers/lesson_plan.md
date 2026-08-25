@@ -11,27 +11,23 @@
 - Ask Paula to print a list of the participants so that they can check their name (roll call)
 - Start auto push [TODO] @halfordd step-by-step explanation
 
+## 9:30 - Land - 10'
 ☕ Coffee/tea 🫖
 
-## 9:10 - Housekeeping - 15' - CATA
+## 9:40 - Housekeeping - 10'
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install git
     - install VSCode
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
-#### pilot
-everyone was prepared so this too no time
 
-## 9:25 - Icebreaker - 5' - CATA
-- Instructions for the icebreaker in the links document
+## 9:50 - Icebreaker - 5'
+- Instructions for the icebreaker on slides
 - When finished ask the group to share some of the answers they got
-#### pilot
-- used name tags to find someone with the same initials
-- people were quite chatty already so didn't want to stop
-- added questions to slides so that's easier to explain
 
-## 9:30 - Introduction to version control - 10' - CATA
+
+## 9:55 - Introduction to version control - 10'
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - What is version control and why should I use it?
   - Do it for your future self
@@ -40,7 +36,7 @@ everyone was prepared so this too no time
 - What is a git repo: 
     - folder with files + subfolders + `.git` hidden folder
 
-## 9:40 - Preparing Your Working Directory - 5' - HALFORD
+## 10:05 - Preparing Your Working Directory - 5'
 - Open a bash terminal:
     - Windows: Open *Git Bash* from the Windows start menu
     - Mac:  
@@ -54,10 +50,8 @@ cd ~/Desktop
 cd "/c/Users/[username]/OneDrive - Delft University of Technology\Desktop"
 cd "/c/Users/[username]/OneDrive - Delft University of Technology\Bureaublad"
 ```
-#### pilot
-halford skipped this (or at least did the setting up first)
 
-## 9:45 - Setting up git - 5' - HALFORD
+## 10:10 - Setting up git - 5'
 
 Important to mention:
 - End of a line:
@@ -83,13 +77,8 @@ git config --global init.defaultBranch main
 git config --list --global
 git config --global --edit
 ```
-#### pilot
-- from which version is git ok?
-- ask halford to add explanation of history of crlf-> typewritter "carriage return line feed"
-- started at 9:27 (so we are 10 minutes ahead)
-- this part took 15mins because halford teaches also history and branches
 
-## 9:50 - Initialize a local Git repository - 10' - HALFORD
+## 10:15 - Initialize a local Git repository - 10'
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
@@ -106,11 +95,7 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-### 10:00 - 💪 Challenge `init` - 5' - HALFORD
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 1
-
-## 10:05 - “add → commit” cycles - 20'- HALFORD
+## 10:25 - “add → commit” cycles - 15'
 - Commands: `status, add, commit, log, diff`
 - Important: 
     - We will work with a text file in this course. It will work the same with code. 
@@ -153,29 +138,17 @@ git add guacamole.md        # explain stating area: like framing for a photo
 git commit -m "Add ingredients to guacamole recipe"
 git log
 ```
-#### pilot
-started at 9:55
-tips: engage by asking before typing structure of recipe
-there were questions about "end of line" warning?
-there were questions about working tree already after first commit
-lots of questions at 10:15. once they floor opened they went wild. AND probably ready for a coffee break at 10:15 (maybe cause we started content 10mins before?)
-questions (and worries) about `git blame`
 
-### 10:25 - 💪 Challenge `changes` - 5' - HALFORD
+### 10:40 - 💪 Challenge `changes` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 2
+- Vevox question 1 and 2
 
-#### pilot
-5mins is enough per question including reading the question 
-- question: is it too disrupting to stop just for one question? maybe better to lump Q1 and Q2
-- question 2 -> too early we have not make the lime. Change the question text!
 
-## 10:30 - Break - 15'
-#### pilot
-start at 10:40 because of lots of questions. Is it better to talk about staging area earlier? like in the intro slides?
-clearly some people had git experience cause they were asking about conflicts and dependencies
+## 10:50 - Break - 10'
 
-## 10:45 - Working directory and staging area - 10' - CATA
+
+## 11:00 - Working directory and staging area - 10'
+- 🎦 introduce staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Working directory -> staging area -> commit history (database)
 - Useful ANALOGIES: 
     - Mailing a letter:
@@ -205,28 +178,12 @@ git commit -m "Modify guacamole to traditional recipe"
 git status
 git log
 ```
-**OPTIONAL:** add all changes
-```console
-touch pesto.md           # create a new file
-nano guacamole.md        # make another change to guacamole.md
-ls -a                    # two files now
-git status               # modified:   guacamole.md + untracked file: pesto.md
-git diff                 # only shows tracked file (guacamole.md)
-git add .                # adds everything (avoid since it makes history messy)
-git status               # modified:   guacamole.md + new file:   pesto.md
-git diff --staged        # shows staged changes
-git restore --staged .   # changed my mind about messy commit
-rm pesto.md
-ls -a                    # all clean now
-```
 
-#### pilot
-start at 10:50
-did the optional: git add . -> to show them how not to do things.
-added messyness but realism
 
-### 10:55 - 💪 Challenge `staging` - 10' - CATA
+### 11:10 - 💪 Challenge `staging` - 10'
 `bio Repository` challenge explained in `links` document
+> * Remember to show the exercise on the screen while giving the instructions
+
 #### Solution
 ```console
 cd ..     # move out of recipes folder
@@ -239,12 +196,9 @@ git commit -m "Add biography file"  # commit changes
 nano me.txt                         # modify one line, add a fourth line
 git diff me.txt                     # show differences
 ```
-#### pilot
-start at 11:!5
-best to show exercise on the screen (show links file). Voice instructions is not enough.
-about half the people put up the green post it after 8 minutes. 
 
-## 11:05 - git HEAD/TAG game - 15' - CATA
+
+## 11:20 - git HEAD/TAG game - 10'
     HEAD 
     - We use a physical object to represent the HEAD (a ball, a stuff animal, a fruit)
     - Teacher will call HEAD~1, HEAD~5
@@ -263,7 +217,7 @@ about half the people put up the green post it after 8 minutes.
         - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
 
 
-## 11:20 - Git history - 25' - CATA
+## 11:30 - Git history - 20'
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
@@ -301,16 +255,15 @@ git restore -s nana guacamole.md    # -s same as with the hash -> source
 git status                          # restored file is not staged!
 ```
 
-## 11:45 - Break - 15'
-#### pilot 
-started at 11:55 -> 12:05
+## 11:50 - Break - 10'
 
-### 12:00 - 💪 Challenges `history` - 10' - HALFORD
+
+### 12:00 - 💪 Challenges `history` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 3 and 4
-some wait to hear the explanation to answer the vevox -> TODO add "I don't know"
 
-## 12:10 - Git ignore - 10' - HALFORD
+
+## 12:10 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
 
 ```console
@@ -335,24 +288,15 @@ git status --ignored                # status of ignored files
 mkdir anotherfolder                 # empty folder
 git status                          # nothing! git does not see empty folder
 ```
-#### pilot
-started at 12:14
 
 
-### 12:20 - 💪 Challenges `ignore` - 10' - HALFORD
+### 12:20 - 💪 Challenges `ignore` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 5 and 6
 
-#### pilot
-started at 12:27 -> ended 12:33 ~ 5mins
-there were more questions about .gitignore -> multiple .gitignore files?
-in general it seems vevox questions becuase they are multiple choice are quick to be answered -> 2mins per question
-the hands on exercise can use more time (e.g. bio repository)
-3 more minutes on extra question -> so still safest to leave 10minutes
-
 ## 12:30 - Lunch break - 60'
 
-## 13:30 - SSH key - 20' - CATA
+## 13:30 - SSH key - 20'
 - Why SSH key?
     - go though the option of writing password everytime
     - we can bypass this by adding a key
@@ -376,7 +320,7 @@ ssh -T git@github.com           # test the connection
 ```console
 ssh -T git@github.com           # test the connection
 ```
-# 13:50 - Create remote repository - 15' - CATA
+# 13:50 - Create remote repository - 10'
 
 Create a new repository called `recipes`
 - Public
@@ -393,8 +337,10 @@ git push origin main            # explain push vs commit
     - Commit only updates your local repository.
 - Show repository in GitHub
 
-### 14:05 - 💪  Challenges `GitHub` - 10' - CATA
+### 14:00 - 💪  Challenges `GitHub` - 10'
+> * Remember to show the exercise on the screen while giving the instructions
 Challenges explained in `links` document:
+
 #### `GitHub GUI` solution:
 
 When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
@@ -407,35 +353,18 @@ The right-most button lets you view all of the files in the repository at the ti
 
 GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 
-### 14:15 - 💪 Challenges `remotes` - 10' - CATA
+### 14:10 - 💪 Challenges `remotes` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 7 and 8
-#### pilot
-Q7 talks about "pull" when has not been covered yet
 
-## 14:25 - Break - 15'
 
-## 14:40 - TU Delft FAIR software guidelines - 15' - HALFORD
+## 14:20 - Break - 15'
+
+## 14:35 - TU Delft FAIR software guidelines - 10'
 - 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+>* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
-#### pilot
-- started at 14:42
-from halford's talk
-- cutting edge technology with specific data
-- they can't reprocude our results
-- how can they cite us if they can not find it
-- reusable -> relevant
-- we consume a wild amount of money doing research -> or granny is paying tax for this -> we owe to people to be accountable and transparent
-- fair data and fair software
-    they're not quite the same
-- fair vs open science
-    - e.g. personal data can not be open but it can be fair
-    - as open as possible but as closed as necessary
-- TODO ask Heather to add details of license and copyright to slides
-    - note to trainer -> Add importance to talk about the common licenses
-- ended at 15:00
-
-## 14:55 - 💪 Challenge `Modify a README` - 15' - HALFORD
+## 14:45 - 💪 Challenge `Modify a README` - 15'
 `Modify a README` challenge explained in `links` document
 - Download the README file from [GitHub](
 https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/main/material_for_participants/README.md)
@@ -444,10 +373,8 @@ https://github.com/tu-delft-library/introduction_to_version_control_with_git/blo
 - Complete the tasks included between [] in the README file 
 - Add and commit changes to your local recipes repository 
 
-#### pilot
-ended at 15:15
 
-## 15:10 - Pulling a fresh copy of repo - 10' - HALFORD
+## 15:00 - Pulling a fresh copy of repo - 10'
 
 Experience loosing your local repo and getting your code back from remote:
 
@@ -473,7 +400,11 @@ git status
 ```
 Magic!
 
-## 15:20 - 💪 Challenge `A new recipe` - 15' - HALFORD
+## 15:10 - Break - 10'
+
+## 15:20 - 💪 Challenge `A new recipe` - 25'
+> * Remember to show the exercise on the screen while giving the instructions
+
 `A new recipe` challenge explained in `links` document.
 #### solution
 ```console
@@ -490,56 +421,8 @@ git commit -m "Add instructions to hummus"
 git log --oneline
 git push origin main
 ```
-#### pilot
-started at 15:23 ended at 15:35
 
-## 15:35 - Break - 15'
-
-## 15:50 - Demo git operations in VSCode - 20' - CATA
-- Some people prefer to use a GUI to work with Git.
-- Let's explore that using VSCode
-#### pilot
-more explanation about VS code --> what it is and why it has a terminal etc
-
-
-### Git by default
-- Open VSCode
-- Open folder -> recipes folder
-- Go to git tab (left)
-- Explain GUI:
-    - log -> hover for details
-    - click on +- icon on the right to show changes
-    - right click for more options
-### Commit changes
-- Open `guacamole.md` from explorer
-- Make a change (e.g. smash avocado, add salt, pepper and lime)
-- Save `guacamole.md` (CTRL + S)
-- Notice badge on git icon
-- Click on `guacamole.md` to see the changes on the right
-    - red deleted
-    - green added
-- Click on plus to stage
-- Write message and click on commit
-- Notice the update on the log
-- Push by clicking "Publish Branch"
-- Confirm in GitHub
-
-
-## 16:10 - 💪 Exercise `Try Git Graph extension` - 15' - CATA
-- Install `Git Graph` extension in VS Code
-    - Go the marketplace tab in VS code 
-    - Search for `Git Graph` and click install
-- Go back to the Git tab and click on the `Git Graph` icon on the changes section
-- Use `Git Graph` window to explore differences between the latest commit and “Modify guacamole to the traditional recipe” 
-    - Open each modified file to see the changes
-- Go to the file explorer and open your new recipe file
-    - Add a line to the instructions
-    - Add the changes and commit using the git in VS Code
-- Go back to the `Git Graph` window
-    - Click on your new recipe file to see the differences in a new window 
-- Sync with remote
-
-## 16:25 - Key points - 10' - CATA
+## 15:45 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -556,12 +439,10 @@ git show            # shows changes made on that commit (rather than differences
 git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
-#### pilots
-quite fast
 
-## 16:35 - Feedback - 10' - CATA
+## 16:55 - Feedback - 5'
 Ask participants to fill in the feedback survey
-feedback 16:27: <5mins
+
 
 
 #### pilot
