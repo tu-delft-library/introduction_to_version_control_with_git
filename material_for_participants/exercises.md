@@ -11,7 +11,8 @@ Fill the interactive poll using this Vevox link: https://vevox.app/181857001
     - **tip** remember to step out of your current `recipe` repository
 - Write a three-line biography for yourself in a file called me.txt, commit your changes
 - Modify one line, add a fourth line
-- Display the differences between its updated state and its original state. 
+- Display the differences between its *modified* state and its original state. 
+- Stage the file and display the differences between its *staged* state and its original state.
 
 <details>
 <summary>🔍 Click here for a hint! </summary>
@@ -42,33 +43,8 @@ ASDFASDFASF
 ASDFASDFASF
 </details>
 
-## 4 💪 Modify a README 
 
-- Download the README file from [material_for_participants/README.md](https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/2026-03-11/material_for_participants/README.md)
-- Add it to your local `recipes` repository 
-- Open file with nano 
-- Complete the tasks included between `[]` in the `README` file 
-- Add and commit changes to your local `recipes` repository 
 
-<details>
-<summary>🔍 Click here for a hint! </summary>
-ASDFASDFASF
-</details>
-
-## 5 💪 A new recipe 
-
-- Add another recipe file to your local repository (e.g. `hummus.md`, `pesto.md`)
-- Edit to the new file with ingredients and instructions
-- Add and commit changes
-- Make new changes to the recipe
-- Add and commit changes again
-- Push changes to the remote repository
-- Confirm that you see the latest changes in GitHub 
- 
-<details>
-<summary>🔍 Click here for a hint! </summary>
-ASDFASDFASF
-</details>
 
 #### 🚀 Optional challenge
 TODO -> select optional challenges and add them inside each numbered exercise
