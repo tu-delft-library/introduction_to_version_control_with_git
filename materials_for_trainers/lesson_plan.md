@@ -325,7 +325,7 @@ If not, put your red sticky up and we'll help you
 
 ## 12:35 - Lunch break - 55'
 
-# 13:30 - Create remote repository - 10'
+## 13:30 - Create remote repository - 10'
 - 🎦 continue mailing letter analogy to introduce remote repositories with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Explain push vs commit: 
     - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
