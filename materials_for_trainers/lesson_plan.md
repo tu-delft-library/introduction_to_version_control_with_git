@@ -1,7 +1,20 @@
-## 9:00 - Land - 10'
+## Tips for the day
+- Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
+- Write the edu.nl link pointing to `links` document on the whiteboard 
+    - Use dark marker on the board (not red)
+- If you are using a mac, make the terminal not transparent: 
+    - Open the terminal
+    - Open settings
+    - Go to background color
+    - Adjust opacity to 100%
+- Set your desktop to a color background instead of an image that can be distracting (e.g. a beach or a mountain)
+- Ask Paula to print a list of the participants so that they can check their name (roll call)
+- Start auto push [TODO] @halfordd step-by-step explanation
+
+## 9:30 - Land - 5'
 ☕ Coffee/tea 🫖
 
-## 9:10 - Housekeeping - 15'
+## 9:35 - Housekeeping - 10'
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install git
@@ -9,11 +22,13 @@
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
-## 9:25 - Icebreaker - 5'
-A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
+## 9:45 - Icebreaker - photos timeline - 5'
+- Instructions for the icebreaker on slides
+- This icebreaker is a good bridge to talk about timeline
 
+> **REMEMBER TO START AUTOPUSH**
 
-## 9:30 - Introduction to version control - 10'
+## 9:50 - Introduction to version control - 10'
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - What is version control and why should I use it?
   - Do it for your future self
@@ -22,26 +37,22 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
 - What is a git repo: 
     - folder with files + subfolders + `.git` hidden folder
 
-## 9:40 - Preparing Your Working Directory - 5'
+## 10:00 - Preparing Your Working Directory - 5'
 - Open a bash terminal:
     - Windows: Open *Git Bash* from the Windows start menu
     - Mac:  
         - type `command + spacebar` search for `Terminal` and press `Return`
         - type `bash`
     - Linux: Open `Gnome Terminal` or `KDE Konsole` or `xterm`
+     
 - Navigate to `Desktop`:
 ```console
 cd ~/Desktop
-cd "/c/Users/[username]/OneDrive\ -\ Delft\ University\ of\ Technology\Desktop"
+cd "/c/Users/[username]/OneDrive - Delft University of Technology\Desktop"
+cd "/c/Users/[username]/OneDrive - Delft University of Technology\Bureaublad"
 ```
 
-## 9:45 - Setting up git - 5'
-Important to mention:
-- End of a line:
-    - Windows: Uses CRLF (\r\n) to mark the end of a line. 
-    - Unix/Linux/macOS: Uses LF (\n).
-- Git uses branches. 
-    - We work on the main branch and no more details for now.
+## 10:05 - Setting up git - 5'
 
 ```console
 git version
@@ -49,13 +60,32 @@ git help
 git config --list
 git config --global user.name "Name Lastname"
 git config --global user.email "netid@tudelft.nl"
-git config --global core.editor nano
-git config --global core.autocrlf input
+git config --global core.editor "nano -w"
+```
+>*CRLF* carriage return line feed. This concept originated from mechanical typewriters to separate the physical actions of moving to the left margin and advancing the paper. In our case it means `how Git handles line endings`
+
+End of a line:
+- Windows: Uses CRLF (\r\n) to mark the end of a line. 
+- Unix/Linux/macOS: Uses LF (\n).
+
+```console
+# For mac and linux
+git config --global core.autocrlf input              
+# for windows do
+git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
 git config --global init.defaultBranch main
+```
+Git uses branches
+- A branch is a separate timeline
+- You will learn about branches later (in the intermediate course??)
+- We work on the main branch for now. We will discuss branches in the next module.
+
+```console
 git config --list --global
+git config --global --edit
 ```
 
-## 9:50 - Initialize a local Git repository - 10'
+## 10:10 - Initialize a local Git repository - 10'
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
@@ -64,7 +94,7 @@ cd Desktop
 mkdir recipes   # create a new directory for repository
 cd recipes/     # change to new directory to initialize git repo
 ls              # show directory is empty
-ls -a           # show directory has no hidden folders
+ls -a           # show directory has no hidden folders. remind about shortcuts . and ..
 git init        # initialize git repo
 ls              # appears as if nothing has changed
 ls -a           # but hidden item .git was created
@@ -72,11 +102,7 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-### 10:00 - 💪 Challenge `init` - 5'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 1
-
-## 10:05 - “add → commit” cycles - 20'
+## 10:20 - “add → commit” cycles - 15'
 - Commands: `status, add, commit, log, diff`
 - Important: 
     - We will work with a text file in this course. It will work the same with code. 
@@ -86,7 +112,11 @@ ls .git         # some files and subfolders inside .git
 ```console
 cd ~/Desktop/recipes        # ensure inside recipes dir
 ls                          # dir is empty
-git status                  # status of project
+git status                  # status of project: no commits yet!
+cd ..                       # let's compare one level up
+git status                  # not a git repository
+cd recipes                  # let's go back inside the recipes folder
+git status                  # yes! this is our repository
 nano guacamole.md           # add headers
                             # explain headers in .md
     # Guacamole
@@ -115,28 +145,27 @@ cat guacamole.md            # see content of file
 git status                  # “no changes added to commit”
 git diff                    # review changes. Explain the output
 git commit -m "Add ingredients to guacamole recipe" # no staged changes
-git add guacamole.md        # explain stating area: like framing for a photo
+git add guacamole.md        # explain stating area: allows to review before taking a snapshot (commit)
+git status                  # file is 'staged' -> ready to be commited
 git commit -m "Add ingredients to guacamole recipe"
 git log
+cat guacamole.md        # see contents of file
 ```
-### 10:25 - 💪 Challenge `changes` - 5'
+> **NOTE** there might be confusion about stating area and working tree. We will clarify in the next section.
+
+## 10:35 - 💪 Challenge `changes` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 2
+- Vevox question 1 and 2
 
-## 10:30 - Break - 15'
+## 10:45 - Break - 15'
 
-## 10:45 - Working directory and staging area - 10'
+## 11:00 - Working directory and staging area - 10'
+- 🎦 clarify staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Working directory -> staging area -> commit history (database)
 - Useful ANALOGIES: 
     - Mailing a letter:
         - Staging is like putting letter in envelop
         - Committing is like putting it in the mailbox
-
-    - Photo group analogy:
-        - `git add` specifies what will go in a snapshot 
-        - `git commit` then actually takes the snapshot
-        - `git commit -a` is like gathering everyone to take a group photo
-
 ```console
 git status
 nano guacamole.md           # change lemon for lime
@@ -148,25 +177,58 @@ nano guacamole.md           # change lemon for lime
     ## Instructions
 git diff                    # replaced one line - with new line +
 git add guacamole.md
-git diff                    # no output        
+git diff                    # no output   - diff only compares to working dir   
 git diff --staged           # changes in staging area
 git status
-git commit -m "Modify guacamole to traditional recipe"
+git commit -m "Modify guacamole to traditional recipe" # Commit message: think why
 git status
 git log
 ```
-### 10:55 - 💪 Challenge `staging` - 10'
-`bio Repository` challenge explained in collaborative document
-- Create a new Git repository on your computer called bio.
-- Write a three-line biography for yourself in a file called me.txt, commit your changes
-- Modify one line, add a fourth line
-- Display the differences between its updated state and its original state. 
 
-## 11:05 - git HEAD/TAG game - 15'
-- Game explained in [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 
-## 11:20 - Git history - 25'
-- Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore`
+
+## 11:10 - 1 💪 `bio Repository`  - 10'
+
+See `exercises.md`. There is an optional challenge under each numbered exercise.
+
+#### Solution
+```console
+cd ..     # move out of recipes folder
+mkdir bio                           # Create a new folder called bio
+cd bio                              # step into bio
+git init                            # initialise git
+nano me.txt                         # create file and add three lines
+git add me.txt                      # add file
+git commit -m "Add biography file"  # commit changes
+nano me.txt                         # modify one line, add a fourth line
+git diff me.txt                     # show differences to working directory
+git add me.txt                      # stage
+git diff                            # no changes to working directory
+git diff --staged                   # show difference to staged area
+```
+
+
+## 11:20 - git HEAD/TAG game - 10'
+    HEAD 
+    - We use a physical object to represent the HEAD (a ball, a stuff animal, a fruit)
+    - Teacher will call HEAD~1, HEAD~5
+    - Marker of HEAD starts in one edge of the row
+    - The teacher calls ‘git restore HEAD~[X]’. 
+        - The HEAD marker is passed hand by hand until it reaches the corresponding HEAD position. 
+
+    TAGS 
+    - Marker of HEAD starts in one edge of the row
+    - Some people get a paper with a short hash (e.g. f22b25e, b36abfd) 
+    - The teacher calls ‘git  restore [hash]’. 
+        - HEAD marker is passed hand by hand until it reaches the corresponding hash. 
+    - Teacher comments on how hard it is for humans to remember this hash. Enter TAGs 
+    - Some other people will get a post it with a TAG (e.g. for guacamole – original, spicy, no onion) 
+    - The teacher calls ‘git  restore [tag]’. 
+        - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
+
+
+## 11:30 - Git history - 15'
+- Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
 ```console
@@ -189,19 +251,27 @@ git diff [long_hash] guacamole.md   # another way to reference a commit
 git log --oneline                   # shows short hashes
 git diff [short_hash] guacamole.md  # use short hash to point to a specific commit  
 git status                          # shows modified file
+git restore guacamole.md            # restores to latest commit
 git log --oneline
 git restore -s [short_hash] guacamole.md # -s for source
 cat guacamole.md                    # restored file
 git status                          # restored file is not staged!
 git restore guacamole.md            # overwrites working copy with last committed version
 git status
-cat guacamole.md                       
+cat guacamole.md   
+git tag -a traditional [short_hash] -m "Tag for traditional recipe"   # add a tag -> easier than hash
+git log --oneline
+git restore -s traditional guacamole.md    # -s same as with the hash -> source
+git status                          # restored file is not staged!
 ```
+
 ## 11:45 - Break - 15'
 
-### 12:00 - 💪 Challenges `history` - 10'
+
+## 12:00 - 💪 Challenges `history` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 3 and 4
+
 
 ## 12:10 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
@@ -214,47 +284,53 @@ touch a.png b.png c.png pictures/cake1.jpg pictures/cake2.jpg   # make dummy pic
 ls                                  # lists generated pictures
 ls pictures                         # lists generated pictures inside folder
 git status                          # images not recommended in git + distracting 
-nano .gitignore                     # type lines below
+nano .gitignore                     # type lines below (remind . means hidden file)
         *.png
         pictures/
 cat .gitignore                      # confirm content of .gitignore
 git status                          # no pictures but yes new .gitignore file
-git add .gitignore                  # let's track this file
+git add .gitignore                  # let's track this file. it won't ignore itself
 git commit -m "Ignore png files and the pictures folder"
 git status                          # all clean
 ls                                  # files are in folder but not tracked by git
 git add a.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
-
+touch pictures/new.jpg              # new file in ignored folder
+git status                          # nothing because pictures folder is ignored
+mkdir anotherfolder                 # empty folder
+git status                          # nothing! git does not see empty folder
+touch anotherfolder/file.jpg        # once there is a file, folder is tracked. This jpg is not inside pictures folder
+rm -rf anotherfolder                # changed my mind. Clean up!
 ```
-### 12:20 - 💪 Challenges `ignore` - 10'
+
+
+## 12:20 - 💪 Challenges `ignore` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 5 and 6
 
-## 12:30 - Lunch break - 60'
-
-## 13:30 - SSH key - 20'
-
-- Log into GitHub
-- Create Secure Shell Protocol (SSH) key
-    - SSH key in GitHub is paired to key in your computer
-```console
-ls -al ~/.ssh                   # possible keys id_ed25519/id_ed25519.pub
-ssh-keygen -t ed25519 -C "email_used_in_github@address.com" # skip this if key exists
-cat ~/.ssh/id_ed25519.pub       # prints content of key to terminal
-ssh -T git@github.com           # test the connection
-```
-- If your connection is already set up: you're done. 
-- Otherwise, we add the key to GitHub.
-    - Copy output of terminal (using mouse to select the text)
-    - Go to GitHub:
-        - Click on profile icon -> `Settings` -> `SSH and GPG keys` -> `New SSH key`
-        - Paste your SSH key into field -> `Add SSH key` 
+## 12:30 - Check your SSH key - 5'
+- Why SSH key?
+    - go though the option of writing password everytime
+    - we can bypass this by adding a key
+    - tells github that is safe to communicate with your machine
 
 ```console
 ssh -T git@github.com           # test the connection
 ```
-## 13:50 - Create remote repository - 15'
+You should see a message like
+```
+Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
+```
+If not, put your red sticky up and we'll help you
+
+## 12:35 - Lunch break - 55'
+
+# 13:30 - Create remote repository - 10'
+- 🎦 continue mailing letter analogy to introduce remote repositories with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+- Explain push vs commit: 
+    - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
+    - Commit only updates your local repository.
+> ** Let's go to GitHub **
 
 Create a new repository called `recipes`
 - Public
@@ -266,41 +342,47 @@ git remote add origin git@github.com:[username]/recipes.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
-Show repository in GitHub
+Check that the local changes are visible in GitHub
 
-### 14:05 - 💪  Challenges `GitHub` - 10'
-Challenges explained in collaborative document:
-- `GitHub GUI`
-    - Browse to your recipes repository on GitHub.
-    - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
-    - Hover over, and click on, the three buttons to the right of each commit.
-    - What information can you gather/explore from these buttons?
-    - How would you get that same information in the shell? 
+```console
+nano guacamole.md 
+    # Guacamole
+    ## Ingredients
+    * avocado
+    * lime
+    * salt
+    * red chilly pepper
+    ## Instructions
+git status
+git add guacamole.md 
+git commit -m "Added extra ingredients"
+git log --oneline
+git push                      # does not work! branch needs an 'upstream'
+git push --set-upstream origin main
+git push
+git status
+git pull origin main
+git push origin main
+git status
+```
 
-- `GitHub Timestamps` 
-    - Go to the repo you just created on GitHub and check the timestamps of the files.  
-    - How does GitHub record times, and why?  
-    - Hover over the timestamp, you can see the exact time at which the last change to the file occurred. 
 
-### 14:15 - 💪 Challenges `remotes` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 7 and 8
+## 13:40 - 💪  2 GitHub GUI + 3 GitHub Timestamps - 10'
+See `exercises.md`. There is an optional challenge under each numbered exercise.
 
-## 14:25 - Break - 15'
+#### `GitHub GUI` solution:
 
-## 14:40 - TU Delft FAIR software guidelines - 15'
-- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
 
-## 14:55 - 💪 Challenge `Modify a README` - 15'
-`Modify a README` challenge explained in collaborative document
-- Download the README file from [GitHub](
-https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/main/material_for_participants/README.md)
-- Add it to your local recipes repository 
-- Open file with nano 
-- Complete the tasks included between [] in the README file 
-- Add and commit changes to your local recipes repository 
+The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit to the clipboard. In the shell, git log will show you the full commit identifier for each commit.
 
-## 15:10 - Pulling a fresh copy of repo - 10'
+The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we’d need to checkout the repository at that particular time. We can do this with git checkout ID where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+
+#### `GitHub Timestamps` solution:
+
+GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+
+## 13:50 - Pulling a fresh copy of repo - 10'
 
 Experience loosing your local repo and getting your code back from remote:
 
@@ -310,15 +392,14 @@ git push origin main            # push changes
 git pull origin main            # explain pull from remote
 ```
 - Confirm all files are in remote (visit GitHub)
-- Admire the new README file
 
 ```console
-ls
+ls -a                           # local files (including the ignored files)
 pwd
 cd ..                           
 rm -rf recipes/                 # loose repository
-git status                      # no git repository here
-git clone git@github.com:halfordd/recipes.git # clone repository
+git status                      # make sure you are not inside a git repository
+git clone git@github.com:[username]/recipes.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd recipes
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
@@ -326,58 +407,22 @@ git status
 ```
 Magic!
 
-## 15:20 - 💪 Challenge `A new recipe` - 15'
-`A new recipe` challenge explained in collaborative document.
-- Add another recipe file to your local repository (e.g. `hummus.md`, `pesto.md`) 
-- Edit to the new file with ingredients and instructions 
-- Add and commit changes 
-- Push changes to the remote repository 
-- Confirm that you see the latest changes in GitHub 
-
-## 15:35 - Break - 15'
-
-## 15:50 - Demo git operations in VSCode - 20'
-- Some people prefer to use a GUI to work with Git.
-- Let's explore that using VSCode
-
-### Git by default
-- Open VSCode
-- Open folder -> recipes folder
-- Go to git tab (left)
-- Explain GUI:
-    - log -> hover for details
-    - click on +- icon on the right to show changes
-    - right click for more options
-### Commit changes
-- Open `guacamole.md` from explorer
-- Make a change (e.g. smash avocado, add salt, pepper and lime)
-- Save `guacamole.md` (CTRL + S)
-- Notice badge on git icon
-- Click on `guacamole.md` to see the changes on the right
-    - red deleted
-    - green added
-- Click on plus to stage
-- Write message and click on commit
-- Notice the update on the log
-- Push by clicking "sync changes"
-- Confirm in GitHub
+## 14:00 - 💪 Challenges `remotes` - 10'
+- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+- Vevox question 7 and 8
 
 
-## 16:10 - 💪 Exercise `Try Git Graph extension` - 15'
-- Install `Git Graph` extension in VS Code
-    - Go the marketplace tab in VS code 
-    - Search for `Git Graph` and click install
-- Go back to the Git tab and click on the `Git Graph` icon on the changes section
-- Use `Git Graph` window to explore differences between the latest commit and “Modify guacamole to the traditional recipe” 
-    - Open each modified file to see the changes
-- Go to the file explorer and open your new recipe file
-    - Add a line to the instructions
-    - Add the changes and commit using the git in VS Code
-- Go back to the `Git Graph` window
-    - Click on your new recipe file to see the differences in a new window 
-- Sync with remote
+## 14:10 - Break - 15'
 
-## 16:25 - Key points - 10'
+## 14:25 - TU Delft FAIR software guidelines - 10'
+- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+>* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
+
+
+## 14:35 LAB: Putting it all together - 60'
+see `PRACTICAL.md` file 
+
+## 15:35 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -395,5 +440,6 @@ git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
 
-## 16:35 - Feedback - 10'
+## 15:45 - Feedback - 5'
 Ask participants to fill in the feedback survey
+
