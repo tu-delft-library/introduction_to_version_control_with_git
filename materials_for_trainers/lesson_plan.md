@@ -11,10 +11,10 @@
 - Ask Paula to print a list of the participants so that they can check their name (roll call)
 - Start auto push [TODO] @halfordd step-by-step explanation
 
-## 9:30 - Land - 10'
+## 9:30 - Land - 5'
 ☕ Coffee/tea 🫖
 
-## 9:40 - Housekeeping - 10'
+## 9:35 - Housekeeping - 10'
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install git
@@ -22,12 +22,13 @@
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
-## 9:50 - Icebreaker - 5'
+## 9:45 - Icebreaker - photos timeline - 5'
 - Instructions for the icebreaker on slides
-- When finished ask the group to share some of the answers they got
+- This icebreaker is a good bridge to talk about timeline
 
+> **REMEMBER TO START AUTOPUSH**
 
-## 9:55 - Introduction to version control - 10'
+## 9:50 - Introduction to version control - 10'
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - What is version control and why should I use it?
   - Do it for your future self
@@ -36,7 +37,7 @@
 - What is a git repo: 
     - folder with files + subfolders + `.git` hidden folder
 
-## 10:05 - Preparing Your Working Directory - 5'
+## 10:00 - Preparing Your Working Directory - 5'
 - Open a bash terminal:
     - Windows: Open *Git Bash* from the Windows start menu
     - Mac:  
@@ -51,16 +52,7 @@ cd "/c/Users/[username]/OneDrive - Delft University of Technology\Desktop"
 cd "/c/Users/[username]/OneDrive - Delft University of Technology\Bureaublad"
 ```
 
-## 10:10 - Setting up git - 5'
-
-Important to mention:
-- End of a line:
-    - Windows: Uses CRLF (\r\n) to mark the end of a line. 
-    - Unix/Linux/macOS: Uses LF (\n).
-- Git uses branches
-    - A branch is a separate timeline
-    - You will learn about branches later (in the intermediate course??)
-    - We work on the main branch and no more details for now.
+## 10:05 - Setting up git - 5'
 
 ```console
 git version
@@ -69,16 +61,31 @@ git config --list
 git config --global user.name "Name Lastname"
 git config --global user.email "netid@tudelft.nl"
 git config --global core.editor "nano -w"
-## For mac and linux
-git config --global core.autocrlf input             # auto carriage return line feed 
-## for windows do
-git config --global TODOTODODODOD                   # TODO
+```
+>*CRLF* carriage return line feed. This concept originated from mechanical typewriters to separate the physical actions of moving to the left margin and advancing the paper. In our case it means `how Git handles line endings`
+
+End of a line:
+- Windows: Uses CRLF (\r\n) to mark the end of a line. 
+- Unix/Linux/macOS: Uses LF (\n).
+
+```console
+# For mac and linux
+git config --global core.autocrlf input              
+# for windows do
+git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
 git config --global init.defaultBranch main
+```
+Git uses branches
+- A branch is a separate timeline
+- You will learn about branches later (in the intermediate course??)
+- We work on the main branch for now. We will discuss branches in the next module.
+
+```console
 git config --list --global
 git config --global --edit
 ```
 
-## 10:15 - Initialize a local Git repository - 10'
+## 10:10 - Initialize a local Git repository - 10'
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
@@ -95,7 +102,7 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-## 10:25 - “add → commit” cycles - 15'
+## 10:20 - “add → commit” cycles - 15'
 - Commands: `status, add, commit, log, diff`
 - Important: 
     - We will work with a text file in this course. It will work the same with code. 
@@ -105,7 +112,11 @@ ls .git         # some files and subfolders inside .git
 ```console
 cd ~/Desktop/recipes        # ensure inside recipes dir
 ls                          # dir is empty
-git status                  # status of project
+git status                  # status of project: no commits yet!
+cd ..                       # let's compare one level up
+git status                  # not a git repository
+cd recipes                  # let's go back inside the recipes folder
+git status                  # yes! this is our repository
 nano guacamole.md           # add headers
                             # explain headers in .md
     # Guacamole
@@ -134,32 +145,27 @@ cat guacamole.md            # see content of file
 git status                  # “no changes added to commit”
 git diff                    # review changes. Explain the output
 git commit -m "Add ingredients to guacamole recipe" # no staged changes
-git add guacamole.md        # explain stating area: like framing for a photo
+git add guacamole.md        # explain stating area: allows to review before taking a snapshot (commit)
+git status                  # file is 'staged' -> ready to be commited
 git commit -m "Add ingredients to guacamole recipe"
 git log
+cat guacamole.md        # see contents of file
 ```
+> **NOTE** there might be confusion about stating area and working tree. We will clarify in the next section.
 
-### 10:40 - 💪 Challenge `changes` - 10'
+## 10:35 - 💪 Challenge `changes` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 1 and 2
 
-
-## 10:50 - Break - 10'
-
+## 10:45 - Break - 15'
 
 ## 11:00 - Working directory and staging area - 10'
-- 🎦 introduce staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+- 🎦 clarify staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Working directory -> staging area -> commit history (database)
 - Useful ANALOGIES: 
     - Mailing a letter:
         - Staging is like putting letter in envelop
         - Committing is like putting it in the mailbox
-
-    - Photo group analogy:
-        - `git add` specifies what will go in a snapshot 
-        - `git commit` then actually takes the snapshot
-        - `git commit -a` is like gathering everyone to take a group photo
-
 ```console
 git status
 nano guacamole.md           # change lemon for lime
@@ -171,18 +177,19 @@ nano guacamole.md           # change lemon for lime
     ## Instructions
 git diff                    # replaced one line - with new line +
 git add guacamole.md
-git diff                    # no output        
+git diff                    # no output   - diff only compares to working dir   
 git diff --staged           # changes in staging area
 git status
-git commit -m "Modify guacamole to traditional recipe"
+git commit -m "Modify guacamole to traditional recipe" # Commit message: think why
 git status
 git log
 ```
 
 
-### 11:10 - 💪 Challenge `staging` - 10'
-`bio Repository` challenge explained in `links` document
-> * Remember to show the exercise on the screen while giving the instructions
+
+## 11:10 - 1 💪 `bio Repository`  - 10'
+
+See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### Solution
 ```console
@@ -194,7 +201,10 @@ nano me.txt                         # create file and add three lines
 git add me.txt                      # add file
 git commit -m "Add biography file"  # commit changes
 nano me.txt                         # modify one line, add a fourth line
-git diff me.txt                     # show differences
+git diff me.txt                     # show differences to working directory
+git add me.txt                      # stage
+git diff                            # no changes to working directory
+git diff --staged                   # show difference to staged area
 ```
 
 
@@ -217,7 +227,7 @@ git diff me.txt                     # show differences
         - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
 
 
-## 11:30 - Git history - 20'
+## 11:30 - Git history - 15'
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
@@ -249,16 +259,16 @@ git status                          # restored file is not staged!
 git restore guacamole.md            # overwrites working copy with last committed version
 git status
 cat guacamole.md   
-git tag -a nana [short_hash] -m "Nana's recipe"   # add a tag -> easier than hash
+git tag -a traditional [short_hash] -m "Tag for traditional recipe"   # add a tag -> easier than hash
 git log --oneline
-git restore -s nana guacamole.md    # -s same as with the hash -> source
+git restore -s traditional guacamole.md    # -s same as with the hash -> source
 git status                          # restored file is not staged!
 ```
 
-## 11:50 - Break - 10'
+## 11:45 - Break - 15'
 
 
-### 12:00 - 💪 Challenges `history` - 10'
+## 12:00 - 💪 Challenges `history` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 3 and 4
 
@@ -274,7 +284,7 @@ touch a.png b.png c.png pictures/cake1.jpg pictures/cake2.jpg   # make dummy pic
 ls                                  # lists generated pictures
 ls pictures                         # lists generated pictures inside folder
 git status                          # images not recommended in git + distracting 
-nano .gitignore                     # type lines below
+nano .gitignore                     # type lines below (remind . means hidden file)
         *.png
         pictures/
 cat .gitignore                      # confirm content of .gitignore
@@ -285,42 +295,42 @@ git status                          # all clean
 ls                                  # files are in folder but not tracked by git
 git add a.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
+touch pictures/new.jpg              # new file in ignored folder
+git status                          # nothing because pictures folder is ignored
 mkdir anotherfolder                 # empty folder
 git status                          # nothing! git does not see empty folder
+touch anotherfolder/file.jpg        # once there is a file, folder is tracked. This jpg is not inside pictures folder
+rm -rf anotherfolder                # changed my mind. Clean up!
 ```
 
 
-### 12:20 - 💪 Challenges `ignore` - 10'
+## 12:20 - 💪 Challenges `ignore` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 5 and 6
 
-## 12:30 - Lunch break - 60'
-
-## 13:30 - SSH key - 20'
+## 12:30 - Check your SSH key - 5'
 - Why SSH key?
     - go though the option of writing password everytime
     - we can bypass this by adding a key
     - tells github that is safe to communicate with your machine
-- Log into GitHub
-- Create Secure Shell Protocol (SSH) key
-    - SSH key in GitHub is paired to key in your computer
-```console
-ls -al ~/.ssh                   # possible keys id_ed25519/id_ed25519.pub
-ssh-keygen -t ed25519 -C "email_used_in_github@address.com" # skip this if key exists
-cat ~/.ssh/id_ed25519.pub       # prints content of key to terminal
-ssh -T git@github.com           # test the connection
-```
-- If your connection is already set up: you're done. 
-- Otherwise, we add the key to GitHub.
-    - Copy output of terminal (using mouse to select the text)
-    - Go to GitHub:
-        - Click on profile icon -> `Settings` -> `SSH and GPG keys` -> `New SSH key`
-        - Paste your SSH key into field -> `Add SSH key` 
 
 ```console
 ssh -T git@github.com           # test the connection
 ```
-# 13:50 - Create remote repository - 10'
+You should see a message like
+```
+Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
+```
+If not, put your red sticky up and we'll help you
+
+## 12:35 - Lunch break - 55'
+
+# 13:30 - Create remote repository - 10'
+- 🎦 continue mailing letter analogy to introduce remote repositories with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+- Explain push vs commit: 
+    - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
+    - Commit only updates your local repository.
+> ** Let's go to GitHub **
 
 Create a new repository called `recipes`
 - Public
@@ -332,14 +342,33 @@ git remote add origin git@github.com:[username]/recipes.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
-- Explain push vs commit: 
-    - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
-    - Commit only updates your local repository.
-- Show repository in GitHub
+Check that the local changes are visible in GitHub
 
-### 14:00 - 💪  Challenges `GitHub` - 10'
-> * Remember to show the exercise on the screen while giving the instructions
-Challenges explained in `links` document:
+```console
+nano guacamole.md 
+    # Guacamole
+    ## Ingredients
+    * avocado
+    * lime
+    * salt
+    * red chilly pepper
+    ## Instructions
+git status
+git add guacamole.md 
+git commit -m "Added extra ingredients"
+git log --oneline
+git push                      # does not work! branch needs an 'upstream'
+git push --set-upstream origin main
+git push
+git status
+git pull origin main
+git push origin main
+git status
+```
+
+
+## 13:40 - 💪  2 GitHub GUI + 3 GitHub Timestamps - 10'
+See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### `GitHub GUI` solution:
 
@@ -353,28 +382,7 @@ The right-most button lets you view all of the files in the repository at the ti
 
 GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 
-### 14:10 - 💪 Challenges `remotes` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 7 and 8
-
-
-## 14:20 - Break - 15'
-
-## 14:35 - TU Delft FAIR software guidelines - 10'
-- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
->* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
-
-## 14:45 - 💪 Challenge `Modify a README` - 15'
-`Modify a README` challenge explained in `links` document
-- Download the README file from [GitHub](
-https://github.com/tu-delft-library/introduction_to_version_control_with_git/blob/main/material_for_participants/README.md)
-- Add it to your local recipes repository 
-- Open file with nano 
-- Complete the tasks included between [] in the README file 
-- Add and commit changes to your local recipes repository 
-
-
-## 15:00 - Pulling a fresh copy of repo - 10'
+## 13:50 - Pulling a fresh copy of repo - 10'
 
 Experience loosing your local repo and getting your code back from remote:
 
@@ -384,14 +392,13 @@ git push origin main            # push changes
 git pull origin main            # explain pull from remote
 ```
 - Confirm all files are in remote (visit GitHub)
-- Admire the new README file
 
 ```console
-ls
+ls -a                           # local files (including the ignored files)
 pwd
 cd ..                           
 rm -rf recipes/                 # loose repository
-git status                      # no git repository here
+git status                      # make sure you are not inside a git repository
 git clone git@github.com:[username]/recipes.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd recipes
 ls
@@ -400,29 +407,22 @@ git status
 ```
 Magic!
 
-## 15:10 - Break - 10'
+## 14:00 - 💪 Challenges `remotes` - 10'
+- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+- Vevox question 7 and 8
 
-## 15:20 - 💪 Challenge `A new recipe` - 25'
-> * Remember to show the exercise on the screen while giving the instructions
 
-`A new recipe` challenge explained in `links` document.
-#### solution
-```console
-nano hummus.md              # add headers ingredients, instructions
-git add hummus.md
-git commit -m "Add hummus recipe"
-git status
-nano hummus.md              # add chickpeas, lemon, tahini, garlic
-git add hummus.md
-git commit -m "Add ingredients to hummus"
-nano hummus.md              # add all to food processor
-git add hummus.md
-git commit -m "Add instructions to hummus"
-git log --oneline
-git push origin main
-```
+## 14:10 - Break - 15'
 
-## 15:45 - Key points - 10'
+## 14:25 - TU Delft FAIR software guidelines - 10'
+- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+>* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
+
+
+## 14:35 LAB: Putting it all together - 60'
+see `PRACTICAL.md` file 
+
+## 15:35 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -440,11 +440,6 @@ git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
 
-## 16:55 - Feedback - 5'
+## 15:45 - Feedback - 5'
 Ask participants to fill in the feedback survey
 
-
-
-#### pilot
-general note -> make desktop single background so that its less distracting than a photo of the beach where we are not right now
-remember to clear terminal more often
