@@ -15,9 +15,15 @@ Fill the interactive poll using this Vevox link: https://vevox.app/181857001
 - Stage the file and display the differences between its *staged* state and its original state.
 
 <details>
-<summary>🔍 Click here for a hint! </summary>
-ASDFASDFASF
+<summary>🔍 Click here hints! </summary>
+
+- To create a folder use `mkdir folder_name`
+- To initialize a repository, navigate to the folder that you want to turn into a repository and use `git init`
+- To open a (new) file for editing use `nano name_of_file`
+- To stage file use `git add name_of_file`
+- To commit a file use `git commit -m "commit message"`
 </details>
+
 
 ## 2 💪 GitHub GUI 
 
