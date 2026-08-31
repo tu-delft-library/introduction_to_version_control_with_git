@@ -355,7 +355,7 @@ nano guacamole.md
     ## Instructions
 git status
 git add guacamole.md 
-git commit -m "Added extra ingredients"
+git commit -m "Modify to spicy recipe"
 git log --oneline
 git push                      # does not work! branch needs an 'upstream'
 git push --set-upstream origin main
@@ -419,7 +419,7 @@ Magic!
 >* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
 
-## 14:35 LAB: Putting it all together - 60'
+## 14:35 LAB: Putting it all together - 45'
 see `PRACTICAL.md` file 
 
 ## 15:35 - Key points - 10'
