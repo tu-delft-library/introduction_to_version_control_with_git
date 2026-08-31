@@ -114,10 +114,10 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 <details>
 <summary>🔍 Click here hints! </summary>
 
-- To add a remote repository to an existing local repository use `git remote add origin git@github.com:[USERNAME]/[RESPOSITORY].git`
+- To add a remote repository to an existing local repository use `git remote add origin git@github.com:[USERNAME]/[REPOSITORY].git`
 - To push to a remote repository use `git push origin main`
 - To rename a local folder use `mv source_directory target_directory`
-- To clone a repository from GitHub use `git clone git@github.com:[USERNAME]/[RESPOSITORY].git`
+- To clone a repository from GitHub use `git clone git@github.com:[USERNAME]/[REPOSITORY].git`
 </details>
 
 ## Wrap-up — Peer FAIR review
