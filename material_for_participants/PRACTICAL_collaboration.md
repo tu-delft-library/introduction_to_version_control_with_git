@@ -48,7 +48,7 @@ $ git clone git@github.com:<owner-username>/recipes.git recipes-<owner-username>
    ```bash
    $ nano hummus.md
    ```
-- Add the title and ingredients in the new file
+- Add the title and ingredients in the new file.
    ```
    # Hummus
    ## Ingredients
@@ -57,14 +57,19 @@ $ git clone git@github.com:<owner-username>/recipes.git recipes-<owner-username>
    * olive oil
    * salt
    ```
-
-- Save, stage and commit the change:
+- Save changes and exit nano
+- Stage and commit the change:
 
    ```bash
    $ git add hummus.md
    $ git commit -m "Add ingredients for hummus"
    ```
-
+- Confirm there no uncommitted changes in your working directory
+   ```bash
+   $ git status
+   ...
+   nothing to commit, working tree clean
+   ```
 - Push the change back to the **Owner's** repository:
 
    ```bash
@@ -81,7 +86,7 @@ Back on **Partner A**'s machine, pull down the new commit:
 $ git pull origin main
 ```
 
-Check the repository's commit history (`git log`, or refresh the GitHub page) — you should now see Partner One's commit.
+Check the repository's commit history with `git log --oneline`. You should now see **Partner One**'s commit.
 
 At this point, three copies of the project are back in sync: the Owner's local repo, the Collaborator's local repo, and the copy on GitHub.
 
@@ -89,7 +94,7 @@ At this point, three copies of the project are back in sync: the Owner's local r
 
 Before moving on, talk through this together:
 
-> **The basic collaborative workflow** is: `git pull` → make changes → `git add` → `git commit -m` → `git push`. Why does it matter that you pull *before* you start editing, rather than only before you push? What could go wrong if you skip that first pull?
+> **The basic collaborative workflow** is: `git pull` → make changes → `git add` → `git commit` → `git push`. Why does it matter that you pull *before* you start editing, rather than only before you push? What could go wrong if you skip that first pull?
 
 
 ### Making and sharing another change (Partner A)
@@ -104,15 +109,20 @@ Before moving on, talk through this together:
    ## Instructions
    Mix the ingredients together in a food processor.
    ```
-
-- Save, stage and commit the change:
+- Save changes and exit nano
+- Stage and commit the change:
 
    ```bash
    $ git add hummus.md
-   $ git commit -m "Add ingredients for hummus"
+   $ git commit -m "Add instructions for hummus"
    ```
-
-- Push the change back to your remote repository:
+- Confirm there no uncommitted changes in your working directory
+   ```bash
+   $ git status
+   ...
+   nothing to commit, working tree clean
+   ```
+- Push the change back to your remote repository
 
    ```bash
    $ git push origin main
@@ -126,7 +136,7 @@ Back on **Partner One**'s machine, pull down the new commit:
 $ git pull origin main
 ```
 
-Check the repository's commit history (`git log`, or refresh the GitHub page) — you should now see Partner A's commit.
+Check the repository's commit history with `git log --oneline`. You should now see **Partner A**'s commit.
 
 At this point, three copies of the project are back in sync: the Owner's local repo, the Collaborator's local repo, and the copy on GitHub.
 
@@ -155,61 +165,64 @@ Make these changes as **Partner One** contribution, following the same workflow 
 - Pull from remote
 - Create a `README.md` using `nano`
 - Copy paste the template below
-```
-# Nana's recipes
-[Modify the title above to make it more descriptive]
 
-## Description
-I often found myself searching over and over again for certain recipes. Sometimes I would find them. Sometimes I would not. 
+      
+      # Nana's recipes
+      [Modify the title above to make it more descriptive]
 
-So I decided to start a collection of my most beloved recipes for my *future-self* to enjoy that perfect guacamole.
+      ## Description
+      I often found myself searching over and over again for certain recipes. Sometimes I would find them. Sometimes I would not. 
 
-These recipes have been tested under the following circumstances:
-* Dinner for two
-* Family birthday
-* PhD graduation party
+      So I decided to start a collection of my most beloved recipes for my *future-self* to enjoy that perfect guacamole.
 
-[Add to the list other circumstances to test the recipes]
+      These recipes have been tested under the following circumstances:
+      * Dinner for two
+      * Family birthday
+      * PhD graduation party
 
-## Requirements
-- Kitchen
-- Utensils
-    - Bowls
-    - Spoon
-- Ingredients
-    - Salt
+      [Add to the list other circumstances to test the recipes]
 
-[Complete the list of requirements. Use indented lists too.]
+      ## Requirements
+      - Kitchen
+      - Utensils
+         - Bowls
+         - Spoon
+      - Ingredients
+         - Salt
 
-## How to install
+      [Complete the list of requirements. Use indented lists too.]
 
-Click on the desired .md file in GitHub to visualize online. 
-Alternatively, clone this repository locally and use your favorite text editor to preview the .md file.
+      ## How to install
 
-[Highlight .md words using `inline code` quotes]
+      Click on the desired .md file in GitHub to visualize online. 
+      Alternatively, clone this repository locally and use your favorite text editor to preview the .md file.
 
-## License
-See the `LICENSE` file in this repository
+      [Highlight .md words using `inline code` quotes]
 
-## Copyright
+      ## License
+      See the `LICENSE` file in this repository
 
-Copyright (c) 2026, Technische Universiteit Delft
+      ## Copyright
 
-## Citation
+      Copyright (c) 2026, Technische Universiteit Delft
 
-Use the citation in the `CITATION.CFF` file to acknowledge this work.
+      ## Citation
 
-## Acknowlegdements
-- Nana
-- Raul, my mexican friend
+      Use the citation in the `CITATION.CFF` file to acknowledge this work.
 
-[Name anyone who has helped this project]
+      ## Acknowledgements
+      - Nana
+      - Raul, my mexican friend
 
-```
+      [Name anyone who has helped this project]
+
 - Inside `nano`, check the suggestions between brackets [] and make changes accordingly. 
-- Save, stage and commit the `README.md`
+- Save changes and exit nano
+- Stage and commit the `README.md`
 - Push to remote
-- **Partner A** `git pull` the changes and confirm they appear on GitHub.
+- **Partner A** confirm the changes appear on GitHub 
+- **Partner A** run `git pull` locally
+- **Partner A** run `git log --oneline` and confirm you see the `README.md` file locally
 
 ### Add a **LICENSE** file 
 Make these changes as **Partner A** contribution
@@ -218,5 +231,9 @@ Make these changes as **Partner A** contribution
 - Inside `nano` replace:
     - `[year]` with the current year 
     - `[fullname]` with `Technische Universiteit Delft`
-- Save, stage and commit the `LICENSE` file
-- **Partner One** `git pull` the changes and confirm they appear on GitHub.
+- Save changes and exit nano
+- Stage and commit  the `LICENSE` file
+- Push to remote
+- **Partner One** confirm the changes appear on GitHub 
+- **Partner One** run `git pull` locally
+- **Partner One** run `git log --oneline` and confirm you see the `LICENSE` file locally
