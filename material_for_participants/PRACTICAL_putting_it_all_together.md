@@ -18,6 +18,7 @@ For example, navigate to your `Desktop` and start from there
    ## Usage
 
    Empty for now
+
    ```
 - Create a `LICENSE` file using `nano`
    - pick any open license text from https://choosealicense.com and paste it in. 
@@ -119,20 +120,3 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - To rename a local folder use `mv source_directory target_directory`
 - To clone a repository from GitHub use `git clone git@github.com:[USERNAME]/[REPOSITORY].git`
 </details>
-
-## Wrap-up — Peer FAIR review
-Pair up with your neighbor and swap GitHub repo links. You are now a "future collaborator" who has just stumbled onto your partner's repo and needs to reuse it — you get **2 minutes** to review their repo before switching roles.
-
-Reviewer fills this in about your **partner's** repo (not your own):
-
-| FAIR principle | Question | Partner's repo? |
-|---|---|---|
-| Findable | Would someone searching for "weather notes analysis" ever find this? | |
-| Accessible | Is it actually public / shared somewhere? | |
-| Interoperable | Does the README say what format the data is in? | |
-| Reusable | Is there a LICENSE telling others what they're allowed to do with it? | |
-
-Then tell your partner, **one thing you'd need them to fix or clarify** before you could reuse their repo yourself. Switch roles and repeat.
-
-
-
