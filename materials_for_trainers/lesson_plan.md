@@ -419,10 +419,10 @@ Magic!
 >* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
 
-## 14:35 LAB: Putting it all together - 45'
-see `PRACTICAL.md` file 
+## 14:35 LAG: Getting started with Collaboration - 40'
+see `PRACTICAL_collaboration_exercise.md` file 
 
-## 15:35 - Key points - 10'
+## 15:15 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -440,6 +440,6 @@ git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
 
-## 15:45 - Feedback - 5'
-Ask participants to fill in the feedback survey
+## 15:25 - Home assignment - 5'
+At home, go through the exercise in `PRACTICAL_putting_it_all_together.md` file. It should take less than 1 hour to finish it.
 
