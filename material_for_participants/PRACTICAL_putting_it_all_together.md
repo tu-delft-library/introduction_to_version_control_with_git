@@ -15,13 +15,10 @@ For example, navigate to your `Desktop` and start from there
    
    ```
    # Weather notes
-
    One sentence on what this project is
 
    ## Usage
-
    Empty for now
-
    ```
 - Create a `LICENSE` file using `nano`
    - pick any open license text from https://choosealicense.com and paste it in. 
@@ -47,26 +44,25 @@ For example, navigate to your `Desktop` and start from there
 
 
 ## Working directory → staging → history
-- Create `notes.txt` in `nano` and add two lines describing this week's weather
+- Create `notes.txt` in `nano` and add one line describing this week's weather
 ```
-This week the weather was pleasant
 The sun came out
 ```
-- Check `status`, then stage and commit it with the message `Add first two lines`
-- Open `notes.txt` in `nano` and add a third line to `notes.txt`
+- Check `status`, then stage and commit it with the message `Add first line`
+- Open `notes.txt` in `nano` and add a second line to `notes.txt`
 ```
-It rained during the night
+The air was fresh
 ```
 - Run `diff` to see the *unstaged* changes
 - Stage the file
 - Run `diff` again — notice it shows nothing (all staged changes are compared differently — use `diff --staged`)
-- Commit with the message `Add third line`
-- Open `notes.txt` in `nano` and add a forth line to `notes.txt`
+- Commit with the message `Add second line`
+- Open `notes.txt` in `nano` and add a third line to `notes.txt`
 ```
-Soon I will pull out my thick blanket
+A cloudy afternoon
 ```
 - Run `diff` to see the *unstaged* changes
-- Stage and commit with the message `Add forth line`
+- Stage and commit with the message `Add third line`
 
 You should now have 4 commits. Run `log --oneline` to confirm.
 
@@ -87,7 +83,10 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - Deliberately break the file: Open in nano, delete one line and save
 - Run `diff` to see the *unstaged* changes
 - Use `restore` to bring back the last **committed** version (discard your uncommitted edit)
-- Now go back further: check out `notes.txt` as it existed at `HEAD~2` into your working directory, look at it, then restore back to the latest version so you don't lose work
+- See the contents of the file with `cat notes.txt`
+- Now go back further: check out `notes.txt` as it existed at `HEAD~2` into your working directory
+- Run `diff` to see the *unstaged* changes
+- Restore back to the latest version so you don't lose work
 
 <details>
 <summary>🔍 Click here hints! </summary>
@@ -100,18 +99,20 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 - Create a new file `debug.log` 
 - Make a new directory named `data`
-- Inside the folder `data` add two files: `raw_dump.csv` and `README.md`
-- Add a `.gitignore` that ignores `*.log` and everything in `data/`, **except** `data/README.md`
-- Confirm with `status` that the log and csv files are ignored but `data/README.md` shows up as untracked
-- Stage and commit the `.gitignore` file
-- Stage and commit the `data/README.md` file
+- Inside the directory `data` add two files: `raw_dump.csv` and `temperatures.csv`
+- Create a file named `.gitignore` with nano 
+- Add a rule inside `.gitignore` to ignore all `log` files 
+- Add a rule inside `.gitignore` to ignore everything inside `data/`
+- Confirm with `status` that the log and csv files are ignored 
+- Stage and commit the `.gitignore` file with the message `Ignore all log and data files`
 
 <details>
 <summary>🔍 Click here hints! </summary>
 
 - To create a file without nano use `touch name_of_file`
 - To create a new folder use `mkdir name_of_folder`
-- To add an exception in `.gitignore` use `!` in front of the file name you want to track
+- Use the wildcard `*.extension` to indicate all files with a specific extension (e.g. csv, log, png, pdf)
+- Use wildcard `name_of_directory/*` to indicate all files inside a directory
 - To check the status of the local git repo use `git status`
 </details>
 
@@ -157,27 +158,23 @@ touch README.md
 touch LICENSE
 git add README.md LICENSE 
 git commit -m "Initial commit: add README and LICENSE"
-echo 'This week the weather was pleasant' > notes.txt
-echo 'The sun came out' >> notes.txt 
+echo "The sun came out" > notes.txt 
 git add notes.txt 
-git commit -m "Add first two lines"
-echo 'It rained during the night' >> notes.txt  
+git commit -m "Add first line"
+echo "The air was fresh" >> notes.txt  
+git add notes.txt 
+git commit -m "Add second line"
+echo "A cloudy afternoon" >> notes.txt 
 git add notes.txt 
 git commit -m "Add third line"
-echo 'Soon I will pull out my thick blanket' >> notes.txt 
-git add notes.txt 
-git commit -m "Add forth line"
 touch debug.log
 mkdir data
 touch data/raw_dump.csv
-touch data/README.md
-echo '*.log' > .gitignore
-echo 'data/*' >> .gitignore
-echo '!data/README.md' >> .gitignore
+touch data/temperatures.csv
+echo "*.log" > .gitignore
+echo "data/*" >> .gitignore
 git add .gitignore
-git commit -m "Add .gitignore"
-git add data/README.md 
-git commit -m "Add data README"
+git commit -m "Ignore all log and data files"
 ```
 This should generate a local repository with a commit history. But you still need to add the remote repository:
 
@@ -186,7 +183,7 @@ This should generate a local repository with a commit history. But you still nee
 ```
 git remote add origin git@github.com:<your-user-name>/weather-notes.git
 ```
-Replace <your-user-name> with your GitHub user name
+Replace `<your-user-name>` with your GitHub user name
 ```
 git remote -v
 git push origin main
