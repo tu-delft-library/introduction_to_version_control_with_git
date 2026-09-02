@@ -184,7 +184,7 @@ git commit -m "Modify guacamole to traditional recipe" # Commit message: think w
 git status
 git log
 ```
-
+- 🎦 clarify `git diff --staged` with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 
 
 ## 11:10 - 1 💪 `bio Repository`  - 10'
