@@ -31,9 +31,11 @@ $ git clone git@github.com:<owner-username>/recipes.git recipes-<owner-username>
 
 - Replace `<owner-username>` with **Partner A**'s GitHub username.
 
-> ⚠️ **Watch out:** if you omit the destination path at the end of `git clone`, Git will clone into a folder matching the repo's name in your current directory — which may overwrite or collide with your own repo of the same name.
+> **NOTE** if you omit the destination path at the end of `git clone`, Git will clone into a folder matching the repo's name in your current directory — which may overwrite or collide with your own repo of the same name.
 
 ## PART 1: A new recipe 
+
+> ⚠️ **Watch out:** Follow the instructions carefully to avoid conflicts. We will learn how to solve conflicts on the next session.
 
 ### Making and sharing a change (Partner One)
 
