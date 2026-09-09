@@ -3,27 +3,53 @@
 
 
 ## Vevox 
-Fill the interactive poll using this Vevox link: https://vevox.app/181857001
+- Fill the interactive poll using Vevox: https://vevox.app/
+- Enter the ID shown by the instructor on the screen
 
 ## 1 💪 bio Repository 
 
-- Create a new Git repository on your computer called bio.
-    - **tip** remember to step out of your current `recipe` repository
+- Create a new Git repository on your computer called `bio`.
+    - **Tip** remember to step out of your current `recipe` repository
 - Write a three-line biography for yourself in a file called `me.txt`, commit your changes
 - Modify one line, add a fourth line
 - Display the differences between its *modified* state and its original state. 
 - Stage the file and display the differences between its *staged* state and its original state.
+- Commit your changes
+- Display the git history
 
 <details>
 <summary>🔍 Click here hints! </summary>
 
+- Use `cd ..` to navigate to the parent directory. This should bring you to your `Desktop`
 - To create a folder use `mkdir folder_name`
 - To initialize a repository, navigate to the folder that you want to turn into a repository and use `git init`
 - To open a (new) file for editing use `nano name_of_file`
+- To move a file to a different location use `mv source_path target_path`
 - To stage file use `git add name_of_file`
 - To commit a file use `git commit -m "commit message"`
+- To see git history use `git log`
 </details>
 
+
+### 🚀 Optional challenge
+When you make changes, they often belong together as one logical improvement. Git lets you group related edits into a single commit so your project stays consistent.
+
+The staging area can hold changes from any number of files that you want to commit as a single snapshot. Let's practice this.
+
+- Navigate to your `bio` repository
+- Create a file called `timeline.txt`
+- Add to it some of your PhD start date (e.g. september 2026)
+- Modify `me.txt` with a line `I am a [first/second/third] year PhD student`. Replace the text between `[]` accordingly.
+- Since the new line in biography and the timeline are related, commit the changes in a single commit. Do this by adding both files to the staging area BEFORE running the commit command.
+
+
+<details>
+<summary>🔍 Click here hints!  </summary>
+
+
+- To staged multiple files, you execute `git add file` multiple times and the changes will be accumulated in the staging area
+- Alternatively, add multiple files at the same time using `git add one_file another_file yet_another_file`
+</details>
 
 ## 2 💪 GitHub GUI 
 
@@ -42,75 +68,9 @@ Fill the interactive poll using this Vevox link: https://vevox.app/181857001
 
 
 
-## 🚀 Optional challenges
+### 🚀 Optional challenges
 
-These are additional exercises for you to play with 🙂
-
-### Committing Multiple Files
-When you make changes, they often belong together as one logical improvement. Git lets you group related edits into a single commit so your project stays consistent. This is something word processors can’t easily do—each suggestion is separate, even if they depend on each other.
-
-The staging area can hold changes from any number of files that you want to commit as a single snapshot.
-- Navigate to your recipes repository
-- Add some text to `guacamole.md` noting the rough price of the ingredients.
-- Create a new file `groceries.md` with a list of products and their prices for different markets.
-- Add changes from both files to the staging area and commit those changes.
-
-
-<details>
-<summary>🔍 Click here to see the solution! </summary>
-
-First we make our changes to the `guacamole.md` and `groceries.md` files:
-
-```console
-$ nano guacamole.md
-$ cat guacamole.md
-```
-
-```
-# Guacamole
-## Ingredients
-* avocado (1.35)
-* lime (0.64)
-* salt (2)
-```
-
-```console
-$ nano groceries.md
-$ cat groceries.md
-```
-
-```
-# Market A
-* avocado: 1.35 per unit.
-* lime: 0.64 per unit
-* salt: 2 per kg
-```
-
-Now you can add both files to the staging area. We can do that in one line:
-
-```console
-$ git add guacamole.md groceries.md
-```
-Or with multiple commands:
-```console
-$ git add guacamole.md
-$ git add groceries.md
-```
-Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
-
-```console
-$ git commit -m "Write prices for ingredients and their source"
-```
-```
-[main cc127c2]
- Write prices for ingredients and their source
- 2 files changed, 7 insertions(+)
- create mode 100644 groceries.md
-```
-
-</details>
-
-### Getting Rid of Staged Changes
+#### Getting Rid of Staged Changes
 `git restore` can be used to restore a previous commit when unstaged changes have been made, but will it also work for changes that have been staged but not committed? 
 
 Make a change to `guacamole.md`, add that change using `git add`, then use `git restore` to see if you can remove your change.
@@ -161,7 +121,7 @@ nothing to commit, working tree clean
 
 </details>
 
-### Ignoring all data Files in the repository
+#### Ignoring all data Files in the repository
 Let us assume you have many `.csv` files in different subdirectories of your repository. For example, you might have:
 
 ```console
