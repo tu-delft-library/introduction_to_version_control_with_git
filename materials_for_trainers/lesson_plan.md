@@ -18,7 +18,6 @@
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install git
-    - install VSCode
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
@@ -77,7 +76,7 @@ git config --global init.defaultBranch main
 ```
 Git uses branches
 - A branch is a separate timeline
-- You will learn about branches later (in the intermediate course??)
+- You will learn about branches later (on the new workshop)
 - We work on the main branch for now. We will discuss branches in the next module.
 
 ```console
@@ -144,10 +143,10 @@ nano guacamole.md           # add ingredients
 cat guacamole.md            # see content of file 
 git status                  # “no changes added to commit”
 git diff                    # review changes. Explain the output
-git commit -m "Add ingredients to guacamole recipe" # no staged changes
+git commit -m "Add ingredients for basic guacamole" # no staged changes
 git add guacamole.md        # explain stating area: allows to review before taking a snapshot (commit)
 git status                  # file is 'staged' -> ready to be commited
-git commit -m "Add ingredients to guacamole recipe"
+git commit -m "Add ingredients for basic guacamole"
 git log
 cat guacamole.md        # see contents of file
 ```
@@ -205,6 +204,8 @@ git diff me.txt                     # show differences to working directory
 git add me.txt                      # stage
 git diff                            # no changes to working directory
 git diff --staged                   # show difference to staged area
+git commit -m "More details"        # commit changes
+git log                             # display git history
 ```
 
 
@@ -231,7 +232,11 @@ git diff --staged                   # show difference to staged area
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
+Let's step back into our `recipes` repository
 ```console
+cd ..
+pwd                                 # should be in Desktop
+cd recipes                          # step into recipe repository
 git status
 git log --oneline                   # summarized view
 nano guacamole.md                   # add line below instructions
@@ -244,14 +249,16 @@ nano guacamole.md                   # add line below instructions
     An ill-considered change
 git diff HEAD guacamole.md          # diff of current file and most recent commit
 git diff guacamole.md               # HEAD is default option for git diff
-git diff HEAD~1 guacamole.md        # one commit before HEAD
-git diff HEAD~2 guacamole.md        # two commits before HEAD
+git diff HEAD~1 guacamole.md        # diff between now and one commit before HEAD
+git diff HEAD~2 guacamole.md        # diff between now and two commits before HEAD
 git show HEAD~2 guacamole.md        # shows changes made on that commit (rather than differences)
 git diff [long_hash] guacamole.md   # another way to reference a commit
 git log --oneline                   # shows short hashes
 git diff [short_hash] guacamole.md  # use short hash to point to a specific commit  
 git status                          # shows modified file
+cat guacamole.md                    # see current version
 git restore guacamole.md            # restores to latest commit
+cat guacamole.md                    # ill-considered change is gone
 git log --oneline
 git restore -s [short_hash] guacamole.md # -s for source
 cat guacamole.md                    # restored file
@@ -259,10 +266,11 @@ git status                          # restored file is not staged!
 git restore guacamole.md            # overwrites working copy with last committed version
 git status
 cat guacamole.md   
-git tag -a traditional [short_hash] -m "Tag for traditional recipe"   # add a tag -> easier than hash
+git tag -a simple [short_hash] -m "Tag for simple recipe" # add a tag -> easier than hash
 git log --oneline
-git restore -s traditional guacamole.md    # -s same as with the hash -> source
+git restore -s simple guacamole.md  # -s same as with the hash -> source
 git status                          # restored file is not staged!
+git restore guacamole.md            # restores to latest commit
 ```
 
 ## 11:45 - Break - 15'
@@ -342,6 +350,8 @@ git remote add origin git@github.com:[username]/recipes.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
+Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy.
+
 Check that the local changes are visible in GitHub
 
 ```console
@@ -358,12 +368,17 @@ git add guacamole.md
 git commit -m "Modify to spicy recipe"
 git log --oneline
 git push                      # does not work! branch needs an 'upstream'
+```
+The label `upstream` becomes relevant when you `fork` someone else's project. In our case, the remote is your own repository. So `origin` and `upstream` are the same.
+
+`origin` and `upstreams` are just names. They could be named anything else. But this is the convention everyone uses, so it is good to stick to it.
+
+```console
 git push --set-upstream origin main
 git push
-git status
-git pull origin main
-git push origin main
-git status
+git status                      # nothing to commit
+git pull origin main            # already up-to-date
+git push origin main            # Everything up-to-date
 ```
 
 
