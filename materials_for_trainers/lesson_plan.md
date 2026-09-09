@@ -1,6 +1,6 @@
 ## Tips for the day
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
-- Write the edu.nl link pointing to `links` document on the whiteboard 
+- Write the edu.nl link pointing to `material_for_participants/links.md` document on the whiteboard 
     - Use dark marker on the board (not red)
 - If you are using a mac, make the terminal not transparent: 
     - Open the terminal
