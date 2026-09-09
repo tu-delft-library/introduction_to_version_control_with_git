@@ -166,7 +166,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 
 - Pull from remote
 - Create a `README.md` using `nano`
-- Copy paste the template below
+- Copy paste the template below. Inside `nano`, check the suggestions between brackets [] and make changes accordingly.
 
       
       # Nana's recipes
@@ -218,7 +218,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 
       [Name anyone who has helped this project]
 
-- Inside `nano`, check the suggestions between brackets [] and make changes accordingly. 
+ 
 - Save changes and exit nano
 - Stage and commit the `README.md`
 - Push to remote
