@@ -338,7 +338,8 @@ If not, put your red sticky up and we'll help you
 - Explain push vs commit: 
     - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
     - Commit only updates your local repository.
-> ** Let's go to GitHub **
+
+> **Let's go to GitHub**
 
 Create a new repository called `recipes`
 - Public
@@ -377,7 +378,6 @@ The label `upstream` becomes relevant when you `fork` someone else's project. In
 git push --set-upstream origin main
 git push
 git status                      # nothing to commit
-git pull origin main            # already up-to-date
 git push origin main            # Everything up-to-date
 ```
 
@@ -431,10 +431,10 @@ Magic!
 
 ## 14:25 - TU Delft FAIR software guidelines - 10'
 - 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
->* Remember to talk about the most common licenses: MIT, Creative Commons, Apache
+> Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
 
-## 14:35 LAG: Getting started with Collaboration - 40'
+## 14:35 LAB: Getting started with Collaboration - 40'
 see `PRACTICAL_collaboration_exercise.md` file 
 
 ## 15:15 - Key points - 10'
