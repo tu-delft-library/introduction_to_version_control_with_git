@@ -1,6 +1,4 @@
 # PRACTICAL -  Putting it all together
-CONTINUE HERE -> adapt this one to DAY TWO repo
--> first line about the weather weather
 
 ## Setup
 Work in a new folder for this exercise — don't reuse `recipe` or `bio` from earlier
@@ -21,10 +19,14 @@ For example, navigate to your `Desktop` and start from there
    Empty for now
    ```
 - Create a `LICENSE` file using `nano`
-   - pick any open license text from https://choosealicense.com and paste it in. 
-   - Inside `nano` replace:
-      - `[year]` with the current year 
-      - `[fullname]` with `Technische Universiteit Delft`
+   - Pick any open license text from https://choosealicense.com and paste it in. 
+   - Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
+      1. If software is patented or commercialized: `Copyright (c) [YEAR] Technische Universiteit Delft`
+      1. If software is not patented nor commercialized, TU Delft will waive the copyright to authors as long as it is published under open-source license: `Copyright (c) [YEAR] [AUTHOR(S)], Delft, the Netherlands`
+      1. If software is kept as in-house development, share with collaborators under proprietary license or agreement only:
+      `Copyright (c) [YEAR] Technische Universiteit Delft, [NON-EMPLOYEES], Delft, the Netherlands`
+
+
 - Stage and commit both files together with the message `Initial commit: add README and LICENSE`
 
 
@@ -78,15 +80,16 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 </details>
 
 ## Time travel: restoring old versions
-- Look at your history with `log --oneline` and note the commit hashes
+- Look at your history with `log --oneline`
 - Use `show HEAD~1` to view the previous commit's version of `notes.txt`
 - Deliberately break the file: Open in nano, delete one line and save
 - Run `diff` to see the *unstaged* changes
 - Use `restore` to bring back the last **committed** version (discard your uncommitted edit)
-- See the contents of the file with `cat notes.txt`
+- See the contents of the file with `cat notes.txt` to confirm the file is restored
 - Now go back further: check out `notes.txt` as it existed at `HEAD~2` into your working directory
 - Run `diff` to see the *unstaged* changes
 - Restore back to the latest version so you don't lose work
+- See the contents of the file with `cat notes.txt` to confirm the file is restored
 
 <details>
 <summary>🔍 Click here hints! </summary>
@@ -97,7 +100,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 ## Keep it clean 
 
-- Create a new file `debug.log` 
+- Create a new empty file named `debug.log` 
 - Make a new directory named `data`
 - Inside the directory `data` add two files: `raw_dump.csv` and `temperatures.csv`
 - Create a file named `.gitignore` with nano 
@@ -109,10 +112,10 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 <details>
 <summary>🔍 Click here hints! </summary>
 
-- To create a file without nano use `touch name_of_file`
+- To create an empty file use `touch name_of_file`
 - To create a new folder use `mkdir name_of_folder`
 - Use the wildcard `*.extension` to indicate all files with a specific extension (e.g. csv, log, png, pdf)
-- Use wildcard `name_of_directory/*` to indicate all files inside a directory
+- Use wildcard `name_of_directory/` to indicate all files inside a directory
 - To check the status of the local git repo use `git status`
 </details>
 
@@ -120,12 +123,16 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - Create a new empty repository on GitHub (no README/license — you already have those).
 - Connect your local repo to it and push all your commits.
 - Refresh the GitHub page and confirm every file and all commits made it across.
-- **Simulate disaster:** rename your local `weather-notes` folder to `weather-notes-OLD` (don't delete it yet, just in case).
+- **Simulate disaster:** 
+   - Navigate to your `Desktop` (parent directory of the folder `weather-notes`)
+   - Rename the `weather-notes` folder to `weather-notes-old` (don't delete it yet).
 - Clone the repo fresh from GitHub into a new `weather-notes` folder.
 - Verify: does the clone have your full commit history (`log --oneline`)? Does it have the README, LICENSE, and `.gitignore`?
-- Once you confirm the cloning was successful, delete `weather-notes-OLD`
 
-**Ask yourself:** what files are there in `weather-notes-OLD` but not in `weather-notes`. What would you have lost if you had never pushed?
+- **Ask yourself:** 
+   - What files are there in `weather-notes-old` but not in `weather-notes`? 
+   - What would you have lost if you had never pushed?
+- Once you confirm the cloning was successful, delete `weather-notes-old`
 
 
 <details>
@@ -133,6 +140,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 - To add a remote repository to an existing local repository use `git remote add origin git@github.com:[USERNAME]/[REPOSITORY].git`
 - To push to a remote repository use `git push origin main`
+- To navigate one level up use `cd ..`
 - To rename a local folder use `mv source_directory target_directory`
 - To clone a repository from GitHub use `git clone git@github.com:[USERNAME]/[REPOSITORY].git`
 - To delete a directory and everything it contains use `rm -rf directory_path`
