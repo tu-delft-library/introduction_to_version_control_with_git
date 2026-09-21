@@ -47,8 +47,8 @@
 - Navigate to `Desktop`:
 ```console
 cd ~/Desktop
-cd "/c/Users/[username]/OneDrive - Delft University of Technology\Desktop"
-cd "/c/Users/[username]/OneDrive - Delft University of Technology\Bureaublad"
+cd "/c/Users/[username]/OneDrive - Delft University of Technology/Desktop"
+cd "/c/Users/[username]/OneDrive - Delft University of Technology/Bureaublad"
 ```
 
 ## 10:05 - Setting up git - 5'
