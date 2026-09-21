@@ -201,13 +201,6 @@ Make these changes as **Partner One** contribution, following the same workflow 
 
       [Highlight .md words using `inline code` quotes]
 
-      ## License
-      See the `LICENSE` file in this repository
-
-      ## Copyright
-
-      Copyright (c) 2026, Technische Universiteit Delft
-
       ## Citation
 
       Use the citation in the `CITATION.CFF` file to acknowledge this work.
@@ -230,12 +223,25 @@ Make these changes as **Partner One** contribution, following the same workflow 
 Make these changes as **Partner A** contribution
 - Create a `LICENSE` file using nano
 - Pick any open license text from https://choosealicense.com and paste it in.
-- Inside `nano` replace:
-    - `[year]` with the current year 
-    - `[fullname]` with `Technische Universiteit Delft`
+- Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
+   1. If software is patented or commercialized: `Copyright (c) [YEAR] Technische Universiteit Delft`
+   1. If software is not patented nor commercialized, TU Delft will waive the copyright to authors as long as it is published under open-source license: `Copyright (c) [YEAR] [AUTHOR(S)], Delft, the Netherlands`
+   1. If software is kept as in-house development, share with collaborators under proprietary license or agreement only:
+   `Copyright (c) [YEAR] Technische Universiteit Delft, [NON-EMPLOYEES], Delft, the Netherlands`
 - Save changes and exit nano
 - Stage and commit  the `LICENSE` file
 - Push to remote
 - **Partner One** confirm the changes appear on GitHub 
 - **Partner One** run `git pull` locally
 - **Partner One** run `git log --oneline` and confirm you see the `LICENSE` file locally
+
+### 🚀 Optional
+#### Add a **CITATION.cff** file
+Decide who is going to perform this task:
+- Generate a CITATION.cff file using this [website](https://citation-file-format.github.io/cff-initializer-javascript/#/)
+- Download the generated file and move it to the repository
+- Stage and commit the `CITATION.cff`
+- Push to remote
+- **Other partner** confirm the changes appear on GitHub 
+- **Other partner** run `git pull` locally
+- **Other partner** run `git log --oneline` and confirm you see the `CITATION.cff` file locally
