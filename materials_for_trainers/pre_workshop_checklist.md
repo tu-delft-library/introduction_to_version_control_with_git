@@ -10,7 +10,7 @@
 - Set up a document to hold all the `links` participants will need during the workshop.
     - option one: use an online collaborative document of your choice. Make sure it can be accessed and edited by anyone with the link.
     - option two: modify the `material_for_participants/links.md` file in this repo
-    - Make an [edu.nl](https://edu.nl/) link to point to `links` document
+    - Make an [edu.nl](https://edu.nl/) link to point to `material_for_participants` folder
 - Prepare de vevox
     - Ask @catactg for a duplicate of the vevox material
     - Copy the share link of vevox
@@ -44,5 +44,5 @@
 ## On workshop day
 
 - Ask Paula to print a list of the participants so that they can check their name (roll call)
-- Write the edu.nl link pointing to `links` document on the whiteboard 
+- Write the edu.nl link pointing to `material_for_participants` folder on the whiteboard 
 - Start auto push [TODO] @halfordd step-by-step explanation
