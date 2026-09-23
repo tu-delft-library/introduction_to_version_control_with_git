@@ -20,6 +20,7 @@
     - install git
     - create a GitHub account
 - 🙋 Getting help (🆘 red  ✅ green stickers)
+- explain edu.nl link files
 
 ## 9:45 - Icebreaker - photos timeline - 5'
 - Instructions for the icebreaker on slides
