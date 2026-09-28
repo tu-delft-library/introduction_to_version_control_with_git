@@ -41,6 +41,9 @@
 ## Autopush for live coding
 - Set up autopush [TODO]@halfordd step-by-step explanation
 
+## Clean up your github
+Make sure to delete the `recipes` repo from your github
+
 ## On workshop day
 
 - Ask Paula to print a list of the participants so that they can check their name (roll call)
