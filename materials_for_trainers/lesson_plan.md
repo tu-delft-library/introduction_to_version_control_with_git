@@ -157,6 +157,22 @@ cat guacamole.md        # see contents of file
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 1 and 2
 
+#### Solution
+Question one.
+> No. Alfredo does not need to make the desserts subdirectory a Git repository because the recipes repository will track all files, sub-directories, and subdirectory files under the recipes directory. Thus, in order to track all information about desserts, Alfredo only needed to add the desserts subdirectory to the recipes directory.
+
+> Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
+
+Question two:
+> git commit -m "my recent changes" would only create a commit if files have already been staged
+
+> git init myfile.txt | git commit -m "my recent changes" would try to create a new repository
+
+> git add myfile.txt | git commit -m "my recent changes" will add file.txt to the staging area and then commit the file. **This is our answer!**
+
+> git commit -m myfile.txt "my recent changes" Would try to commit a file named “my recent changes” with the message myfile.txt
+```
+
 ## 10:45 - Break - 15'
 
 ## 11:00 - Working directory and staging area - 10'
@@ -166,6 +182,8 @@ cat guacamole.md        # see contents of file
     - Mailing a letter:
         - Staging is like putting letter in envelop
         - Committing is like putting it in the mailbox
+
+- clarify `git diff --staged` with [slides]
 ```console
 git status
 nano guacamole.md           # change lemon for lime
@@ -184,8 +202,6 @@ git commit -m "Modify guacamole to traditional recipe" # Commit message: think w
 git status
 git log
 ```
-- 🎦 clarify `git diff --staged` with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-
 
 ## 11:10 - 1 💪 `bio Repository`  - 10'
 
@@ -281,6 +297,22 @@ git restore guacamole.md            # restores to latest commit
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 3 and 4
 
+#### Solution
+Question 3:
+>The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file data_cruncher.py. Answer 2 uses HEAD to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what HEAD means.
+
+> Answer 3 gets the version of data_cruncher.py from the commit before HEAD, which is NOT what we wanted.
+
+> Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files you should use git restore .
+
+Question 4:
+> The changes to the file from the second echo command are only applied to the working copy, not the version in the staging area. The command git add ketchup.md places the current version of ketchup.md into the staging area.
+
+> So, when `git commit -m "My opinions about red sauce"` is executed, the version of ketchup.md committed to the repository is the one from the staging area and has only one line.
+
+> At this time, the working copy still has the second line (and git status will show that the file is modified). However, git restore ketchup.md replaces the working copy with the most recently committed version of ketchup.md. So, cat ketchup.md will output:
+
+> `I like ketchup.`
 
 ## 12:10 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
@@ -316,6 +348,18 @@ rm -rf anotherfolder                # changed my mind. Clean up!
 ## 12:20 - 💪 Challenges `ignore` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 5 and 6
+
+#### Solution
+Question 5:
+> The exclamation point operator will include a previously excluded entry.
+
+Question 6:
+> Answer 1 will ignore only dat files named with one character.
+> Answer 2 looks promising BUT it will ignore ALL the .dat files in the repository. 
+
+>Answer 3 is the correct one. If you want to ignore only the .dat files inside a specific folder then you need to specify the full folder path: `pictures/data/location/gps/*.dat` will match every file in pictures/data/location/gps that ends with .dat. The file `pictures/data/location/gps/info.txt` will not be ignored.
+
+> Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
 ## 12:30 - Check your SSH key - 5'
 - Why SSH key?
@@ -426,6 +470,18 @@ Magic!
 ## 14:00 - 💪 Challenges `remotes` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Vevox question 7 and 8
+
+#### solution
+Question 7
+> When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). Commit only updates your local repository.
+
+Question 8
+1. Update local
+1. Append 100
+1. Stage changes
+1. Commit changes
+1. Update remote
+1. Celebrate
 
 
 ## 14:10 - Break - 15'
