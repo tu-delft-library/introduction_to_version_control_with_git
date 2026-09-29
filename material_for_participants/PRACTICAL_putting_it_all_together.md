@@ -19,8 +19,8 @@ For example, navigate to your `Desktop` and start from there
    Empty for now
    ```
 - Create a `LICENSE` file using `nano`
-   - Pick any open license text from https://choosealicense.com and paste it in. 
-   - Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
+   - Pick any open license text from https://choosealicense.com and paste it in.
+   - Depending on the license type, you will need to specify year and names of the copyright. Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
       1. If software is patented or commercialized: `Copyright (c) [YEAR] Technische Universiteit Delft`
       1. If software is not patented nor commercialized, TU Delft will waive the copyright to authors as long as it is published under open-source license: `Copyright (c) [YEAR] [AUTHOR(S)], Delft, the Netherlands`
       1. If software is kept as in-house development, share with collaborators under proprietary license or agreement only:
