@@ -33,7 +33,7 @@ For example, navigate to your `Desktop` and start from there
 > **Why now, not later?** A repo without a license is technically "all rights reserved" — nobody else can legally reuse your code, even if it's public. Starting with README + LICENSE should become a habit :)
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To create a folder use `mkdir folder_name`
 - To initialize a repository, navigate to the folder that you want to turn into a repository and use `git init`
@@ -70,7 +70,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To see the changes in the working directory use `git diff name_of_file`
 - To see changes in the staging area use `git diff --staged name_of_file`
@@ -89,7 +89,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - See the contents of the file with `cat notes.txt` to confirm the file is restored
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To restore a file to the latest commit use `git restore name_of_file`
 - To restore a file to a SPECIFIC commit use `git restore -s HEAD~[#] name_of_file` or `git restore -s [hash] name_of_file`
@@ -107,7 +107,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - Stage and commit the `.gitignore` file with the message `Ignore all log and data files`
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To create an empty file use `touch name_of_file`
 - To create a new folder use `mkdir name_of_folder`
@@ -133,7 +133,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To add a remote repository to an existing local repository use `git remote add origin git@github.com:[USERNAME]/[REPOSITORY].git`
 - To push to a remote repository use `git push origin main`
