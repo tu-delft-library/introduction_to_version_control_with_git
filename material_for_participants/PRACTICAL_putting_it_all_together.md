@@ -140,6 +140,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - To navigate one level up use `cd ..`
 - To rename a local folder use `mv source_directory target_directory`
 - To clone a repository from GitHub use `git clone git@github.com:[USERNAME]/[REPOSITORY].git`
+- To list the contents of a folder (including hidden files) use `ls -a directory_path`
 - To delete a directory and everything it contains use `rm -rf directory_path`
 </details>
 
