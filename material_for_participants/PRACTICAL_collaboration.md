@@ -222,7 +222,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 ### Add a **LICENSE** file 
 Make these changes as **Partner A** contribution
 - Create a `LICENSE` file using nano
-- Pick any open license text from https://choosealicense.com and paste it in.
+- Pick an MIT license from https://choosealicense.com and paste it in.
 - Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
    1. If software is patented or commercialized: `Copyright (c) [YEAR] Technische Universiteit Delft`
    1. If software is not patented nor commercialized, TU Delft will waive the copyright to authors as long as it is published under open-source license: `Copyright (c) [YEAR] [AUTHOR(S)], Delft, the Netherlands`
