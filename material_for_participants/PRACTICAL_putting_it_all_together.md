@@ -72,11 +72,8 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 <details>
 <summary>🔍 Click here hints! </summary>
 
-- To open a (new) file for editing use `nano name_of_file`
-- To check the status of the git repository use `git status`
-- To stage file use `git add name_of_file`
-- To commit a file use `git commit -m "commit message"`
-- To see the changes in a file use `git diff name_of_file`
+- To see the changes in the working directory use `git diff name_of_file`
+- To see changes in the staging area use `git diff --staged name_of_file`
 </details>
 
 ## Time travel: restoring old versions
