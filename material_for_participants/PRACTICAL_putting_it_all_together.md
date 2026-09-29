@@ -83,7 +83,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - Run `diff` to see the *unstaged* changes
 - Use `restore` to bring back the last **committed** version (discard your uncommitted edit)
 - See the contents of the file with `cat notes.txt` to confirm the file is restored
-- Now go back further: check out `notes.txt` as it existed at `HEAD~2` into your working directory
+- Now go back further: restore `notes.txt` as it existed at `HEAD~2` into your working directory
 - Run `diff` to see the *unstaged* changes
 - Restore back to the latest version so you don't lose work
 - See the contents of the file with `cat notes.txt` to confirm the file is restored
