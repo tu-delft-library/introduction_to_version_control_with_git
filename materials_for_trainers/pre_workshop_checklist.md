@@ -50,5 +50,10 @@
 - On workshop day, you need to **START AUTOPUSH**. Instructions can be found in `materials_for_trainers/lesson_plan.md`
 - Original instructions on setting up autopush can be found[here](https://github.com/4TUResearchData-Carpentries/workshop_notes)
 
-## Clean up your github
-Make sure to delete the `recipes` repo from your github
+## Clean up your system
+- Delete the `recipes` repo from your github
+- Delete `recipes` from your `Desktop`
+- Reset all global configurations by deleting the global configuration file:
+```bash
+rm ~/.gitconfig
+```
