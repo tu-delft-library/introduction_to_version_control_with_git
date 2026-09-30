@@ -18,7 +18,7 @@
 - Display the git history
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - Use `cd ..` to navigate to the parent directory. This should bring you to your `Desktop`
 - To create a folder use `mkdir folder_name`
@@ -44,7 +44,7 @@ The staging area can hold changes from any number of files that you want to comm
 
 
 <details>
-<summary>🔍 Click here hints!  </summary>
+<summary>🔍 Click here for hints!  </summary>
 
 
 - To staged multiple files, you execute `git add file` multiple times and the changes will be accumulated in the staging area
