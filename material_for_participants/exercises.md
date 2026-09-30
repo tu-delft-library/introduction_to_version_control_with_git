@@ -9,7 +9,7 @@
 ## 1 💪 bio Repository 
 
 - Create a new Git repository on your computer called `bio`.
-    - **Tip** remember to step out of your current `recipe` repository
+    - **Tip** remember to step out of your current `recipes` repository
 - Write a three-line biography for yourself in a file called `me.txt`, commit your changes
 - Modify one line, add a fourth line
 - Display the differences between its *modified* state and its original state. 
