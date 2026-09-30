@@ -1,16 +1,15 @@
-## Tips for the day
+## 9:00 🚀 Prepare for take off - 20'
+### Room setup
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
+- Test the microphone
 - Write the edu.nl link pointing to `material_for_participants/links.md` document on the whiteboard 
     - Use dark marker on the board (not red)
-- If you are using a mac, make the terminal not transparent: 
-    - Open the terminal
-    - Open settings
-    - Go to background color
-    - Adjust opacity to 100%
-- Set your desktop to a color background instead of an image that can be distracting (e.g. a beach or a mountain)
-- Collect (from Paula) the list of the participants so that they can check their name (roll call)
+- Place the list of the participants on a table at the entrance so that they can check their name (roll call)
+- [Optional] bring jugs with water and snacks (if you brought any)
 
-## 9:15 START AUTOPUSH
+### Laptop setup
+
+#### start autopush
 Make sure to set up the bash history forwarding before workshop day as explained in `materials_for_trainers/pre_workshop_checklist.md`
 
 Open another Terminal window. Let's call this the `hidden terminal` i.e. NOT to be shown during the workshop.
@@ -23,21 +22,25 @@ Open another tab in the `hidden terminal`, `cd` to `<local-repo-directory>` and 
 ```bash
 gitautopush --sleep 5 .
 ```
+#### Open vevox
+- Open vevox in different browser tab [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+- Open `Introduction to Version Control with Git`
+- Present and keep it open for later
 
-## 9:30 - Land - 5'
-☕ Coffee/tea 🫖
+#### Open slides
+
+Slides work better if you open them in your device: [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+
+## 9:30 - Participants land - 5'
+☕ Reminder them about coffee at the entrance of library
 
 ## 9:35 - Housekeeping - 10'
-- ✅ Roll call + 🤝 Code of Conduct
-- 🖥 Did everyone:
-    - install git
-    - create a GitHub account
-- 🙋 Getting help (🆘 red  ✅ green stickers)
-- explain edu.nl link files
+Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) to welcome and introduce the session
+
 
 ## 9:45 - Icebreaker - photos timeline - 5'
-- Instructions for the icebreaker on slides
-- This icebreaker is a good bridge to talk about timeline
+- Instructions for the icebreaker on [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b)
+- This icebreaker is a good bridge to talk about git as time travel tool
 
 > **REMEMBER TO START AUTOPUSH** instructions above 
 
