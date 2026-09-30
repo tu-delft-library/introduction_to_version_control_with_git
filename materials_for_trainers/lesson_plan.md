@@ -139,7 +139,6 @@ git commit -m "Create initial structure for a guacamole recipe"
 git status                  # up to date
 git log                     # project history in reverse chronological order
                             # explain hash
-ls
 nano guacamole.md           # add ingredients
                             # explain lists in .md
     # Guacamole
@@ -161,16 +160,13 @@ cat guacamole.md        # see contents of file
 > **NOTE** there might be confusion about staging area and working tree. We will clarify in the next section.
 
 ## 10:35 - 💪 Challenge `changes` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 1 and 2
 
-#### Solution
-Question one.
+Vevox question 1 
 > No. Alfredo does not need to make the desserts subdirectory a Git repository because the recipes repository will track all files, sub-directories, and subdirectory files under the recipes directory. Thus, in order to track all information about desserts, Alfredo only needed to add the desserts subdirectory to the recipes directory.
 
 > Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
 
-Question two:
+Vevox question 2
 > git commit -m "my recent changes" would only create a commit if files have already been staged
 
 > git init myfile.txt | git commit -m "my recent changes" would try to create a new repository
@@ -190,7 +186,7 @@ Question two:
         - Staging is like putting letter in envelop
         - Committing is like putting it in the mailbox
 
-- clarify `git diff --staged` with [slides]
+- clarify `git diff --staged`
 ```console
 git status
 nano guacamole.md           # change lemon for lime
@@ -221,14 +217,18 @@ mkdir bio                           # Create a new folder called bio
 cd bio                              # step into bio
 git init                            # initialise git
 nano me.txt                         # create file and add three lines
+    My name is [NAME]
+    I come from [COUNTRY]
+    I love to [HOBBy]
 git add me.txt                      # add file
-git commit -m "Add biography file"  # commit changes
+git commit -m "Name, origin and hobby"  # commit changes
 nano me.txt                         # modify one line, add a fourth line
+    I have a [FIELD] background
 git diff me.txt                     # show differences to working directory
 git add me.txt                      # stage
 git diff                            # no changes to working directory
 git diff --staged                   # show difference to staged area
-git commit -m "More details"        # commit changes
+git commit -m "Add background"        # commit changes
 git log                             # display git history
 ```
 
@@ -275,8 +275,9 @@ git diff HEAD guacamole.md          # diff of current file and most recent commi
 git diff guacamole.md               # HEAD is default option for git diff
 git diff HEAD~1 guacamole.md        # diff between now and one commit before HEAD
 git diff HEAD~2 guacamole.md        # diff between now and two commits before HEAD
+git diff HEAD~3 guacamole.md        # fails. unknown revision
+git log --oneline                   # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
 git show HEAD~2 guacamole.md        # shows changes made on that commit (rather than differences)
-git diff [long_hash] guacamole.md   # another way to reference a commit
 git log --oneline                   # shows short hashes
 git diff [short_hash] guacamole.md  # use short hash to point to a specific commit  
 git status                          # shows modified file
@@ -290,29 +291,26 @@ git status                          # restored file is not staged!
 git restore guacamole.md            # overwrites working copy with last committed version
 git status
 cat guacamole.md   
-git tag -a simple [short_hash] -m "Tag for simple recipe" # add a tag -> easier than hash
+git tag -a basic [short_hash] -m "Tag for basic recipe" # add a tag -> easier than hash
 git log --oneline
 git restore -s simple guacamole.md  # -s same as with the hash -> source
 git status                          # restored file is not staged!
 git restore guacamole.md            # restores to latest commit
+git status                          # working tree clean
 ```
 
 ## 11:45 - Break - 15'
 
 
 ## 12:00 - 💪 Challenges `history` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 3 and 4
-
-#### Solution
-Question 3:
+Vevox question 3
 >The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file data_cruncher.py. Answer 2 uses HEAD to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what HEAD means.
 
 > Answer 3 gets the version of data_cruncher.py from the commit before HEAD, which is NOT what we wanted.
 
 > Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files you should use git restore .
 
-Question 4:
+Vevox question 4
 > The changes to the file from the second echo command are only applied to the working copy, not the version in the staging area. The command git add ketchup.md places the current version of ketchup.md into the staging area.
 
 > So, when `git commit -m "My opinions about red sauce"` is executed, the version of ketchup.md committed to the repository is the one from the staging area and has only one line.
@@ -353,14 +351,10 @@ rm -rf anotherfolder                # changed my mind. Clean up!
 
 
 ## 12:20 - 💪 Challenges `ignore` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 5 and 6
-
-#### Solution
-Question 5:
+Vevox question 5
 > The exclamation point operator will include a previously excluded entry.
 
-Question 6:
+Vevox question 6
 > Answer 1 will ignore only dat files named with one character.
 > Answer 2 looks promising BUT it will ignore ALL the .dat files in the repository. 
 
@@ -381,7 +375,8 @@ You should see a message like
 ```
 Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-If not, put your red sticky up and we'll help you
+If not, put your red sticky up and we'll help you.
+If needed point to instructions in the [carpentries website](https://swcarpentry.github.io/git-novice/07-github.html#create-an-ssh-key-pair)
 
 ## 12:35 - Lunch break - 55'
 
@@ -403,7 +398,7 @@ git remote add origin git@github.com:[username]/recipes.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
-Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy.
+Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy. `origin` is just a name. It is the convention everyone uses, so it is good to stick to it.
 
 Check that the local changes are visible in GitHub
 
@@ -419,17 +414,7 @@ nano guacamole.md
 git status
 git add guacamole.md 
 git commit -m "Modify to spicy recipe"
-git log --oneline
-git push                      # does not work! branch needs an 'upstream'
-```
-The label `upstream` becomes relevant when you `fork` someone else's project. In our case, the remote is your own repository. So `origin` and `upstream` are the same.
-
-`origin` and `upstreams` are just names. They could be named anything else. But this is the convention everyone uses, so it is good to stick to it.
-
-```console
-git push --set-upstream origin main
-git push
-git status                      # nothing to commit
+git log --oneline               # the local HEAD is one commit ahead of origin/main HEAD
 git push origin main            # Everything up-to-date
 ```
 
@@ -457,32 +442,27 @@ Experience loosing your local repo and getting your code back from remote:
 git status                      # ensure no uncommitted changes
 git push origin main            # push changes
 git pull origin main            # explain pull from remote
-```
-- Confirm all files are in remote (visit GitHub)
-
-```console
 ls -a                           # local files (including the ignored files)
-pwd
 cd ..                           
 rm -rf recipes/                 # loose repository
+ls                              # recipes directory is gone
 git status                      # make sure you are not inside a git repository
 git clone git@github.com:[username]/recipes.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd recipes
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
-git status
+git log --oneline               # files and history preserved. Beautiful!
+                                # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
+git tag -a basic [HASH] -m "Add basic recipe"
+git push --tags
 ```
-Magic!
+Check the tag in GitHub (drop down menu that shows also branches)
 
 ## 14:00 - 💪 Challenges `remotes` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 7 and 8
-
-#### solution
-Question 7
+Vevox question 7
 > When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). Commit only updates your local repository.
 
-Question 8
+Vevox question 8
 1. Update local
 1. Append 100
 1. Stage changes
