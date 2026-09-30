@@ -8,20 +8,21 @@
     - Go to background color
     - Adjust opacity to 100%
 - Set your desktop to a color background instead of an image that can be distracting (e.g. a beach or a mountain)
-- Ask Paula to print a list of the participants so that they can check their name (roll call)
-- Start auto push
- - Detailed notes on setup can be found here https://github.com/4TUResearchData-Carpentries/workshop_notes
- - Halford's version of it:
-    - clone the https://github.com/tu-delft-library/introduction_to_version_control_with_git repository to a `<local-repo-directory>`. The `command.log` file lives inside the folder `material_for_participants/command.log`
-    - Bash doesn't automatically save the history. Set it up by adding this command to `~/.bashrc`
-    ```bash
-     PROMPT_COMMAND='history -a'
-    ```
-    - Open another Terminal window. This window is not to be shown during the workshop. It would run as a 'background' job.
-        - on that Terminal to forward the bash history. This command forwards only the last line of the history to `command.log`
-        ```tail -n 0 -f ~/.bash_history | tee -a <local-repo-directory>/material_for_participants/command.log```
-        - open another tab in that Terminal to `cd` to `<local-repo-directory>` and run autopush every 2-5 seconds`
-    ```gitautopush --sleep 5 .``
+- Collect (from Paula) the list of the participants so that they can check their name (roll call)
+
+## 9:15 START AUTOPUSH
+Make sure to set up the bash history forwarding before workshop day as explained in `materials_for_trainers/pre_workshop_checklist.md`
+
+Open another Terminal window. Let's call this the `hidden terminal` i.e. NOT to be shown during the workshop.
+
+On the `hidden terminal` forward only the last line of the history to `command.log`
+```bash
+tail -n 0 -f ~/.bash_history | tee -a <local-repo-directory>/material_for_participants/command.log
+```
+Open another tab in the `hidden terminal`, `cd` to `<local-repo-directory>` and run autopush every 2-5 seconds
+```bash
+gitautopush --sleep 5 .
+```
 
 ## 9:30 - Land - 5'
 ☕ Coffee/tea 🫖
@@ -38,7 +39,7 @@
 - Instructions for the icebreaker on slides
 - This icebreaker is a good bridge to talk about timeline
 
-> **REMEMBER TO START AUTOPUSH**
+> **REMEMBER TO START AUTOPUSH** instructions above 
 
 ## 9:50 - Introduction to version control - 10'
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 

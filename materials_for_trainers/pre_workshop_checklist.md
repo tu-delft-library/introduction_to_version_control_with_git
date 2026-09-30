@@ -15,8 +15,9 @@
     - Ask @catactg for a duplicate of the vevox material
     - Copy the share link of vevox
     - Add link to the `links` document
-- Ask Paula to set up the feedback survey
+- Ask student assistant to set up the feedback survey
     - Add link to the `links` document
+- Print a list of the participants for roll call 
 
 ## Slides
 
@@ -38,14 +39,16 @@
     - Prepare 2 papers per row with git short hashes (e.g.f22b25e, b36abfd) (e.g.)
 
 
-## Autopush for live coding
-- Set up autopush [TODO]@halfordd step-by-step explanation
+## Set up autopush for live coding
+
+- Clone the https://github.com/tu-delft-library/introduction_to_version_control_with_git repository to a `<local-repo-directory>`
+- History will be saved to `material_for_participants/command.log`
+- Bash doesn't automatically save the history. Set it up by adding this command to `~/.bashrc`
+    ```bash
+    PROMPT_COMMAND='history -a'
+    ```
+- On workshop day, you need to **START AUTOPUSH**. Instructions can be found in `materials_for_trainers/lesson_plan.md`
+- Original instructions on setting up autopush can be found[here](https://github.com/4TUResearchData-Carpentries/workshop_notes)
 
 ## Clean up your github
 Make sure to delete the `recipes` repo from your github
-
-## On workshop day
-
-- Ask Paula to print a list of the participants so that they can check their name (roll call)
-- Write the edu.nl link pointing to `material_for_participants` folder on the whiteboard 
-- Start auto push [TODO] @halfordd step-by-step explanation
