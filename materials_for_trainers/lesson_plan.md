@@ -9,7 +9,19 @@
     - Adjust opacity to 100%
 - Set your desktop to a color background instead of an image that can be distracting (e.g. a beach or a mountain)
 - Ask Paula to print a list of the participants so that they can check their name (roll call)
-- Start auto push [TODO] @halfordd step-by-step explanation
+- Start auto push
+ - Detailed notes on setup can be found here https://github.com/4TUResearchData-Carpentries/workshop_notes
+ - Halford's version of it:
+    - clone the https://github.com/tu-delft-library/introduction_to_version_control_with_git repository to a `<local-repo-directory>`. The `command.log` file lives inside the folder `material_for_participants/command.log`
+    - Bash doesn't automatically save the history. Set it up by adding this command to `~/.bashrc`
+    ```bash
+     PROMPT_COMMAND='history -a'
+    ```
+    - Open another Terminal window. This window is not to be shown during the workshop. It would run as a 'background' job.
+        - on that Terminal to forward the bash history. This command forwards only the last line of the history to `command.log`
+        ```tail -n 0 -f ~/.bash_history | tee -a <local-repo-directory>/material_for_participants/command.log```
+        - open another tab in that Terminal to `cd` to `<local-repo-directory>` and run autopush every 2-5 seconds`
+    ```gitautopush --sleep 5 .``
 
 ## 9:30 - Land - 5'
 ☕ Coffee/tea 🫖
