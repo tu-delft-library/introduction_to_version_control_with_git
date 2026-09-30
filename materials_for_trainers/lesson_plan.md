@@ -86,14 +86,6 @@ End of a line:
 git config --global core.autocrlf input              
 # for windows do
 git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
-git config --global init.defaultBranch main
-```
-Git uses branches
-- A branch is a separate timeline
-- You will learn about branches later (on the new workshop)
-- We work on the main branch for now. We will discuss branches in the next module.
-
-```console
 git config --list --global
 git config --global --edit
 ```
