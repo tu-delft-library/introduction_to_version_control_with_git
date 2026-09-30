@@ -5,3 +5,4 @@ pwd
 git version 
 git help
 clear
+git config --list
