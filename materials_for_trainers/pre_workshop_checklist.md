@@ -57,3 +57,10 @@
 ```bash
 rm ~/.gitconfig
 ```
+- If you are using a mac, make the terminal not transparent: 
+    - Open the terminal
+    - Open settings
+    - Go to background color
+    - Adjust opacity to 100%
+    
+- Set your desktop to a color background instead of an image that can be distracting (e.g. a beach or a mountain)
