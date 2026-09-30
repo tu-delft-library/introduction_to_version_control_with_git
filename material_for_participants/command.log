@@ -19,3 +19,4 @@ nano .bashrc
 bash
 clear
 git --version
+clear
