@@ -146,10 +146,10 @@ nano guacamole.md           # add ingredients
     - salt
     ## Instructions
 cat guacamole.md            # see content of file 
-git status                  # “no changes added to commit”
+git status                  # shows the file was modified
 git diff                    # review changes. Explain the output
 git commit -m "Add ingredients for basic guacamole" # no staged changes
-git add guacamole.md        # explain staging area: allows to review before taking a snapshot (commit)
+git add guacamole.md        # we add the file, meaning is 'ready to commit'
 git status                  # file is 'staged' -> ready to be commited
 git commit -m "Add ingredients for basic guacamole"
 git log
