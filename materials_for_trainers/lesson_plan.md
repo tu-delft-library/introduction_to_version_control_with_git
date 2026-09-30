@@ -126,8 +126,7 @@ nano guacamole.md           # add headers
                             # explain headers in .md
     # Guacamole
     ## Ingredients
-    ## Instructions
-ls                          # confirm file created                          
+    ## Instructions                         
 cat guacamole.md            # see content of file 
 git status                  # shows untracked file
 git add guacamole.md        # please track this file
@@ -142,21 +141,21 @@ nano guacamole.md           # add ingredients
                             # explain lists in .md
     # Guacamole
     ## Ingredients
-    * avocado       
-    * lemon
-    * salt
+    - avocado       
+    - lemon
+    - salt
     ## Instructions
 cat guacamole.md            # see content of file 
 git status                  # “no changes added to commit”
 git diff                    # review changes. Explain the output
 git commit -m "Add ingredients for basic guacamole" # no staged changes
-git add guacamole.md        # explain stating area: allows to review before taking a snapshot (commit)
+git add guacamole.md        # explain staging area: allows to review before taking a snapshot (commit)
 git status                  # file is 'staged' -> ready to be commited
 git commit -m "Add ingredients for basic guacamole"
 git log
 cat guacamole.md        # see contents of file
 ```
-> **NOTE** there might be confusion about stating area and working tree. We will clarify in the next section.
+> **NOTE** there might be confusion about staging area and working tree. We will clarify in the next section.
 
 ## 10:35 - 💪 Challenge `changes` - 10'
 - Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
@@ -176,7 +175,7 @@ Question two:
 > git add myfile.txt | git commit -m "my recent changes" will add file.txt to the staging area and then commit the file. **This is our answer!**
 
 > git commit -m myfile.txt "my recent changes" Would try to commit a file named “my recent changes” with the message myfile.txt
-```
+
 
 ## 10:45 - Break - 15'
 
@@ -194,9 +193,9 @@ git status
 nano guacamole.md           # change lemon for lime
     # Guacamole
     ## Ingredients
-    * avocado       
-    * lime
-    * salt
+    - avocado       
+    - lime
+    - salt
     ## Instructions
 git diff                    # replaced one line - with new line +
 git add guacamole.md
@@ -264,9 +263,9 @@ git log --oneline                   # summarized view
 nano guacamole.md                   # add line below instructions
     # Guacamole
     ## Ingredients
-    * avocado
-    * lime
-    * salt
+    - avocado
+    - lime
+    - salt
     ## Instructions
     An ill-considered change
 git diff HEAD guacamole.md          # diff of current file and most recent commit
@@ -409,10 +408,10 @@ Check that the local changes are visible in GitHub
 nano guacamole.md 
     # Guacamole
     ## Ingredients
-    * avocado
-    * lime
-    * salt
-    * red chilly pepper
+    - avocado
+    - lime
+    - salt
+    - red chilly pepper
     ## Instructions
 git status
 git add guacamole.md 
