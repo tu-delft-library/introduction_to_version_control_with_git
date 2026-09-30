@@ -54,10 +54,10 @@ $ git clone git@github.com:<owner-username>/recipes.git recipes-<owner-username>
    ```
    # Hummus
    ## Ingredients
-   * chickpeas
-   * lemon
-   * olive oil
-   * salt
+   - chickpeas
+   - lemon
+   - olive oil
+   - salt
    ```
 - Save changes and exit nano
 - Stage and commit the change:
@@ -182,8 +182,6 @@ Make these changes as **Partner One** contribution, following the same workflow 
       * Family birthday
       * PhD graduation party
 
-      [Add to the list other circumstances to test the recipes]
-
       ## Requirements
       - Kitchen
       - Utensils
@@ -211,7 +209,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 
       [Name anyone who has helped this project]
 
- 
+- When you are done, remove the text between []
 - Save changes and exit nano
 - Stage and commit the `README.md`
 - Push to remote

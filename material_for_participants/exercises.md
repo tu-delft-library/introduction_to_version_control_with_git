@@ -54,8 +54,8 @@ The staging area can hold changes from any number of files that you want to comm
 ## 2 💪 GitHub GUI 
 
 - Browse to your `recipes` repository on GitHub.
-- Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
-- Hover over, and click on, the **three buttons** to the right of each commit.
+- Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number). You should see the history log.
+- Click on, the **three buttons** to the right of each commit.
 - What information can you gather/explore from these buttons?
 - How would you get that same information in the shell? 
 
