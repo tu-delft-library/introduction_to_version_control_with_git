@@ -4,31 +4,25 @@
 - Make a branch of this repository using the date format `yyyy-mm-dd`
 - Do any modifications to files of this repo only on that branch
 - Clear the `material_for_participants/command.log` file
+- Make an [edu.nl](https://edu.nl/) link to point to `material_for_participants` folder of the new branch
 
+## Prepare de vevox
+- Ask @catactg for a duplicate of the vevox material and share it with you
+- You will display the vevox meeting id during the workshop so that participants can join
 
 ## `Links` document
-- Set up a document to hold all the `links` participants will need during the workshop.
-    - option one: use an online collaborative document of your choice. Make sure it can be accessed and edited by anyone with the link.
-    - option two: modify the `material_for_participants/links.md` file in this repo
-    - Make an [edu.nl](https://edu.nl/) link to point to `material_for_participants` folder
-- Prepare de vevox
-    - Ask @catactg for a duplicate of the vevox material
-    - Copy the share link of vevox
-    - Add link to the `links` document
-- Ask student assistant to set up the feedback survey
-    - Add link to the `links` document
-- Print a list of the participants for roll call 
+- Update the `links.md` file with any links participants will need.
+- Currently we are using good-old pen and paper for roll call. So the current file does not need updating per workshop run.
+- [OPTIONAL] If you have a feedback survey for this workshop, paste the link in `links.md`
 
 ## Slides
-
 - Update the [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b)
     - Names of trainers/helpers
     - Modify schedule (if needed)
-    - Add link to the `links` document
+    - Modify the `edu.nl` link
 
 ## Lesson prep
 
-- Pick an icebreaker from the [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 - Practice teaching the material on your own (see [lesson plan spreadsheet](https://tud365.sharepoint.com/:x:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/lesson_plan.xlsx?d=we808cfe275964b25a61e1fa97fc31664&csf=1&web=1&e=tugbJr&nav=MTVfe0NGRTdFMkI5LUNEMzQtNDExRC1BQjhFLUUyMjcwMDJGMTdEMX0) for links to content)
 
 - Prepare a separate device to have during the lesson.
@@ -36,8 +30,9 @@
     
 - HEAD/TAG game:
     - Bring physical objects to be passe around (e.g. balls, fruits)
-    - Prepare 2 papers per row with git short hashes (e.g.f22b25e, b36abfd) (e.g.)
+    - Prepare 2 papers per row with git short hashes (e.g.f22b25e, b36abfd) and tags (e.g. basic, spicy)
 
+- Print a list of the participants for roll call 
 
 ## Set up autopush for live coding
 
@@ -52,7 +47,7 @@
 
 ## Clean up your system
 - Delete the `recipes` repo from your github
-- Delete `recipes` from your `Desktop`
+- Delete `recipes` and `bio` from your `Desktop`
 - Reset all global configurations by deleting the global configuration file:
 ```bash
 rm ~/.gitconfig
