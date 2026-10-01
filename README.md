@@ -17,11 +17,4 @@ Join this course if:
 * You are comfortable with basic UNIX shell commands (see Prerequisites section below)
 * You are PhD candidate, researcher, or support staff at TU Delft. 
 
-## Can I skip this course?
-This course is a requirement for other courses:
-- [Intermediate Version Control with Git
-](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/intermediate-version-control-with-git)
-- [Intermediate programming with Python
-](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/intermediate-programming-with-python)
-
-We encourage you to try the [self assessment quiz.](hhttps://tu-delft-library.github.io/introduction_to_version_control_with_git/)
+We encourage you to try the [self assessment quiz.](https://tu-delft-library.github.io/introduction_to_version_control_with_git/)
