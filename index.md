@@ -9,7 +9,7 @@ title: Readiness Quiz - Introduction to Version Control with Git
 
 - It is **not graded**
 
-- If the test felt too hard, we recommend taking the [Introduction to Version Control with Git course](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/introduction-to-version-control) at TU Delft
+- If the test felt too hard, we recommend taking the [Introduction to Version Control with Git course](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/version-control-with-git) at TU Delft
 
 --- 
  
