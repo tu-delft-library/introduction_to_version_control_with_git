@@ -6,7 +6,7 @@ This repository holds the material for the **Introduction to Version Control wit
 
 Learn the essentials of version control with Git and take control of your code. This practical course introduces the fundamentals of version control, helping you track changes, manage project history, and synchronize work across local and remote repositories. Warning, your life might change after learning version control 😉  
 
-See full details and the next **training date** of this course the [TU Delft library training website.](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/introduction-to-version-control-with-git)
+See full details and the next **training date** of this course the [TU Delft library training website.](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/version-control-with-git)
 
 ## Is this course for me?
 
