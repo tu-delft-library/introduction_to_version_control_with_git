@@ -184,3 +184,4 @@ ls -a
 git log --oneline
 git tag -a bash 1618557 "Add basic tag"
 git tag -a bash 1618557 -m "Add basic tag"
+git log --oneline
