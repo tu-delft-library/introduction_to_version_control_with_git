@@ -67,3 +67,4 @@ cd bio
 git init
 nano me.txt
 cat me.txt 
+git diff
