@@ -149,3 +149,4 @@ git status
 mkdir anotherfolder
 git status
 touch anotherfolder/file.jpg
+git status
