@@ -189,3 +189,4 @@ git push --tags
 clear
 git config
 git config --list
+git config --list --global
