@@ -35,3 +35,4 @@ git commit -m "Create initial structure for guacamole recipe"
 git status
 clear
 git log
+git diff
