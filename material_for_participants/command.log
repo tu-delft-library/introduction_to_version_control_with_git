@@ -129,3 +129,4 @@ ls
 mkdir pictures
 touch a.png b.png c.png 
 ls
+touch pictures/cake1.jpg pictures/cake2.jpg
