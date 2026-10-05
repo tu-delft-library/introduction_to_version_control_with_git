@@ -158,3 +158,4 @@ ls
 git log --oneline
 clear
 ssh -T git@github.com
+git remote add origin git@github.com:catactg/recipes.git
