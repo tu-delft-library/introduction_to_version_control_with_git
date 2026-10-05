@@ -120,3 +120,4 @@ git restore guacamole.md
 git status
 nano ketchup.md
 nano ketchup.md
+clear
