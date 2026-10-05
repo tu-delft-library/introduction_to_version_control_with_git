@@ -175,3 +175,4 @@ ls -a
 cd ..
 pwd
 rm -rf recipes/
+ls
