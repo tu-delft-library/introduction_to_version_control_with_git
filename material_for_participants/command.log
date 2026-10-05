@@ -56,3 +56,4 @@ git diff --staged
 clear
 git status
 git commit -m "Modify guacamole to traditional recipe"
+git status
