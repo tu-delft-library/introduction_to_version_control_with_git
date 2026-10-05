@@ -78,3 +78,4 @@ git add me.txt
 git diff
 git diff --staged
 git commit -m "Add background"
+git log
