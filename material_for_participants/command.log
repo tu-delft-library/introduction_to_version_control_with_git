@@ -110,3 +110,4 @@ git status
 nano guacamole.md 
 git restore guacamole.md 
 cat guacamole.md 
+clear
