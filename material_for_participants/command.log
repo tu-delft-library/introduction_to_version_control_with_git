@@ -188,3 +188,4 @@ git log --oneline
 git push --tags
 clear
 git config
+git config --list
