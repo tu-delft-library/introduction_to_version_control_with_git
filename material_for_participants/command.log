@@ -84,3 +84,4 @@ pwd
 cd ..
 cd recipes/
 git status
+git log --oneline
