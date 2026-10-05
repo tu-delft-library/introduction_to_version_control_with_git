@@ -178,3 +178,4 @@ rm -rf recipes/
 ls
 git status
 git clone git@github.com:catactg/recipes.git
+clear
