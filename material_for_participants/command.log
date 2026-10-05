@@ -7,3 +7,4 @@ cleaa
 clear
 git config --list
 git config --global user.name "Catalina Tobon Gomez"
+git config --global user.email "catactg@gmail.com"
