@@ -165,3 +165,4 @@ nano guacamole.md
 git status
 git add guacamole.md 
 git commit -m "Modify to spicy recipe"
+git log --oneline
