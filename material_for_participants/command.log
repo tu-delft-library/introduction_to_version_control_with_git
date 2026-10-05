@@ -138,3 +138,4 @@ cat .gitignore
 git status
 git add .gitignore
 git commit -m "Ignore png files and pictures folder"
+git status
