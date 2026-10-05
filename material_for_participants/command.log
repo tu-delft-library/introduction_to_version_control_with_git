@@ -144,3 +144,5 @@ git status --ignored
 git status
 git add a.png
 clear
+touch pictures/new.jpg
+git status
