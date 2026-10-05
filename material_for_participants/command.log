@@ -65,3 +65,4 @@ pwd
 mkdir bio
 cd bio
 git init
+nano me.txt
