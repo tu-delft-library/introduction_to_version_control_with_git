@@ -125,3 +125,4 @@ git status
 rm ketchup.md 
 git status
 clear
+ls
