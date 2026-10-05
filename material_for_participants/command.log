@@ -6,3 +6,4 @@ git help
 cleaa
 clear
 git config --list
+git config --global user.name "Catalina Tobon Gomez"
