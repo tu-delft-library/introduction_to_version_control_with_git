@@ -22,3 +22,4 @@ ls -a
 git init
 ls -a
 ls -a .git
+clear
