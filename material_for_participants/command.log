@@ -156,3 +156,4 @@ git status
 rm -rf anotherfolder
 ls
 git log --oneline
+clear
