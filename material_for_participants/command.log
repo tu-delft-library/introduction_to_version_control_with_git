@@ -60,3 +60,4 @@ git status
 git log
 clear
 pwd
+cd ..
