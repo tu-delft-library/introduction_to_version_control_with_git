@@ -102,3 +102,4 @@ git status
 git diff
 git restore guacamole.md 
 cat guacamole.md 
+git log --oneline
