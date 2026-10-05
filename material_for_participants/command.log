@@ -157,3 +157,4 @@ rm -rf anotherfolder
 ls
 git log --oneline
 clear
+ssh -T git@github.com
