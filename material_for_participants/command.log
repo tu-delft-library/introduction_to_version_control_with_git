@@ -86,3 +86,4 @@ cd recipes/
 git status
 git log --oneline
 nano guacamole.md 
+git diff guacamole.md 
