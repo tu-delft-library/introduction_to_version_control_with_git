@@ -71,3 +71,4 @@ git diff
 git add me.txt 
 git status
 git commit -m "Name, origin and hobby"
+nano me.txt
