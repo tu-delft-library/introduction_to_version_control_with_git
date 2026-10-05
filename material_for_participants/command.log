@@ -174,3 +174,4 @@ git pull origin main
 ls -a
 cd ..
 pwd
+rm -rf recipes/
