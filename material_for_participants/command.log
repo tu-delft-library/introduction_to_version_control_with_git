@@ -172,3 +172,5 @@ git status
 git push origin main
 git pull origin main
 ls -a
+cd ..
+pwd
