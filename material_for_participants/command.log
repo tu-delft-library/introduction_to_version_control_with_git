@@ -41,3 +41,4 @@ cat guacamole.md
 git diff
 clear
 git status
+git add guacamole.md 
