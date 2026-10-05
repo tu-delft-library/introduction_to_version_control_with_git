@@ -53,3 +53,4 @@ git diff
 git add guacamole.md 
 git diff
 git diff --staged
+clear
