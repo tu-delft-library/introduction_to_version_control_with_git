@@ -142,3 +142,4 @@ git status
 ls
 git status --ignored
 git status
+git add a.png
