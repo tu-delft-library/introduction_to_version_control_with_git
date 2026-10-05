@@ -152,3 +152,4 @@ touch anotherfolder/file.jpg
 git status
 cat .gitignore
 touch anotherfolder/cake.png
+git status
