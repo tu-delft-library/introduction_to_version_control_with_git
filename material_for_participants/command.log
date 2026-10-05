@@ -133,3 +133,4 @@ touch pictures/cake1.jpg pictures/cake2.jpg
 ls pictures/
 git status
 clear
+nano .gitignore
