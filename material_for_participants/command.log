@@ -12,3 +12,4 @@ git config --global core.editor "nano -w"
 git config --glboal core.autocrlf input
 git config --global core.autocrlf input
 clear
+git config --list --global
