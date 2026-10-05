@@ -63,3 +63,4 @@ pwd
 cd ..
 pwd
 mkdir bio
+cd bio
