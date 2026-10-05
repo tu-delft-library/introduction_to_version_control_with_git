@@ -135,3 +135,4 @@ git status
 clear
 nano .gitignore
 cat .gitignore
+git status
