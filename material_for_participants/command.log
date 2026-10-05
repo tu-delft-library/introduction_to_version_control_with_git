@@ -24,3 +24,4 @@ ls -a
 ls -a .git
 clear
 git status
+nano guacamole.md
