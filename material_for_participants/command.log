@@ -68,3 +68,5 @@ git init
 nano me.txt
 cat me.txt 
 git diff
+git add me.txt 
+git status
