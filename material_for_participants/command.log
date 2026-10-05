@@ -168,3 +168,4 @@ git commit -m "Modify to spicy recipe"
 git log --oneline
 git push origin main
 clear
+git status
