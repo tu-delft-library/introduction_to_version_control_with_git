@@ -115,3 +115,4 @@ git log --oneline
 git tag -a basic 1618557 -m "Tag for basic recipe"
 git log --oneline
 git restore -s basic guacamole.md 
+cat guacamole.md 
