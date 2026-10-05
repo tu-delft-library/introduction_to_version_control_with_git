@@ -19,3 +19,4 @@ cd recipes/
 pwd
 ls
 ls -a
+git init
