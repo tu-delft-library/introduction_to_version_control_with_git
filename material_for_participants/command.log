@@ -80,3 +80,4 @@ git diff --staged
 git commit -m "Add background"
 git log
 clear
+pwd
