@@ -85,3 +85,4 @@ cd ..
 cd recipes/
 git status
 git log --oneline
+nano guacamole.md 
