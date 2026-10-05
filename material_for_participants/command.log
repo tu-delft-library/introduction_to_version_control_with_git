@@ -81,3 +81,4 @@ git commit -m "Add background"
 git log
 clear
 pwd
+cd ..
