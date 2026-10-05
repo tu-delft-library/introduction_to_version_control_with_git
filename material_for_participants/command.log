@@ -99,3 +99,4 @@ git log --oneline
 git diff 1f91b0c guacamole.md 
 clear
 git status
+git diff
