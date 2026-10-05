@@ -107,3 +107,4 @@ git restore -s 1618557
 git restore -s 1618557 guacamole.md 
 cat guacamole.md 
 git status
+nano guacamole.md 
