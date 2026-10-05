@@ -148,3 +148,4 @@ touch pictures/new.jpg
 git status
 mkdir anotherfolder
 git status
+touch anotherfolder/file.jpg
