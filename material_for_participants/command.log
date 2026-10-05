@@ -134,3 +134,4 @@ ls pictures/
 git status
 clear
 nano .gitignore
+cat .gitignore
