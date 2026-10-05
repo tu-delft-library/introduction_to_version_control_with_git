@@ -122,3 +122,4 @@ nano ketchup.md
 nano ketchup.md
 clear
 git status
+rm ketchup.md 
