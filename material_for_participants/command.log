@@ -51,3 +51,4 @@ git status
 nano guacamole.md
 git diff
 git add guacamole.md 
+git diff
