@@ -2,3 +2,4 @@ clear
 clear
 cd ~/Desktop
 git version
+git help
