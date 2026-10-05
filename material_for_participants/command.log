@@ -74,3 +74,5 @@ git commit -m "Name, origin and hobby"
 nano me.txt
 clear
 git diff
+git add me.txt 
+git diff
