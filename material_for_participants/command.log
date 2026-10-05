@@ -179,3 +179,4 @@ ls
 git status
 git clone git@github.com:catactg/recipes.git
 clear
+cd recipes
