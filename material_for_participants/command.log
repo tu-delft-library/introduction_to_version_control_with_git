@@ -17,3 +17,4 @@ pwd
 mkdir recipes
 cd recipes/
 pwd
+ls
