@@ -83,3 +83,4 @@ clear
 pwd
 cd ..
 cd recipes/
+git status
