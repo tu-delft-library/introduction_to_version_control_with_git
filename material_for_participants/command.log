@@ -48,3 +48,4 @@ git log
 cat guacamole.md 
 clear
 git status
+nano guacamole.md
