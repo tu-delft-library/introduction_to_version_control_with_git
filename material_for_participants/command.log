@@ -166,3 +166,4 @@ git status
 git add guacamole.md 
 git commit -m "Modify to spicy recipe"
 git log --oneline
+git push origin main
