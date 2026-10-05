@@ -59,3 +59,4 @@ git commit -m "Modify guacamole to traditional recipe"
 git status
 git log
 clear
+pwd
