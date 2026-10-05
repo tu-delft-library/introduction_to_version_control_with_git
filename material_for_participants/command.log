@@ -64,3 +64,4 @@ cd ..
 pwd
 mkdir bio
 cd bio
+git init
