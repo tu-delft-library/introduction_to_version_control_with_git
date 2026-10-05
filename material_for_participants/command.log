@@ -36,3 +36,4 @@ git status
 clear
 git log
 git diff
+nano guacamole.md 
