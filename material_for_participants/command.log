@@ -94,3 +94,4 @@ git diff HEAD~2 guacamole.md
 git diff HEAD~3 guacamole.md 
 clear
 git log --oneline
+git show HEAD~2 guacamole.md 
