@@ -128,3 +128,4 @@ clear
 ls
 mkdir pictures
 touch a.png b.png c.png 
+ls
