@@ -147,3 +147,4 @@ clear
 touch pictures/new.jpg
 git status
 mkdir anotherfolder
+git status
