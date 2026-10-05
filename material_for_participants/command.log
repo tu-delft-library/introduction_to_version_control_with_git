@@ -43,3 +43,4 @@ clear
 git status
 git add guacamole.md 
 git status
+git commit -m "Add ingredients for basic guacamole"
