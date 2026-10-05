@@ -49,3 +49,4 @@ cat guacamole.md
 clear
 git status
 nano guacamole.md
+git diff
