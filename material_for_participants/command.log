@@ -37,3 +37,4 @@ clear
 git log
 git diff
 nano guacamole.md 
+cat guacamole.md 
