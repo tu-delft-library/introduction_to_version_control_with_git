@@ -9,7 +9,7 @@
 ## 1 💪 bio Repository 
 
 - Create a new Git repository on your computer called `bio`.
-    - **Tip** remember to step out of your current `recipe` repository
+    - **Tip** remember to step out of your current `recipes` repository
 - Write a three-line biography for yourself in a file called `me.txt`, commit your changes
 - Modify one line, add a fourth line
 - Display the differences between its *modified* state and its original state. 
@@ -18,7 +18,7 @@
 - Display the git history
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - Use `cd ..` to navigate to the parent directory. This should bring you to your `Desktop`
 - To create a folder use `mkdir folder_name`
@@ -44,7 +44,7 @@ The staging area can hold changes from any number of files that you want to comm
 
 
 <details>
-<summary>🔍 Click here hints!  </summary>
+<summary>🔍 Click here for hints!  </summary>
 
 
 - To staged multiple files, you execute `git add file` multiple times and the changes will be accumulated in the staging area
@@ -54,8 +54,8 @@ The staging area can hold changes from any number of files that you want to comm
 ## 2 💪 GitHub GUI 
 
 - Browse to your `recipes` repository on GitHub.
-- Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number).
-- Hover over, and click on, the **three buttons** to the right of each commit.
+- Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number). You should see the history log.
+- Click on, the **three buttons** to the right of each commit.
 - What information can you gather/explore from these buttons?
 - How would you get that same information in the shell? 
 

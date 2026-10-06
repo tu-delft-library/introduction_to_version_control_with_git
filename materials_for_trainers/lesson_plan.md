@@ -1,32 +1,48 @@
-## Tips for the day
+## 9:00 🚀 Prepare for take off - 20'
+### Room setup
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
+- Test the microphone
 - Write the edu.nl link pointing to `material_for_participants/links.md` document on the whiteboard 
     - Use dark marker on the board (not red)
-- If you are using a mac, make the terminal not transparent: 
-    - Open the terminal
-    - Open settings
-    - Go to background color
-    - Adjust opacity to 100%
-- Set your desktop to a color background instead of an image that can be distracting (e.g. a beach or a mountain)
-- Ask Paula to print a list of the participants so that they can check their name (roll call)
-- Start auto push [TODO] @halfordd step-by-step explanation
+- Place the list of the participants on a table at the entrance so that they can check their name (roll call)
+- [Optional] bring jugs with water and snacks (if you brought any)
 
-## 9:30 - Land - 5'
-☕ Coffee/tea 🫖
+### Laptop setup
+
+#### start autopush
+Make sure to set up the bash history forwarding before workshop day as explained in `materials_for_trainers/pre_workshop_checklist.md`
+
+Open another Terminal window. Let's call this the `hidden terminal` i.e. NOT to be shown during the workshop.
+
+On the `hidden terminal` forward only the last line of the history to `command.log`
+```bash
+tail -n 0 -f ~/.bash_history | tee -a <local-repo-directory>/material_for_participants/command.log
+```
+Open another tab in the `hidden terminal`, `cd` to `<local-repo-directory>` and run autopush every 2-5 seconds
+```bash
+gitautopush --sleep 5 .
+```
+#### Open vevox
+- Open vevox in different browser tab [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
+- Open `Introduction to Version Control with Git`
+- Present and keep it open for later
+
+#### Open slides
+
+Slides work better if you open them in your device: [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+
+## 9:30 - Participants land - 5'
+☕ Reminder them about coffee at the entrance of library
 
 ## 9:35 - Housekeeping - 10'
-- ✅ Roll call + 🤝 Code of Conduct
-- 🖥 Did everyone:
-    - install git
-    - create a GitHub account
-- 🙋 Getting help (🆘 red  ✅ green stickers)
-- explain edu.nl link files
+Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) to welcome and introduce the session
+
 
 ## 9:45 - Icebreaker - photos timeline - 5'
-- Instructions for the icebreaker on slides
-- This icebreaker is a good bridge to talk about timeline
+- Instructions for the icebreaker on [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b)
+- This icebreaker is a good bridge to talk about git as time travel tool
 
-> **REMEMBER TO START AUTOPUSH**
+> **REMEMBER TO START AUTOPUSH** instructions above 
 
 ## 9:50 - Introduction to version control - 10'
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
@@ -73,14 +89,6 @@ End of a line:
 git config --global core.autocrlf input              
 # for windows do
 git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
-git config --global init.defaultBranch main
-```
-Git uses branches
-- A branch is a separate timeline
-- You will learn about branches later (on the new workshop)
-- We work on the main branch for now. We will discuss branches in the next module.
-
-```console
 git config --list --global
 git config --global --edit
 ```
@@ -121,8 +129,7 @@ nano guacamole.md           # add headers
                             # explain headers in .md
     # Guacamole
     ## Ingredients
-    ## Instructions
-ls                          # confirm file created                          
+    ## Instructions                         
 cat guacamole.md            # see content of file 
 git status                  # shows untracked file
 git add guacamole.md        # please track this file
@@ -132,30 +139,42 @@ git commit -m "Create initial structure for a guacamole recipe"
 git status                  # up to date
 git log                     # project history in reverse chronological order
                             # explain hash
-ls
 nano guacamole.md           # add ingredients
                             # explain lists in .md
     # Guacamole
     ## Ingredients
-    * avocado       
-    * lemon
-    * salt
+    - avocado       
+    - lemon
+    - salt
     ## Instructions
 cat guacamole.md            # see content of file 
-git status                  # “no changes added to commit”
+git status                  # shows the file was modified
 git diff                    # review changes. Explain the output
 git commit -m "Add ingredients for basic guacamole" # no staged changes
-git add guacamole.md        # explain stating area: allows to review before taking a snapshot (commit)
+git add guacamole.md        # we add the file, meaning is 'ready to commit'
 git status                  # file is 'staged' -> ready to be commited
 git commit -m "Add ingredients for basic guacamole"
 git log
 cat guacamole.md        # see contents of file
 ```
-> **NOTE** there might be confusion about stating area and working tree. We will clarify in the next section.
+> **NOTE** there might be confusion about staging area and working tree. We will clarify in the next section.
 
 ## 10:35 - 💪 Challenge `changes` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 1 and 2
+
+Vevox question 1 
+> No. Alfredo does not need to make the desserts subdirectory a Git repository because the recipes repository will track all files, sub-directories, and subdirectory files under the recipes directory. Thus, in order to track all information about desserts, Alfredo only needed to add the desserts subdirectory to the recipes directory.
+
+> Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
+
+Vevox question 2
+> git commit -m "my recent changes" would only create a commit if files have already been staged
+
+> git init myfile.txt | git commit -m "my recent changes" would try to create a new repository
+
+> git add myfile.txt | git commit -m "my recent changes" will add file.txt to the staging area and then commit the file. **This is our answer!**
+
+> git commit -m myfile.txt "my recent changes" Would try to commit a file named “my recent changes” with the message myfile.txt
+
 
 ## 10:45 - Break - 15'
 
@@ -166,14 +185,16 @@ cat guacamole.md        # see contents of file
     - Mailing a letter:
         - Staging is like putting letter in envelop
         - Committing is like putting it in the mailbox
+
+- clarify `git diff --staged`
 ```console
 git status
 nano guacamole.md           # change lemon for lime
     # Guacamole
     ## Ingredients
-    * avocado       
-    * lime
-    * salt
+    - avocado       
+    - lime
+    - salt
     ## Instructions
 git diff                    # replaced one line - with new line +
 git add guacamole.md
@@ -184,8 +205,6 @@ git commit -m "Modify guacamole to traditional recipe" # Commit message: think w
 git status
 git log
 ```
-- 🎦 clarify `git diff --staged` with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-
 
 ## 11:10 - 1 💪 `bio Repository`  - 10'
 
@@ -198,14 +217,18 @@ mkdir bio                           # Create a new folder called bio
 cd bio                              # step into bio
 git init                            # initialise git
 nano me.txt                         # create file and add three lines
+    My name is [NAME]
+    I come from [COUNTRY]
+    I love to [HOBBy]
 git add me.txt                      # add file
-git commit -m "Add biography file"  # commit changes
+git commit -m "Name, origin and hobby"  # commit changes
 nano me.txt                         # modify one line, add a fourth line
+    I have a [FIELD] background
 git diff me.txt                     # show differences to working directory
 git add me.txt                      # stage
 git diff                            # no changes to working directory
 git diff --staged                   # show difference to staged area
-git commit -m "More details"        # commit changes
+git commit -m "Add background"        # commit changes
 git log                             # display git history
 ```
 
@@ -243,17 +266,18 @@ git log --oneline                   # summarized view
 nano guacamole.md                   # add line below instructions
     # Guacamole
     ## Ingredients
-    * avocado
-    * lime
-    * salt
+    - avocado
+    - lime
+    - salt
     ## Instructions
     An ill-considered change
 git diff HEAD guacamole.md          # diff of current file and most recent commit
 git diff guacamole.md               # HEAD is default option for git diff
 git diff HEAD~1 guacamole.md        # diff between now and one commit before HEAD
 git diff HEAD~2 guacamole.md        # diff between now and two commits before HEAD
+git diff HEAD~3 guacamole.md        # fails. unknown revision
+git log --oneline                   # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
 git show HEAD~2 guacamole.md        # shows changes made on that commit (rather than differences)
-git diff [long_hash] guacamole.md   # another way to reference a commit
 git log --oneline                   # shows short hashes
 git diff [short_hash] guacamole.md  # use short hash to point to a specific commit  
 git status                          # shows modified file
@@ -267,20 +291,33 @@ git status                          # restored file is not staged!
 git restore guacamole.md            # overwrites working copy with last committed version
 git status
 cat guacamole.md   
-git tag -a simple [short_hash] -m "Tag for simple recipe" # add a tag -> easier than hash
+git tag -a basic [short_hash] -m "Tag for basic recipe" # add a tag -> easier than hash
 git log --oneline
 git restore -s simple guacamole.md  # -s same as with the hash -> source
 git status                          # restored file is not staged!
 git restore guacamole.md            # restores to latest commit
+git status                          # working tree clean
 ```
 
 ## 11:45 - Break - 15'
 
 
 ## 12:00 - 💪 Challenges `history` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 3 and 4
+Vevox question 3
+>The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file data_cruncher.py. Answer 2 uses HEAD to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what HEAD means.
 
+> Answer 3 gets the version of data_cruncher.py from the commit before HEAD, which is NOT what we wanted.
+
+> Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files you should use git restore .
+
+Vevox question 4
+> The changes to the file from the second echo command are only applied to the working copy, not the version in the staging area. The command git add ketchup.md places the current version of ketchup.md into the staging area.
+
+> So, when `git commit -m "My opinions about red sauce"` is executed, the version of ketchup.md committed to the repository is the one from the staging area and has only one line.
+
+> At this time, the working copy still has the second line (and git status will show that the file is modified). However, git restore ketchup.md replaces the working copy with the most recently committed version of ketchup.md. So, cat ketchup.md will output:
+
+> `I like ketchup.`
 
 ## 12:10 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
@@ -314,8 +351,16 @@ rm -rf anotherfolder                # changed my mind. Clean up!
 
 
 ## 12:20 - 💪 Challenges `ignore` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 5 and 6
+Vevox question 5
+> The exclamation point operator will include a previously excluded entry.
+
+Vevox question 6
+> Answer 1 will ignore only dat files named with one character.
+> Answer 2 looks promising BUT it will ignore ALL the .dat files in the repository. 
+
+>Answer 3 is the correct one. If you want to ignore only the .dat files inside a specific folder then you need to specify the full folder path: `pictures/data/location/gps/*.dat` will match every file in pictures/data/location/gps that ends with .dat. The file `pictures/data/location/gps/info.txt` will not be ignored.
+
+> Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
 ## 12:30 - Check your SSH key - 5'
 - Why SSH key?
@@ -330,7 +375,8 @@ You should see a message like
 ```
 Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-If not, put your red sticky up and we'll help you
+If not, put your red sticky up and we'll help you.
+If needed point to instructions in the [carpentries website](https://swcarpentry.github.io/git-novice/07-github.html#create-an-ssh-key-pair)
 
 ## 12:35 - Lunch break - 55'
 
@@ -352,7 +398,7 @@ git remote add origin git@github.com:[username]/recipes.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
-Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy.
+Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy. `origin` is just a name. It is the convention everyone uses, so it is good to stick to it.
 
 Check that the local changes are visible in GitHub
 
@@ -360,25 +406,15 @@ Check that the local changes are visible in GitHub
 nano guacamole.md 
     # Guacamole
     ## Ingredients
-    * avocado
-    * lime
-    * salt
-    * red chilly pepper
+    - avocado
+    - lime
+    - salt
+    - red chilly pepper
     ## Instructions
 git status
 git add guacamole.md 
 git commit -m "Modify to spicy recipe"
-git log --oneline
-git push                      # does not work! branch needs an 'upstream'
-```
-The label `upstream` becomes relevant when you `fork` someone else's project. In our case, the remote is your own repository. So `origin` and `upstream` are the same.
-
-`origin` and `upstreams` are just names. They could be named anything else. But this is the convention everyone uses, so it is good to stick to it.
-
-```console
-git push --set-upstream origin main
-git push
-git status                      # nothing to commit
+git log --oneline               # the local HEAD is one commit ahead of origin/main HEAD
 git push origin main            # Everything up-to-date
 ```
 
@@ -406,26 +442,33 @@ Experience loosing your local repo and getting your code back from remote:
 git status                      # ensure no uncommitted changes
 git push origin main            # push changes
 git pull origin main            # explain pull from remote
-```
-- Confirm all files are in remote (visit GitHub)
-
-```console
 ls -a                           # local files (including the ignored files)
-pwd
 cd ..                           
 rm -rf recipes/                 # loose repository
+ls                              # recipes directory is gone
 git status                      # make sure you are not inside a git repository
 git clone git@github.com:[username]/recipes.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd recipes
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
-git status
+git log --oneline               # files and history preserved. Beautiful!
+                                # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
+git tag -a basic [HASH] -m "Add basic recipe"
+git push --tags
 ```
-Magic!
+Check the tag in GitHub (drop down menu that shows also branches)
 
 ## 14:00 - 💪 Challenges `remotes` - 10'
-- Go to [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
-- Vevox question 7 and 8
+Vevox question 7
+> When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). Commit only updates your local repository.
+
+Vevox question 8
+1. Update local
+1. Append 100
+1. Stage changes
+1. Commit changes
+1. Update remote
+1. Celebrate
 
 
 ## 14:10 - Break - 15'

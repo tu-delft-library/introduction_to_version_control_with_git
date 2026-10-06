@@ -54,10 +54,10 @@ $ git clone git@github.com:<owner-username>/recipes.git recipes-<owner-username>
    ```
    # Hummus
    ## Ingredients
-   * chickpeas
-   * lemon
-   * olive oil
-   * salt
+   - chickpeas
+   - lemon
+   - olive oil
+   - salt
    ```
 - Save changes and exit nano
 - Stage and commit the change:
@@ -182,8 +182,6 @@ Make these changes as **Partner One** contribution, following the same workflow 
       * Family birthday
       * PhD graduation party
 
-      [Add to the list other circumstances to test the recipes]
-
       ## Requirements
       - Kitchen
       - Utensils
@@ -211,7 +209,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 
       [Name anyone who has helped this project]
 
- 
+- When you are done, remove the text between []
 - Save changes and exit nano
 - Stage and commit the `README.md`
 - Push to remote
@@ -222,7 +220,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 ### Add a **LICENSE** file 
 Make these changes as **Partner A** contribution
 - Create a `LICENSE` file using nano
-- Pick any open license text from https://choosealicense.com and paste it in.
+- Pick an MIT license from https://choosealicense.com and paste it in.
 - Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
    1. If software is patented or commercialized: `Copyright (c) [YEAR] Technische Universiteit Delft`
    1. If software is not patented nor commercialized, TU Delft will waive the copyright to authors as long as it is published under open-source license: `Copyright (c) [YEAR] [AUTHOR(S)], Delft, the Netherlands`

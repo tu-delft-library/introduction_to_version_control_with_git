@@ -19,8 +19,8 @@ For example, navigate to your `Desktop` and start from there
    Empty for now
    ```
 - Create a `LICENSE` file using `nano`
-   - Pick any open license text from https://choosealicense.com and paste it in. 
-   - Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
+   - Pick any open license text from https://choosealicense.com and paste it in.
+   - Depending on the license type, you will need to specify year and names of the copyright. Inside `nano` replace the copyright line with one of these three options. Fill the information between `[]` accordingly.
       1. If software is patented or commercialized: `Copyright (c) [YEAR] Technische Universiteit Delft`
       1. If software is not patented nor commercialized, TU Delft will waive the copyright to authors as long as it is published under open-source license: `Copyright (c) [YEAR] [AUTHOR(S)], Delft, the Netherlands`
       1. If software is kept as in-house development, share with collaborators under proprietary license or agreement only:
@@ -33,7 +33,7 @@ For example, navigate to your `Desktop` and start from there
 > **Why now, not later?** A repo without a license is technically "all rights reserved" — nobody else can legally reuse your code, even if it's public. Starting with README + LICENSE should become a habit :)
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To create a folder use `mkdir folder_name`
 - To initialize a repository, navigate to the folder that you want to turn into a repository and use `git init`
@@ -70,13 +70,10 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
-- To open a (new) file for editing use `nano name_of_file`
-- To check the status of the git repository use `git status`
-- To stage file use `git add name_of_file`
-- To commit a file use `git commit -m "commit message"`
-- To see the changes in a file use `git diff name_of_file`
+- To see the changes in the working directory use `git diff name_of_file`
+- To see changes in the staging area use `git diff --staged name_of_file`
 </details>
 
 ## Time travel: restoring old versions
@@ -86,13 +83,13 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - Run `diff` to see the *unstaged* changes
 - Use `restore` to bring back the last **committed** version (discard your uncommitted edit)
 - See the contents of the file with `cat notes.txt` to confirm the file is restored
-- Now go back further: check out `notes.txt` as it existed at `HEAD~2` into your working directory
+- Now go back further: restore `notes.txt` as it existed at `HEAD~2` into your working directory
 - Run `diff` to see the *unstaged* changes
 - Restore back to the latest version so you don't lose work
 - See the contents of the file with `cat notes.txt` to confirm the file is restored
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To restore a file to the latest commit use `git restore name_of_file`
 - To restore a file to a SPECIFIC commit use `git restore -s HEAD~[#] name_of_file` or `git restore -s [hash] name_of_file`
@@ -110,7 +107,7 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 - Stage and commit the `.gitignore` file with the message `Ignore all log and data files`
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To create an empty file use `touch name_of_file`
 - To create a new folder use `mkdir name_of_folder`
@@ -136,13 +133,14 @@ You should now have 4 commits. Run `log --oneline` to confirm.
 
 
 <details>
-<summary>🔍 Click here hints! </summary>
+<summary>🔍 Click here for hints! </summary>
 
 - To add a remote repository to an existing local repository use `git remote add origin git@github.com:[USERNAME]/[REPOSITORY].git`
 - To push to a remote repository use `git push origin main`
 - To navigate one level up use `cd ..`
 - To rename a local folder use `mv source_directory target_directory`
 - To clone a repository from GitHub use `git clone git@github.com:[USERNAME]/[REPOSITORY].git`
+- To list the contents of a folder (including hidden files) use `ls -a directory_path`
 - To delete a directory and everything it contains use `rm -rf directory_path`
 </details>
 
