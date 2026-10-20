@@ -109,7 +109,7 @@ And finally, let's check python
 python --version                # on Mac and Linux it may be python3 --version
 ```
 
-## 10:10 - Initialize a local Git repository - 10'
+## 10:05 - Initialize a local Git repository - 5'
 We use a tiny Python project with a single file `fall.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
@@ -127,7 +127,7 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-## 10:20 - “add → commit” cycles - 15'
+## 10:10 - “add → commit” cycles - 10'
 - Commands: `status, add, commit, log, diff`
 - Important: 
     - We will work with a small Python program in this course (a free fall calculator)
@@ -190,7 +190,7 @@ git log
 cat fall.py        # see contents of file
 ```
 
-## 11:00 - Working directory and staging area - 10'
+## 10:20 - Working directory and staging area - 10'
 > **NOTE** there might be confusion about staging area and working tree. Let's use slides to clarify this
 - 🎦 clarify staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Working directory -> staging area -> commit history (database)
@@ -223,7 +223,7 @@ git status
 git log
 ```
 
-## 11:10 - 1 💪 `bio Repository`  - 10'
+## 10:30 - 1 💪 `bio Repository`  - 10'
 
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
@@ -248,26 +248,10 @@ git diff --staged                   # show difference to staged area
 git commit -m "Add background"        # commit changes
 git log                             # display git history
 ```
-## 10:35 - 💪 Challenge `changes` - 10'
-
-Vevox question 1 
-> No. Alfredo does not need to make the plots subdirectory a Git repository because the fall repository will track all files, sub-directories, and subdirectory files under the fall directory. Thus, in order to track all information about plots, Alfredo only needed to add the plots subdirectory to the fall directory.
-
-> Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
-
-Vevox question 2
-> git commit -m "my recent changes" would only create a commit if files have already been staged
-
-> git init myfile.txt | git commit -m "my recent changes" would try to create a new repository
-
-> git add myfile.txt | git commit -m "my recent changes" will add file.txt to the staging area and then commit the file. **This is our answer!**
-
-> git commit -m myfile.txt "my recent changes" Would try to commit a file named “my recent changes” with the message myfile.txt
+## 10:40 - Break - 15'
 
 
-## 10:45 - Break - 15'
-
-## 11:20 - git HEAD/TAG game - 10'
+## 10:55 - git HEAD/TAG game - 5'
     HEAD 
     - We use a physical object to represent the HEAD (a ball, a stuff animal, a fruit)
     - Teacher will call HEAD~1, HEAD~5
@@ -286,7 +270,7 @@ Vevox question 2
         - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
 
 
-## 11:30 - Git history - 15'
+## 11:00 - Git history - 10'
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
@@ -343,10 +327,9 @@ git restore fall.py              # restores to latest commit
 git status                       # working tree clean
 ```
 
-## 11:45 - Break - 15'
 
 
-## 12:00 - 💪 Challenges `history` - 10'
+## 11:10 - 💪 Challenges `history` - 10'
 
 TODO adapt these exercises to hands on (maybe using the same bio repository)
 Vevox question 3
@@ -365,7 +348,7 @@ Vevox question 4
 
 > `I like ketchup.`
 
-## 12:10 - Git ignore - 10'
+## 11:20 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
 
 ```console
@@ -395,9 +378,11 @@ touch more_plots/pluto.jpg           # once there is a file, folder is tracked. 
 rm -rf more_plots                   # changed my mind. Clean up!
 ```
 
-## 12:20 - 💪 Challenges `ignore` - 10'
+## 11:30 - 💪 Challenges `ignore` - 10'
 
 TODO: turn this into a hands on. Inspiration: https://4turesearchdata-carpentries.github.io/GitCoDev/lesson1.html#ignore-untracked-directories
+
+TODO: add hands on. inspiration: https://4turesearchdata-carpentries.github.io/GitCoDev/lesson1.html#marking-the-history-using-tags
 
 Vevox question 5
 > The exclamation point operator will include a previously excluded entry.
@@ -410,7 +395,28 @@ Vevox question 6
 
 > Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
-## 12:30 - Check your SSH key - 5'
+
+## 11:40 - 💪 Vevox
+
+
+Challenge `changes` - 10'
+
+Vevox question 1 
+> No. Alfredo does not need to make the plots subdirectory a Git repository because the fall repository will track all files, sub-directories, and subdirectory files under the fall directory. Thus, in order to track all information about plots, Alfredo only needed to add the plots subdirectory to the fall directory.
+
+> Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
+
+Vevox question 2
+> git commit -m "my recent changes" would only create a commit if files have already been staged
+
+> git init myfile.txt | git commit -m "my recent changes" would try to create a new repository
+
+> git add myfile.txt | git commit -m "my recent changes" will add file.txt to the staging area and then commit the file. **This is our answer!**
+
+> git commit -m myfile.txt "my recent changes" Would try to commit a file named “my recent changes” with the message myfile.txt
+
+
+## 11:55 - Check your SSH key - 5'
 - Why SSH key?
     - go though the option of writing password everytime
     - we can bypass this by adding a key
@@ -426,9 +432,9 @@ Hi [yourname]! You've successfully authenticated, but GitHub does not provide sh
 If not, put your red sticky up and we'll help you.
 If needed point to instructions in the [carpentries website](https://swcarpentry.github.io/git-novice/07-github.html#create-an-ssh-key-pair)
 
-## 12:35 - Lunch break - 55'
+## 12:00 - Lunch break - 60'
 
-## 13:30 - Create remote repository - 10'
+## 13:00 - Create remote repository - 10'
 - 🎦 continue mailing letter analogy to introduce remote repositories with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Explain push vs commit: 
     - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
@@ -473,7 +479,7 @@ git push origin main            # uploads the new commit. Refresh GitHub to see 
 ```
 
 
-## 13:40 - 💪  2 GitHub GUI + 3 GitHub Timestamps - 10'
+## 13:10 - 💪  2 GitHub GUI + 3 GitHub Timestamps - 10'
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### `GitHub GUI` solution:
@@ -488,7 +494,7 @@ The right-most button lets you view all of the files in the repository at the ti
 
 GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 
-## 13:50 - Pulling a fresh copy of repo - 10'
+## 13:20 - Pulling a fresh copy of repo - 10'
 
 Experience loosing your local repo and getting your code back from remote:
 
@@ -513,8 +519,18 @@ git push --tags
 ```
 Check the tag in GitHub (drop down menu that shows also branches)
 
-## 14:00 - 💪 Challenges `remotes` - 10'
-TODO: add hands on. inspiration: https://4turesearchdata-carpentries.github.io/GitCoDev/lesson1.html#marking-the-history-using-tags
+
+## 13:30 - TU Delft FAIR software guidelines - 10'
+- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+> Remember to talk about the most common licenses: MIT, Creative Commons, Apache
+
+
+## 13:40 LAB: Getting started with Collaboration - 30'
+see `PRACTICAL_collaboration_exercise.md` file 
+
+
+## 14:10 - 💪 VEVOX remote Challenges `remotes` - 5'
+
 
 Vevox question 7
 > When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). Commit only updates your local repository.
@@ -527,18 +543,7 @@ Vevox question 8
 1. Update remote
 1. Celebrate
 
-
-## 14:10 - Break - 15'
-
-## 14:25 - TU Delft FAIR software guidelines - 10'
-- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-> Remember to talk about the most common licenses: MIT, Creative Commons, Apache
-
-
-## 14:35 LAB: Getting started with Collaboration - 40'
-see `PRACTICAL_collaboration_exercise.md` file 
-
-## 15:15 - Key points - 10'
+## 14:15 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -556,6 +561,6 @@ git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
 
-## 15:25 - Home assignment - 5'
+## 14:25 - Home assignment - 5'
 At home, go through the exercise in `PRACTICAL_putting_it_all_together.md` file. It should take less than 1 hour to finish it.
 
