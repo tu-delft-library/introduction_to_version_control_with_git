@@ -89,6 +89,11 @@ End of a line:
 git config --global core.autocrlf input              
 # for windows do
 git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
+git config --global init.defaultBranch main # in recent versions of git, main branch is default. But it's better to set this
+```
+>*branches* Git can keep track of multiple lines of development like parallel timelines. These lines are called `branches`. We will work with branches in the next session. For now, it's only necessary to know that we only use one branch and it's called `main` 
+
+```console
 git config --list --global
 git config --global --edit
 ```
