@@ -30,7 +30,7 @@
     
 - HEAD/TAG game:
     - Bring physical objects to be passe around (e.g. balls, fruits)
-    - Prepare 2 papers per row with git short hashes (e.g.f22b25e, b36abfd) and tags (e.g. basic, spicy)
+    - Prepare 2 papers per row with git short hashes (e.g.f22b25e, b36abfd) and tags (e.g. earth, moon)
 
 - Print a list of the participants for roll call 
 
