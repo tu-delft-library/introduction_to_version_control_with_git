@@ -37,12 +37,6 @@ Slides work better if you open them in your device: [slides](https://tud365.shar
 ## 9:35 - Housekeeping - 10'
 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) to welcome and introduce the session
 
-Participants will run a small Python program during the day, so check it is installed:
-```console
-python --version                # on Mac and Linux it may be python3 --version
-```
-> On Mac and Linux, use `python3` wherever this plan says `python`.
-> On Windows (Git Bash), if `python` is not found or opens the Microsoft Store, install Python from python.org (tick *Add Python to PATH*) and reopen Git Bash. 
 TODO: add python to pre-workshop email.
 
 
