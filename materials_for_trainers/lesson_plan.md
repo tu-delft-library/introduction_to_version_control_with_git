@@ -37,8 +37,6 @@ Slides work better if you open them in your device: [slides](https://tud365.shar
 ## 9:35 - Housekeeping - 10'
 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) to welcome and introduce the session
 
-TODO: add python to pre-workshop email.
-
 
 ## 9:45 - Icebreaker - photos timeline - 5'
 - Instructions for the icebreaker on [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b)
@@ -221,24 +219,26 @@ git log
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### Solution
-- Common challenges: created the `bio` inside `fall`
-- Created me.txt on Desktop. Move to folder `bio`
-- Forgot to initizalise git inside `bio`
+Common difficulties: 
+- created the `bio` inside `fall`
+- created `me.md` on Desktop. Move to folder `bio`
+- forgot to initialize git inside `bio`
+
 ```console
 cd ..                               # move out of fall folder
 mkdir bio                           # Create a new folder called bio
 cd bio                              # step into bio
 git init                            # initialise git
-nano me.txt                         # create file and add three lines
+nano me.md                         # create file and add three lines
     My name is [NAME]
     I come from [COUNTRY]
     I love to [HOBBy]
-git add me.txt                      # add file
+git add me.md                      # add file
 git commit -m "Name, origin and hobby"  # commit changes
-nano me.txt                         # add a fourth line
+nano me.md                         # add a fourth line
     I have a [FIELD] background
-git diff me.txt                     # show differences to working directory
-git add me.txt                      # stage
+git diff me.md                     # show differences to working directory
+git add me.md                      # stage
 git diff                            # no changes to working directory
 git diff --staged                   # show difference to staged area
 git commit -m "Add background"        # commit changes
@@ -323,26 +323,31 @@ git restore fall.py              # restores to latest commit
 git status                       # working tree clean
 ```
 
+## 11:10 - 2 💪 Workflow and `history` - 10'
+See `exercises.md`.
 
+#### Solution
 
-## 11:10 - 💪 Challenges `history` - 10'
+```console
+cd ~/Desktop/bio
+nano bio            
+# add line I like ketchup
+git add me.txt
+nano me.txt
+# add line `Ketchup enhances pasta`
+git commit -m "My opinions about red sauce"
+cat me.txt
+git diff
+git restore me.txt
+```
 
-TODO adapt these exercises to hands on (maybe using the same bio repository)
-Vevox question 3
->The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file data_cruncher.py. Answer 2 uses HEAD to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what HEAD means.
+The changes to the file from the second modification of `me.md` are only applied to the working copy, not the version in the staging area. The command `git add me.md` places the current version of `me.md` into the staging area.
 
-> Answer 3 gets the version of data_cruncher.py from the commit before HEAD, which is NOT what we wanted.
+So, when `git commit -m "My opinions about red sauce"` is executed, the version of `me.md` committed to the repository is the one from the staging area and has only one line.
 
-> Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files you should use git restore .
+At this time, the working copy still has the second line (and `git status` will show that the file is modified). However, `git restore me.md` replaces the working copy with the most recently committed version of `me.md`. So, `cat me.md` will output:
 
-Vevox question 4
-> The changes to the file from the second echo command are only applied to the working copy, not the version in the staging area. The command git add ketchup.md places the current version of ketchup.md into the staging area.
-
-> So, when `git commit -m "My opinions about red sauce"` is executed, the version of ketchup.md committed to the repository is the one from the staging area and has only one line.
-
-> At this time, the working copy still has the second line (and git status will show that the file is modified). However, git restore ketchup.md replaces the working copy with the most recently committed version of ketchup.md. So, cat ketchup.md will output:
-
-> `I like ketchup.`
+`I like ketchup`
 
 ## 11:20 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
@@ -374,43 +379,101 @@ touch more_plots/pluto.jpg           # once there is a file, folder is tracked. 
 rm -rf more_plots                   # changed my mind. Clean up!
 ```
 
-## 11:30 - 💪 Challenges `ignore` - 10'
+## 11:30 - 3 💪 Including Specific Files in `gitignore` - 10'
 
-TODO: turn this into a hands on. Inspiration: https://4turesearchdata-carpentries.github.io/GitCoDev/lesson1.html#ignore-untracked-directories
+See `exercises.md`.
 
-TODO: add hands on. inspiration: https://4turesearchdata-carpentries.github.io/GitCoDev/lesson1.html#marking-the-history-using-tags
-
-Vevox question 5
-> The exclamation point operator will include a previously excluded entry.
-
-Vevox question 6
-> Answer 1 will ignore only dat files named with one character.
-> Answer 2 looks promising BUT it will ignore ALL the .dat files in the repository. 
-
->Answer 3 is the correct one. If you want to ignore only the .dat files inside a specific folder then you need to specify the full folder path: `pictures/data/location/gps/*.dat` will match every file in pictures/data/location/gps that ends with .dat. The file `pictures/data/location/gps/info.txt` will not be ignored.
-
-> Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
-
-
-## 11:40 - 💪 Vevox
+#### Solution
+```console
+cd ~/Desktop/bio
+touch a.png b.png final.png
+nano .gitignore                 # add *.png
+git add .gitignore
+git commit -m "Add gitignore"
+git status --ignored
+nano .gitignore                # add !final.png
+git status --ignored
+```
+The exclamation point operator will include a previously excluded entry.
 
 
-Challenge `changes` - 10'
+## 11:40 - 💪 Vevox - 10'
 
-Vevox question 1 
-> No. Alfredo does not need to make the plots subdirectory a Git repository because the fall repository will track all files, sub-directories, and subdirectory files under the fall directory. Thus, in order to track all information about plots, Alfredo only needed to add the plots subdirectory to the fall directory.
+### Question 1: Places to Create Git Repositories
 
-> Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
+Alfredo has a local repository to store his favorite recipes. 
+Alfredo would also like to track information about desserts specifically.
+Alfredo creates a desserts project inside his recipes project with the following sequence of commands:
+```
+cd ~/Desktop    
+cd recipes      
+ls -a           
+mkdir desserts 
+cd desserts    
+git init        
+ls -a   # ensure the .git subdirectory 
+```
+Is the `git init` command, run inside the desserts subdirectory, required for tracking files stored in the desserts subdirectory?
 
-Vevox question 2
-> git commit -m "my recent changes" would only create a commit if files have already been staged
+### Answer 1
+No. Alfredo does not need to make the desserts subdirectory a Git repository because the recipes repository will track all files, sub-directories, and subdirectory files under the recipes directory. Thus, in order to track all information about desserts, Alfredo only needed to add the desserts subdirectory to the recipes directory.
 
-> git init myfile.txt | git commit -m "my recent changes" would try to create a new repository
+Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory.
 
-> git add myfile.txt | git commit -m "my recent changes" will add file.txt to the staging area and then commit the file. **This is our answer!**
+### Question 2: Committing Changes to Git
+Which command(s) below would save the changes of `myfile.txt` to my local Git repository?
+Note: the | symbol is equivalent to pressing enter in your terminal to run a second command
+### Answer 2
+`git commit -m "my recent changes"` would only create a commit if files have already been staged
 
-> git commit -m myfile.txt "my recent changes" Would try to commit a file named “my recent changes” with the message myfile.txt
+`git init myfile.txt | git commit -m "my recent changes"` would try to create a new repository
 
+`git add myfile.txt | git commit -m "my recent changes"` will add `myfile.txt` to the staging area and then commit the file. **This is our answer!**
+
+`git commit -m myfile.txt "my recent changes"` Would try to commit a file named “my recent changes” with the message `myfile.txt`
+
+### Question 3: Recovering Older Versions of a File
+
+Jennifer has made changes to the Python script that she has been working on for weeks, and the modifications she made this morning “broke” the script and it no longer runs. She has spent ~ 1hr trying to fix it, with no luck…
+
+Luckily, she has been keeping track of her project’s versions using Git! Which commands below will let her recover the last committed version of her Python script called `data_cruncher.py`?
+
+1. git restore
+2. git restore data_cruncher.py
+3. git restore -s HEAD~1 data_cruncher.py
+4. git restore -s data_cruncher.py
+5. Both 2 and 4
+
+### Answer 3
+The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what `HEAD` means.
+
+Answer 3 gets the version of `data_cruncher.py` from the commit before `HEAD,` which is NOT what we wanted.
+
+Answer 1 results in an error. You need to specify a file to restore. If you want to restore all files you should use git restore .
+
+
+### Question 4: Ignoring all data Files in a Directory
+Assuming you have an empty `.gitignore` file, and given a directory structure that looks like:
+```console
+pictures/data/location/gps/a.dat
+pictures/data/location/gps/b.dat
+pictures/data/location/gps/c.dat
+pictures/data/location/gps/info.txt
+pictures/plots
+```
+What `.gitignore` rule will ignore all `.dat` files in `pictures/data/location/gps`? Do not ignore the `info.txt`.
+1. pictures/data/location/gps/?.dat
+2. **/*.dat
+3. pictures/data/location/gps/*.dat
+4. !pictures/data/location/gps/info.txt
+
+### Answer 4
+Answer 1 will ignore only dat files named with one character.
+Answer 2 looks promising BUT it will ignore ALL the .dat files in the repository. 
+
+Answer 3 is the correct one. If you want to ignore only the .dat files inside a specific folder then you need to specify the full folder path: `pictures/data/location/gps/*.dat` will match every file in pictures/data/location/gps that ends with .dat. The file `pictures/data/location/gps/info.txt` will not be ignored.
+
+Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
 ## 11:55 - Check your SSH key - 5'
 - Why SSH key?
@@ -457,7 +520,7 @@ Let's make another change locally:
 ```console
 nano fall.py            # change gravity to 1.62 -> moon's gravity
 ```
-Let's change gravity value to that of the Moon`GRAVITY=1.62` 
+Let's change gravity value to that of the Moon `GRAVITY=1.62` 
 
 ```python
 GRAVITY = 1.62
@@ -477,7 +540,7 @@ git push origin main            # uploads the new commit. Refresh GitHub to see 
 ```
 
 
-## 13:10 - 💪  2 GitHub GUI + 3 GitHub Timestamps - 10'
+## 13:10 - 💪  4 GitHub GUI + 5 GitHub Timestamps - 10'
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### `GitHub GUI` solution:
@@ -519,29 +582,15 @@ Check the tag in GitHub (drop down menu that shows also branches)
 
 
 ## 13:30 - TU Delft FAIR software guidelines - 10'
-- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 > Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
 
-## 13:40 LAB: Getting started with Collaboration - 30'
+## 13:40 LAB: Getting started with Collaboration - 40'
 see `PRACTICAL_collaboration_exercise.md` file 
 
 
-## 14:10 - 💪 VEVOX remote Challenges `remotes` - 5'
-
-
-Vevox question 7
-> When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). Commit only updates your local repository.
-
-Vevox question 8
-1. Update local
-1. Append 100
-1. Stage changes
-1. Commit changes
-1. Update remote
-1. Celebrate
-
-## 14:15 - Key points - 10'
+## 14:20 - Key points - 5'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
