@@ -9,9 +9,9 @@
 ## 1 💪 bio Repository 
 
 - Create a new Git repository on your computer called `bio`.
-    - **Tip** remember to step out of your current `recipes` repository
+    - **Remember to step out** of your current `fall` repository
 - Write a three-line biography for yourself in a file called `me.txt`, commit your changes
-- Modify one line, add a fourth line
+- Add a fourth line (e.g. your field of research or a hobby)
 - Display the differences between its *modified* state and its original state. 
 - Stage the file and display the differences between its *staged* state and its original state.
 - Commit your changes
@@ -53,7 +53,7 @@ The staging area can hold changes from any number of files that you want to comm
 
 ## 2 💪 GitHub GUI 
 
-- Browse to your `recipes` repository on GitHub.
+- Browse to your `fall` repository on GitHub.
 - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number). You should see the history log.
 - Click on, the **three buttons** to the right of each commit.
 - What information can you gather/explore from these buttons?
