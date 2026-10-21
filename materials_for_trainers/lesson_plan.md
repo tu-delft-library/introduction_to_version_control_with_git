@@ -138,8 +138,8 @@ git status                  # not a git repository
 cd fall                     # let's go back inside the fall folder
 git status                  # yes! this is our repository
 nano fall.py                # add the skeleton of the program
-                            # explain: def defines a function, pass means 'do nothing yet'
 ```
+`def` defines a function, `pass` means 'do nothing yet' and `print` shows the output of `fall_distance` computation in the terminal
 ```python
 def fall_distance(seconds):
     pass
@@ -159,10 +159,8 @@ git log                     # project history in reverse chronological order
                             # explain hash
 nano fall.py                # implement the formula
 ```
-We'll do a simple function that computes the distance of an object free falling on earth.
-with the formula `distance = 0.5 * g * t^2`
-In python, `**` is power. We also use a constant accessible anywhere in the code `GRAVITY` which on earth is 9.81 m/s^2
-Finally, we add a line with `print` that shows the output of `fall_distance` computation.
+We'll do a simple function that computes the distance of an object free falling on earth with the formula `distance = 0.5 * g * t^2`.
+In python, `**` is power. We also use a constant accessible anywhere in the code `GRAVITY` which on earth is `9.81 m/s^2`
 
 ```python
 GRAVITY = 9.81
@@ -196,8 +194,9 @@ cat fall.py        # see contents of file
 - clarify `git diff --staged`
 ```console
 git status
-nano fall.py           # make the output readable: replace the print line
+nano fall.py
 ```
+Let's modify the `print` line to make it more readable to humans
 ```python
 GRAVITY = 9.81
 def fall_distance(seconds):
@@ -275,8 +274,9 @@ pwd                                 # should be in Desktop
 cd fall                        # step into fall repository
 git status
 git log --oneline                   # summarized view
-nano fall.py                   # introduce a typo in gravity constant (decimals swapped)
+nano fall.py                  
 ```
+Let's imagine our fingers got clumsy and we typed gravity with the decimals swapped (`9.18` instead of `9.81`)
 ```python
 GRAVITY = 9.18
 def fall_distance(seconds):
@@ -455,13 +455,15 @@ Let's make another change locally:
 ```console
 nano fall.py            # change gravity to 1.62 -> moon's gravity
 ```
+Let's change gravity value to that of the Moon`GRAVITY=1.62` 
+
 ```python
 GRAVITY = 1.62
 
 def fall_distance(seconds):
     return 0.5 * GRAVITY * seconds ** 2
 
-print("After 5 seconds the fall distance is", fall_distance(5),"m")
+print("After 5 seconds the fall distance is", fall_distance(5), "m")
 ```
 ```console
 python fall.py             # Moon gravity
@@ -498,14 +500,14 @@ git push origin main            # push changes
 git pull origin main            # explain pull from remote
 ls -a                           # local files (including the ignored files)
 cd ..                           
-rm -rf fall/               # lose repository
+rm -rf fall/                    # lose repository
 ls                              # fall directory is gone
 git status                      # make sure you are not inside a git repository
 git clone git@github.com:[username]/fall.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd fall
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
-python fall.py > output.txt  # the program still runs. We can regenerate anything that was not tracked
+python fall.py                  # the program still runs. We can regenerate anything that was not tracked
 git log --oneline               # files and history preserved. Beautiful!
                                 # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
 git tag -a formula [HASH] -m "First working version"
