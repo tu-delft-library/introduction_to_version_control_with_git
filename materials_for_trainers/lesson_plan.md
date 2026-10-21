@@ -139,7 +139,7 @@ cd fall                     # let's go back inside the fall folder
 git status                  # yes! this is our repository
 nano fall.py                # add the skeleton of the program
 ```
-`def` defines a function, `pass` means 'do nothing yet' and `print` shows the output of `fall_distance` computation in the terminal
+`def` defines a function, `pass` means **do nothing yet*. Finally, a `print` shows the output of `fall_distance` computation in the terminal. For now the computation shows `None` because we are computing *nothing yet*
 ```python
 def fall_distance(seconds):
     pass
@@ -160,7 +160,7 @@ git log                     # project history in reverse chronological order
 nano fall.py                # implement the formula
 ```
 We'll do a simple function that computes the distance of an object free falling on earth with the formula `distance = 0.5 * g * t^2`.
-In python, `**` is power. We also use a constant accessible anywhere in the code `GRAVITY` which on earth is `9.81 m/s^2`
+In python, `**` is power. We also use a constant accessible anywhere in the code `GRAVITY` which on earth is `9.81 m/s^2`.
 
 ```python
 GRAVITY = 9.81
@@ -221,8 +221,11 @@ git log
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### Solution
+- Common challenges: created the `bio` inside `fall`
+- Created me.txt on Desktop. Move to folder `bio`
+- Forgot to initizalise git inside `bio`
 ```console
-cd ..     # move out of fall folder
+cd ..                               # move out of fall folder
 mkdir bio                           # Create a new folder called bio
 cd bio                              # step into bio
 git init                            # initialise git
@@ -232,7 +235,7 @@ nano me.txt                         # create file and add three lines
     I love to [HOBBy]
 git add me.txt                      # add file
 git commit -m "Name, origin and hobby"  # commit changes
-nano me.txt                         # modify one line, add a fourth line
+nano me.txt                         # add a fourth line
     I have a [FIELD] background
 git diff me.txt                     # show differences to working directory
 git add me.txt                      # stage
@@ -246,7 +249,7 @@ git log                             # display git history
 
 ## 10:55 - git HEAD/TAG game - 5'
     HEAD 
-    - We use a physical object to represent the HEAD (a ball, a stuff animal, a fruit)
+    - We use a physical object to represent the HEAD (a ball, a fruit)
     - Teacher will call HEAD~1, HEAD~5
     - Marker of HEAD starts in one edge of the row
     - The teacher calls ‘git restore HEAD~[X]’. 
@@ -254,12 +257,11 @@ git log                             # display git history
 
     TAGS 
     - Marker of HEAD starts in one edge of the row
-    - Some people get a paper with a short hash (e.g. f22b25e, b36abfd) 
+    - Some people get a paper with a short hash (e.g. f22b25e, b36abfd) on one side and a tag on the other side (e.g. earth , moon) 
     - The teacher calls ‘git  restore [hash]’. 
         - HEAD marker is passed hand by hand until it reaches the corresponding hash. 
     - Teacher comments on how hard it is for humans to remember this hash. Enter TAGs 
-    - Some other people will get a post it with a TAG (e.g. for earth, moon) 
-    - The teacher calls ‘git  restore [tag]’. 
+    - The teacher calls ‘git restore [tag]’. 
         - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
 
 
@@ -463,7 +465,7 @@ GRAVITY = 1.62
 def fall_distance(seconds):
     return 0.5 * GRAVITY * seconds ** 2
 
-print("After 5 seconds the fall distance is", fall_distance(5), "m")
+print("After 5 seconds the fall distance is", fall_distance(5), "meters")
 ```
 ```console
 python fall.py             # Moon gravity
