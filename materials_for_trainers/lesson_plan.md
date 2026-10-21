@@ -587,7 +587,7 @@ Check the tag in GitHub (drop down menu that shows also branches)
 
 
 ## 13:40 LAB: Getting started with Collaboration - 40'
-see `PRACTICAL_collaboration_exercise.md` file 
+see `PRACTICAL_collaboration.md` file 
 
 
 ## 14:20 - Key points - 5'
