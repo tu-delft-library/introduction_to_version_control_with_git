@@ -104,14 +104,14 @@ python --version                # on Mac and Linux it may be python3 --version
 ```
 
 ## 10:05 - Initialize a local Git repository - 5'
-We use a tiny Python project with a single file `fall.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
+We use a tiny Python project with a single file `distance.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
 ```console
 cd Desktop
-mkdir fall   # create a new directory for repository
-cd fall/     # change to new directory to initialize git repo
+mkdir free_fall   # create a new directory for repository
+cd free_fall/     # change to new directory to initialize git repo
 ls              # show directory is empty
 ls -a           # show directory has no hidden folders. remind about shortcuts . and ..
 git init        # initialize git repo
@@ -130,57 +130,58 @@ ls .git         # some files and subfolders inside .git
 
 
 ```console
-cd ~/Desktop/fall           # ensure inside fall dir
+cd ~/Desktop/free_fall      # ensure inside free_fall dir
 ls                          # dir is empty
 git status                  # status of project: no commits yet!
 cd ..                       # let's compare one level up
 git status                  # not a git repository
-cd fall                     # let's go back inside the fall folder
+cd free_fall/               # let's go back inside the free_fall folder
 git status                  # yes! this is our repository
-nano fall.py                # add the skeleton of the program
+nano distance.py                # add the skeleton of the program
 ```
-`def` defines a function, `pass` means **do nothing yet*. After the function definitiion, a `print` statement shows the output of `fall_distance` computation in the terminal. For now the computation shows `None` because we are computing *nothing yet*
+A brief comment of what we want to function to do. Then two variables: `gravity` and `time`
 ```python
-def fall_distance():
-    pass
+# Distance that an object free falls during a given time
 
-print(fall_distance())
+gravity = 9.81
+time = 5
 ```
 ```
-python fall.py              # runs but prints nothing. Code is just text that python interprets
-cat fall.py                 # see content of file 
+python distance.py              # runs but prints nothing. Code is just text that python interprets
+cat distance.py                 # see content of file 
 git status                  # shows untracked file
-git add fall.py             # please track this file
+git add distance.py             # please track this file
 git status                  # new file but not committed
-git commit -m "Create initial structure for free fall calculator" 
+git commit -m "Create file for free fall distance" 
                             # -m flag + good commit messages: "this commit will..."
 git status                  # up to date
 git log                     # project history in reverse chronological order
                             # explain hash
-nano fall.py                # implement the formula
+nano distance.py                # implement the formula
 ```
-We'll do a simple function that computes the distance of an object free falling on earth with the formula `distance = 0.5 * g * t^2`.
-In python, `**` is power. We also use a constant accessible anywhere in the code `GRAVITY` which on earth is `9.81 m/s^2`.
-We need to feed a time value of in. `seconds` to the function to compute the `distance`
+This simple script will compute the distance of an object free falling on earth with the formula `distance = 0.5 * g * t^2`.
+In python, `**` is power. Gravity on earth is `9.81 m/s^2`. We'll compute the distance for `time`
 
 ```python
-GRAVITY = 9.81
-def fall_distance(seconds):
-    return 0.5 * GRAVITY * seconds ** 2
+# Distance that an object free falls during a given time
 
-print(fall_distance(5))
+gravity = 9.81
+time = 5
+
+distance = 0.5 * gravity * time ** 2
+print(distance)
 ```
 ```console
-python fall.py         # now it prints something: 122.625
-cat fall.py            # see content of file 
+python distance.py         # now it prints something: 122.625
+cat distance.py            # see content of file 
 git status                  # shows the file was modified
 git diff                    # review changes. Explain the output
-git commit -m "Implement fall distance formula" # no staged changes
-git add fall.py        # we add the file, meaning is 'ready to commit'
+git commit -m "Implement free fall distance formula" # no staged changes
+git add distance.py        # we add the file, meaning is 'ready to commit'
 git status                  # file is 'staged' -> ready to be committed
-git commit -m "Implement fall distance formula"
+git commit -m "Implement free fall distance formula"
 git log
-cat fall.py        # see contents of file
+cat distance.py        # see contents of file
 ```
 
 ## 10:20 - Working directory and staging area - 10'
@@ -195,20 +196,22 @@ cat fall.py        # see contents of file
 - clarify `git diff --staged`
 ```console
 git status
-nano fall.py
+nano distance.py
 ```
 Let's modify the `print` line to make it more readable to humans
 ```python
-GRAVITY = 9.81
-def fall_distance(seconds):
-    return 0.5 * GRAVITY * seconds ** 2
+# Distance that an object free falls during a given time
 
-print("After 5 seconds the fall distance is", fall_distance(5), "meters")
+gravity = 9.81
+time = 5
+
+distance = 0.5 * gravity * time ** 2
+print("After",time,"seconds the free fall distance on Earth is", distance, "meters")
 ```
 ```console
-python fall.py         # the program now behaves differently, not just the text
+python distance.py         # the program now behaves differently, not just the text
 git diff                    # replaced one line - with new line +
-git add fall.py
+git add distance.py
 git diff                    # no output   - diff only compares to working dir
 git diff --staged           # changes in staging area
 git status
@@ -276,53 +279,55 @@ Let's step back into our `fall` repository
 ```console
 cd ..
 pwd                                 # should be in Desktop
-cd fall                        # step into fall repository
+cd free_fall/                       # step into fall repository
 git status
 git log --oneline                   # summarized view
-nano fall.py                  
+nano distance.py                  
 ```
 Let's imagine our fingers got clumsy and we typed gravity with the decimals swapped (`9.18` instead of `9.81`)
 ```python
-GRAVITY = 9.18
-def fall_distance(seconds):
-    return 0.5 * GRAVITY * seconds ** 2
+# Distance that an object free falls during a given time
 
-print("After 5 seconds the fall distance is", fall_distance(5), "meters")
+gravity = 9.18
+time = 5
+
+distance = 0.5 * gravity * time ** 2
+print("After",time,"seconds the free fall distance on Earth is", distance, "meters")
 ```
 ```console
-python fall.py                 # 114.75 m. Looks plausible! Would you have noticed from the output alone?
-git diff HEAD fall.py          # diff of current file and most recent commit. The typo is obvious now
-git diff fall.py               # HEAD is default option for git diff
-git diff HEAD~1 fall.py        # diff between now and one commit before HEAD
-git diff HEAD~2 fall.py        # diff between now and two commits before HEAD
-git diff HEAD~3 fall.py        # fails. unknown revision
+python distance.py                 # 114.75 m. Looks plausible! Would you have noticed from the output alone?
+git diff HEAD distance.py          # diff of current file and most recent commit. The typo is obvious now
+git diff distance.py               # HEAD is default option for git diff
+git diff HEAD~1 distance.py        # diff between now and one commit before HEAD
+git diff HEAD~2 distance.py        # diff between now and two commits before HEAD
+git diff HEAD~3 distance.py        # fails. unknown revision
 git log --oneline              # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
-git show HEAD~2 fall.py        # shows changes made on that commit (rather than differences)
+git show HEAD~2 distance.py        # shows changes made on that commit (rather than differences)
 git log --oneline                   # shows short hashes
-git diff [short_hash] fall.py  # use short hash to point to a specific commit
+git diff [short_hash] distance.py  # use short hash to point to a specific commit
 git status                          # shows modified file
-cat fall.py                    # see current version
-git restore fall.py            # restores to latest commit
-cat fall.py                    # typo is gone
-python fall.py                 # correct values are back (4.905 m)
+cat distance.py                    # see current version
+git restore distance.py            # restores to latest commit
+cat distance.py                    # typo is gone
+python distance.py                 # correct values are back (4.905 m)
 git log --oneline
-git restore -s [short_hash] fall.py # -s for source
-cat fall.py                    # restored file
-python fall.py                 # we can even run the old version: crude output (1 4.905)
+git restore -s [short_hash] distance.py # -s for source
+cat distance.py                    # restored file
+python distance.py                 # we can even run the old version: crude output (1 4.905)
 git status                     # restored file is not staged!
-git restore fall.py            # overwrites working copy with last committed version
+git restore distance.py            # overwrites working copy with last committed version
 git status
-cat fall.py
+cat distance.py
 git tag -a formula [short_hash] -m "First working version" # add a tag -> easier than hash
-                                    # use the hash of "Implement fall distance formula"
+                                    # use the hash of "Implement free fall distance formula"
 git log --oneline
-git restore -s formula fall.py   # -s same as with the hash -> source
-python fall.py                   # restored file is in the working directory.
+git restore -s formula distance.py   # -s same as with the hash -> source
+python distance.py                   # restored file is in the working directory.
 git status                       # BUT restored file is not staged!
 ```
 If we wanted to make this restored version our new latest version, we would need to make a new commit with the restored changes. But for now, we just inspect it, run it and then get go back to the latest commit.
 ```console
-git restore fall.py              # restores to latest commit
+git restore distance.py              # restores to latest commit
 git status                       # working tree clean
 ```
 
@@ -504,13 +509,13 @@ If needed point to instructions in the [carpentries website](https://swcarpentry
 
 > **Let's go to GitHub**
 
-Create a new repository called `fall`
+Create a new repository called `free_fall`
 - Public
 - Empty: no README, no .gitignore, no license
 - Copy SSH link
 
 ```console
-git remote add origin git@github.com:[username]/fall.git # use SSH link
+git remote add origin git@github.com:[username]/free_fall.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
 ```
@@ -521,22 +526,23 @@ Check that the local changes are visible in GitHub.
 Let's make another change locally:
 
 ```console
-nano fall.py            # change gravity to 1.62 -> moon's gravity
+nano distance.py            # change gravity to 1.62 -> moon's gravity
 ```
-Let's change gravity value to that of the Moon `GRAVITY=1.62` 
+Let's change gravity value to that of the Moon `gravity=1.62` 
 
 ```python
-GRAVITY = 1.62
+# Distance that an object free falls during a given time
 
-def fall_distance(seconds):
-    return 0.5 * GRAVITY * seconds ** 2
+gravity = 1.62
+time = 5
 
-print("After 5 seconds the fall distance is", fall_distance(5), "meters")
+distance = 0.5 * gravity * time ** 2
+print("After",time,"seconds the free fall distance on the Moon is", distance, "meters")
 ```
 ```console
-python fall.py             # Moon gravity
+python distance.py             # Moon gravity
 git status
-git add fall.py
+git add distance.py
 git commit -m "Use Moon gravity"
 git log --oneline               # the local HEAD is one commit ahead of origin/main HEAD
 git push origin main            # uploads the new commit. Refresh GitHub to see it
@@ -568,14 +574,14 @@ git push origin main            # push changes
 git pull origin main            # explain pull from remote
 ls -a                           # local files (including the ignored files)
 cd ..                           
-rm -rf fall/                    # lose repository
-ls                              # fall directory is gone
+rm -rf free_fall/               # lose repository
+ls                              # free_fall directory is gone
 git status                      # make sure you are not inside a git repository
-git clone git@github.com:[username]/fall.git # NEW COMMAND! clone repository (copy SSH link from github)
-cd fall
+git clone git@github.com:[username]/free_fall.git # NEW COMMAND! clone repository (copy SSH link from github)
+cd free_fall/
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
-python fall.py                  # the program still runs. We can regenerate anything that was not tracked
+python distance.py                  # the program still runs. We can regenerate anything that was not tracked
 git log --oneline               # files and history preserved. Beautiful!
                                 # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
 git tag -a formula [HASH] -m "First working version"
