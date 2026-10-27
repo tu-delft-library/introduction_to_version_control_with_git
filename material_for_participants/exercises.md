@@ -9,7 +9,7 @@
 ## 1 💪 bio Repository 
 
 - Create a new Git repository on your computer called `bio`.
-    - **Remember to step out** of your current `fall` repository
+    - **Remember to step out** of your current `free_fall` repository
 - Write a three-line biography for yourself in a file called `me.md`, commit your changes
 - Add a fourth line (e.g. your field of research or a hobby)
 - Display the differences between its *modified* state and its original state. 
@@ -190,7 +190,7 @@ This will ignore all the `.csv` files, regardless of their position in the direc
 
 ## 4 💪 GitHub GUI 
 
-- Browse to your `fall` repository on GitHub.
+- Browse to your `free_fall` repository on GitHub.
 - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number). You should see the history log.
 - Click on, the **three buttons** to the right of each commit.
 - What information can you gather/explore from these buttons?
