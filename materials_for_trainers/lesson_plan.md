@@ -1,4 +1,6 @@
-## 9:00 🚀 Prepare for take off - 20'
+> Adapted from *Version Control with Git*, Software Carpentry / The Carpentries, licensed [CC-BY 4.0](https://swcarpentry.github.io/git-novice/LICENSE.html). 
+
+# 9:00 🚀 Prepare for take off - 20'
 ### Room setup
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
 - Test the microphone
