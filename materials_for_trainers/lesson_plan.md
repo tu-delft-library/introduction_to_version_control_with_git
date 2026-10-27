@@ -137,12 +137,12 @@ cd fall                     # let's go back inside the fall folder
 git status                  # yes! this is our repository
 nano fall.py                # add the skeleton of the program
 ```
-`def` defines a function, `pass` means **do nothing yet*. Finally, a `print` shows the output of `fall_distance` computation in the terminal. For now the computation shows `None` because we are computing *nothing yet*
+`def` defines a function, `pass` means **do nothing yet*. After the function definitiion, a `print` statement shows the output of `fall_distance` computation in the terminal. For now the computation shows `None` because we are computing *nothing yet*
 ```python
-def fall_distance(seconds):
+def fall_distance():
     pass
 
-print(fall_distance(5))
+print(fall_distance())
 ```
 ```
 python fall.py              # runs but prints nothing. Code is just text that python interprets
@@ -159,6 +159,7 @@ nano fall.py                # implement the formula
 ```
 We'll do a simple function that computes the distance of an object free falling on earth with the formula `distance = 0.5 * g * t^2`.
 In python, `**` is power. We also use a constant accessible anywhere in the code `GRAVITY` which on earth is `9.81 m/s^2`.
+We need to feed a time value of in. `seconds` to the function to compute the `distance`
 
 ```python
 GRAVITY = 9.81
