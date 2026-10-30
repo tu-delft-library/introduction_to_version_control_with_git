@@ -22,16 +22,14 @@ Get into pairs. Decide who will be:
 ### Cloning the shared repository (Partner One)
 
 - **Partner One** downloads a copy of **Partner A**'s repository.
-- Since **Partner One** already has a local repo named `free_fall`, clone into a **different folder** so the two don't collide
+- Since **Partner One** already has a local repo named `free_fall`, clone into a ⚠️**different folder** ⚠️ so the two don't collide
+- Replace `<owner-username>` with **Partner A**'s GitHub username.
 
 ```
 $ cd ~/Desktop
 $ git clone git@github.com:<owner-username>/free_fall.git free_fall-<owner-username>
 ```
 
-- Replace `<owner-username>` with **Partner A**'s GitHub username.
-
-> **NOTE** if you omit the destination path at the end of `git clone`, Git will clone into a folder matching the repo's name in your current directory — which may overwrite or collide with your own repo of the same name.
 
 ## PART 1: A new script
 
@@ -100,11 +98,7 @@ Check the repository's commit history with `git log --oneline`. You should now s
 
 At this point, three copies of the project are back in sync: the Owner's local repo, the Collaborator's local repo, and the copy on GitHub.
 
-### Checkpoint discussion (both partners)
 
-Before moving on, talk through this together:
-
-> **The basic collaborative workflow** is: `git pull` → make changes → `git add` → `git commit` → `git push`. Why does it matter that you pull *before* you start editing, rather than only before you push?
 
 ### Making and sharing another change (Partner A)
 
@@ -215,6 +209,11 @@ Check the repository's commit history with `git log --oneline`. You should now s
 
 Run the script on your machine too, and check that you get the same result as your partner.
 
+### Checkpoint discussion (both partners)
+
+Before moving on, talk through this together:
+
+> **The basic collaborative workflow** is: `git pull` → make changes → `git add` → `git commit` → `git push`. Why does it matter that you pull *before* you start editing, rather than only before you push?
 
 * * *
 
