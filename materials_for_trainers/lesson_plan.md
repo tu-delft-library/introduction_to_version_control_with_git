@@ -152,7 +152,7 @@ cat distance.py                 # see content of file
 git status                  # shows untracked file
 git add distance.py             # please track this file
 git status                  # new file but not committed
-git commit -m "Create file for free fall distance" 
+git commit -m "Add distance.py with variables" 
                             # -m flag + good commit messages: "this commit will..."
 git status                  # up to date
 git log                     # project history in reverse chronological order
@@ -206,7 +206,7 @@ gravity = 9.81
 time = 5
 
 distance = 0.5 * gravity * time ** 2
-print("After",time,"seconds the free fall distance on Earth is", distance, "meters")
+print("After", time,"seconds the free fall distance on Earth is", distance, "meters")
 ```
 ```console
 python distance.py         # the program now behaves differently, not just the text
@@ -215,7 +215,7 @@ git add distance.py
 git diff                    # no output   - diff only compares to working dir
 git diff --staged           # changes in staging area
 git status
-git commit -m "Make output readable" # Commit message: think why
+git commit -m "Make output human readable" # Commit message: think why
 git status
 git log
 ```
@@ -226,12 +226,12 @@ See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### Solution
 Common difficulties: 
-- created the `bio` inside `fall`
+- created the `bio` inside `free_fall`
 - created `me.md` on Desktop. Move to folder `bio`
 - forgot to initialize git inside `bio`
 
 ```console
-cd ..                               # move out of fall folder
+cd ..                               # move out of free_fall folder
 mkdir bio                           # Create a new folder called bio
 cd bio                              # step into bio
 git init                            # initialise git
@@ -263,7 +263,7 @@ git log                             # display git history
 
     TAGS 
     - Marker of HEAD starts in one edge of the row
-    - Some people get a paper with a short hash (e.g. f22b25e, b36abfd) on one side and a tag on the other side (e.g. earth , moon) 
+    - Some people get a paper with a short hash (e.g. f22b25e, b36abfd) on one side and a tag on the other side (e.g. formula , readable) 
     - The teacher calls ‘git  restore [hash]’. 
         - HEAD marker is passed hand by hand until it reaches the corresponding hash. 
     - Teacher comments on how hard it is for humans to remember this hash. Enter TAGs 
@@ -275,11 +275,11 @@ git log                             # display git history
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
-Let's step back into our `fall` repository
+Let's step back into our `free_fall` repository
 ```console
 cd ..
 pwd                                 # should be in Desktop
-cd free_fall/                       # step into fall repository
+cd free_fall/                       # step into free_fall repository
 git status
 git log --oneline                   # summarized view
 nano distance.py                  
@@ -292,7 +292,7 @@ gravity = 9.18
 time = 5
 
 distance = 0.5 * gravity * time ** 2
-print("After",time,"seconds the free fall distance on Earth is", distance, "meters")
+print("After", time, "seconds the free fall distance on Earth is", distance, "meters")
 ```
 ```console
 python distance.py                 # 114.75 m. Looks plausible! Would you have noticed from the output alone?
@@ -301,7 +301,7 @@ git diff distance.py               # HEAD is default option for git diff
 git diff HEAD~1 distance.py        # diff between now and one commit before HEAD
 git diff HEAD~2 distance.py        # diff between now and two commits before HEAD
 git diff HEAD~3 distance.py        # fails. unknown revision
-git log --oneline              # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
+git log --oneline                  # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
 git show HEAD~2 distance.py        # shows changes made on that commit (rather than differences)
 git log --oneline                   # shows short hashes
 git diff [short_hash] distance.py  # use short hash to point to a specific commit
@@ -309,12 +309,12 @@ git status                          # shows modified file
 cat distance.py                    # see current version
 git restore distance.py            # restores to latest commit
 cat distance.py                    # typo is gone
-python distance.py                 # correct values are back (4.905 m)
+python distance.py                 # correct values are back (122.625 m)
 git log --oneline
 git restore -s [short_hash] distance.py # -s for source
 cat distance.py                    # restored file
-python distance.py                 # we can even run the old version: crude output (1 4.905)
-git status                     # restored file is not staged!
+python distance.py                 # we can even run the old version: no text - 122.625
+git status                          # restored file is not staged!
 git restore distance.py            # overwrites working copy with last committed version
 git status
 cat distance.py
@@ -374,7 +374,7 @@ nano .gitignore                     # type lines below (remind . means hidden fi
 cat .gitignore                      # confirm content of .gitignore
 git status                          # no plots but yes new .gitignore file
 git add .gitignore                  # let's track this file. it won't ignore itself
-git commit -m "Ignore png files and the plots folder"
+git commit -m "Ignore png files and plots folder"
 git status                          # all clean
 ls                                  # files are in folder but not tracked by git
 git add a.png                       # if accidentally added, shows warning
@@ -537,7 +537,7 @@ gravity = 1.62
 time = 5
 
 distance = 0.5 * gravity * time ** 2
-print("After",time,"seconds the free fall distance on the Moon is", distance, "meters")
+print("After", time, "seconds the free fall distance on the Moon is", distance, "meters")
 ```
 ```console
 python distance.py             # Moon gravity
@@ -581,7 +581,7 @@ git clone git@github.com:[username]/free_fall.git # NEW COMMAND! clone repositor
 cd free_fall/
 ls
 ls -a                           # notice the difference: no .png files as they were not tracked
-python distance.py                  # the program still runs. We can regenerate anything that was not tracked
+python distance.py              # the program still runs
 git log --oneline               # files and history preserved. Beautiful!
                                 # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
 git tag -a formula [HASH] -m "First working version"
