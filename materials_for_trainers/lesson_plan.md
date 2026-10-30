@@ -201,7 +201,7 @@ Let's modify the `print` line to make it more readable to humans
 gravity = 9.81
 time = 5
 distance = 0.5 * gravity * time ** 2
-print("After", time,"seconds the free fall distance on Earth is", distance, "meters")
+print("After", time,"s the free fall distance on Earth is", distance, "m")
 ```
 ```console
 python distance.py         # the program now behaves differently, not just the text
@@ -285,7 +285,7 @@ Let's imagine our fingers got clumsy and we typed gravity with the decimals swap
 gravity = 9.18
 time = 5
 distance = 0.5 * gravity * time ** 2
-print("After", time, "seconds the free fall distance on Earth is", distance, "meters")
+print("After", time, "s the free fall distance on Earth is", distance, "m")
 ```
 ```console
 python distance.py                 # 114.75 m. Looks plausible! Would you have noticed from the output alone?
@@ -528,7 +528,7 @@ Let's change gravity value to that of the Moon `gravity=1.62`
 gravity = 1.62
 time = 5
 distance = 0.5 * gravity * time ** 2
-print("After", time, "seconds the free fall distance on the Moon is", distance, "meters")
+print("After", time, "s the free fall distance on the Moon is", distance, "m")
 ```
 ```console
 python distance.py             # Moon gravity
