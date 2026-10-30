@@ -252,7 +252,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
   These scripts have been tested under the following circumstances:
   * Earth gravity (g = 9.81 m/s^2)
   * Drop height of 10 meters
-  * Time of 5 seconds
+  * Drop time of 5 seconds
 
   [Add one more circumstance you tested, e.g. the moon gravity]
 
