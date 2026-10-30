@@ -59,7 +59,6 @@ Add a comment describing the script, the gravitational acceleration and the heig
 
 ```python
 # Time for an object to free fall from a given height
-
 gravity = 9.81
 height = 10
 ```
@@ -111,7 +110,6 @@ Add the calculation at the **end of the file**, after the line that defines `hei
 
 ```python
 import math
-
 time = math.sqrt(2 * height / gravity)
 print("An object dropped from", height, "meters reaches the ground after", time, "seconds")
 
@@ -169,7 +167,6 @@ Add a new line above `print` to compute a new variable `time_round`. Update the 
 ```python
 time_round = round(time, 2)
 print("An object dropped from", height, "meters reaches the ground after", time_round, "seconds")
-
 ```
 Save changes and exit nano.
 

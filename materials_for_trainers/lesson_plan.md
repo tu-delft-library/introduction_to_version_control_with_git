@@ -142,7 +142,6 @@ nano distance.py                # add the skeleton of the program
 A brief comment of what we want to function to do. Then two variables: `gravity` and `time`
 ```python
 # Distance that an object free falls during a given time
-
 gravity = 9.81
 time = 5
 ```
@@ -164,10 +163,8 @@ In python, `**` is power. Gravity on earth is `9.81 m/s^2`. We'll compute the di
 
 ```python
 # Distance that an object free falls during a given time
-
 gravity = 9.81
 time = 5
-
 distance = 0.5 * gravity * time ** 2
 print(distance)
 ```
@@ -201,10 +198,8 @@ nano distance.py
 Let's modify the `print` line to make it more readable to humans
 ```python
 # Distance that an object free falls during a given time
-
 gravity = 9.81
 time = 5
-
 distance = 0.5 * gravity * time ** 2
 print("After", time,"seconds the free fall distance on Earth is", distance, "meters")
 ```
@@ -287,10 +282,8 @@ nano distance.py
 Let's imagine our fingers got clumsy and we typed gravity with the decimals swapped (`9.18` instead of `9.81`)
 ```python
 # Distance that an object free falls during a given time
-
 gravity = 9.18
 time = 5
-
 distance = 0.5 * gravity * time ** 2
 print("After", time, "seconds the free fall distance on Earth is", distance, "meters")
 ```
@@ -532,10 +525,8 @@ Let's change gravity value to that of the Moon `gravity=1.62`
 
 ```python
 # Distance that an object free falls during a given time
-
 gravity = 1.62
 time = 5
-
 distance = 0.5 * gravity * time ** 2
 print("After", time, "seconds the free fall distance on the Moon is", distance, "meters")
 ```
