@@ -243,7 +243,9 @@ Make these changes as **Partner One** contribution, following the same workflow 
   ## Description
   I often found myself rewriting the same free fall calculation over and over again. Sometimes I got the formula right. Sometimes I forgot a factor of 2.
 
-  So I decided to start a collection of small scripts for my future-self.
+  This collection includes:
+  - `distance.py` computes [complete this sentence]
+  - `time.py` computes [complete this sentence]
 
   These scripts have been tested under the following circumstances:
   * Earth gravity (g = 9.81 m/s^2)
