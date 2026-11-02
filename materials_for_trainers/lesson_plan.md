@@ -531,7 +531,7 @@ distance = 0.5 * gravity * time ** 2
 print("After", time, "s the free fall distance on the Moon is", distance, "m")
 ```
 ```console
-python distance.py             # Moon gravity
+python distance.py             # Moon gravity: 20.25m
 git status
 git add distance.py
 git commit -m "Use Moon gravity"
