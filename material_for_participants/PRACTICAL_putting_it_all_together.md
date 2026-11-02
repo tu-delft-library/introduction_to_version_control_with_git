@@ -26,36 +26,36 @@ If something is off (the folder is missing, or the repo is a mess), jump to **�
 
 ## Working directory → staging → history
 
-- Create `energy.py` in `nano` and add:
+- Create `velocity.py` in `nano` and add:
     - a comment describing the purpose of the script
-    - the mass of an object in kilograms
-    - the velocity in meters per second
+    - the gravitational acceleration in meters per second squared
+    - the time in seconds
 ```
-# Kinetic energy in Joules given mass and velocity
-mass = 2.0
-velocity = 5.0
+# Final velocity of a free falling object after given time
+gravity = 9.81
+time = 2.0
 ```
-- Check `status`, then stage and commit it with the message `Add energy.py with mass and velocity`
-- Open `energy.py` in `nano` and add:
-    - a third line with the kinetic energy formula
-    - a fourth line that prints the result
+- Check `status`, then stage and commit it with the message `Add velocity.py with gravity and time`
+- Open `velocity.py` in `nano` and add:
+    - a fourth line with the final velocity formula (v = g * t)
+    - a fifth line that prints the result
 ```
-kinetic_energy = 0.5 * mass * velocity ** 2
-print(kinetic_energy)
+velocity = gravity * time
+print(velocity)
 ```
-- Run the script. The kinetic energy should be 25.0.
+- Run the script. The velocity should be 19.62.
 - Run `diff` to see the *unstaged* changes
 - Stage the file
 - Run `diff` again. Notice it shows nothing (all staged changes are compared differently, use `diff --staged`)
-- Commit with the message `Implement kinetic energy formula`
-- Open `energy.py` in `nano` and change the fourth line to be more human readable
+- Commit with the message `Implement final velocity formula`
+- Open `velocity.py` in `nano` and change the fifth line to be more human readable
 ```
-print("The kinetic energy of an object with mass", mass ,"k and velocity", velocity, "m/s is", kinetic_energy,"J")
+print("After", time, "s a free falling object reaches", velocity, "m/s")
 ```
-> ⚠️ **Watch out:** Make sure there are not double quotes `"` between the variables  (mass, velocity, kinetic_energy) and the commas `,`
+> ⚠️ **Watch out:** Make sure there are not double quotes `"` between the variables (time, velocity) and the commas `,`
 - Run `diff` to see the *unstaged* changes
 - Stage and commit with the message `Show result in human readable format`
-- Run the script. The result should show human friendly text around the number 25.0
+- Run the script. The result should show human friendly text around the number `19.62`.
 
 You should now have 3 new commits. Run `git log --oneline` to confirm.
 
@@ -73,16 +73,16 @@ You should now have 3 new commits. Run `git log --oneline` to confirm.
 - Run `status` to make sure there are changes in your working directory
 - Look at your history with `log --oneline`
 - Use `show HEAD` to view the previous commit
-- Deliberately break the file: open `energy.py` in nano, delete the second line (definition of mass)
+- Deliberately break the file: open `velocity.py` in nano, delete the second line (definition of gravity)
 - Run the script and notice that Python gives an error.
 - Run `diff` to see the *unstaged* changes
 - Use `restore` to bring back the last **committed** version (discard your uncommitted edit)
-- Run the script. The script should print the whole human readable sentence `The kinetic energy ...` like it did before.
-- Now go back further: restore `energy.py` as it existed at `HEAD~1` into your working directory
-- Run the script. The script should only show the number `25.0` no text around it.
+- Run the script. The script should print the whole human readable sentence `After 2.0 s a free falling ...` like it did before.
+- Now go back further: restore `velocity.py` as it existed at `HEAD~1` into your working directory
+- Run the script. The script should only show the number `19.62` no text around it.
 - Run `diff` to see the *unstaged* changes
 - Actually, we prefer the human readable version. Restore back to the latest version.
-- Run the script. The script should print the whole human readable sentence `The kinetic energy ...` like it did before.
+- Run the script. The script should print the whole human readable sentence `After 2.0 s a free falling ...` like it did before.
 
 <details>
 <summary>🔍 Click here for hints! </summary>
@@ -121,16 +121,16 @@ We will soon produce files that should not be tracked: log files and raw data.
 Your GitHub repository already exists, so we only need to send the new commits.
 
 - Push your commits to `origin`
-- Refresh the GitHub page and confirm that `energy.py` and all 4 new commits made it across
+- Refresh the GitHub page and confirm that `velocity.py` and all 4 new commits made it across
 - Run `git status` and confirm that your branch is up to date with `origin/main`
 
-You are done! Your history should now look like this (hashes will differ, and you will have more commits from yesterday below):
+You are done! Your history should now look like this (hashes will differ, and you will have more commits from the workshop below):
 
 ```
 xxxxxxx (HEAD -> main, origin/main) Ignore log and data files
 xxxxxxx Show result in human readable format
-xxxxxxx Implement kinetic energy formula
-xxxxxxx Add energy.py with mass and velocity
+xxxxxxx Implement final velocity formula
+xxxxxxx Add velocity.py with gravity and time
 ...
 ```
 <details>
@@ -239,16 +239,6 @@ echo "time = math.sqrt(2 * height / gravity)" >> time.py
 echo 'print("An object dropped from", height, "m reaches the ground after", time, "s")' >> time.py
 git add time.py
 git commit -m "Add free fall time calculation"
-echo "# Time for an object to free fall from a given height" > time.py
-echo "gravity = 9.81" >> time.py
-echo "height = 10" >> time.py
-git add time.py
-git commit -m "Add constants for free fall time"
-echo "import math" >> time.py
-echo "time = math.sqrt(2 * height / gravity)" >> time.py
-echo 'print("An object dropped from", height, "m reaches the ground after", time, "s")' >> time.py
-git add time.py
-git commit -m "Add free fall time calculation"
 sed -i 's/time,/time_round,/g' time.py
 sed -i '/^print/i time_round = round(time, 2)' time.py
 git add time.py
@@ -256,63 +246,9 @@ git commit -m "More readable rounded time value"
 touch README.md LICENSE
 git add README.md LICENSE
 git commit -m "Add README and LICENSE"
-
 ```
 </details>
 
-
-
-## ⚠️Solution to solve this PRACTICAL ⚠️
-
-
-<details>
-<summary>🔍 MacOS/Linux </summary>
-
-```
-cd ~/Desktop/free_fall
-echo "# Kinetic energy in Joules given mass and velocity" > energy.py
-echo "mass = 2.0" >> energy.py
-echo "velocity = 5.0" >> energy.py
-git add energy.py
-git commit -m "Add energy.py with mass and velocity"
-echo "kinetic_energy = 0.5 * mass * velocity ** 2" >> energy.py
-echo "print(kinetic_energy)" >> energy.py
-git add energy.py
-git commit -m "Implement kinetic energy formula"
-git tag -a formula HEAD -m "First working version"
-sed -i '' 's|print(kinetic_energy)|print("The kinetic energy of an object with mass", mass, "k and velocity", velocity, "m/s is", kinetic_energy, "J")|g' energy.py
-git add energy.py
-git commit -m "Show result in human readable format"
-echo "*.log" > .gitignore
-echo "data/" >> .gitignore
-git add .gitignore
-git commit -m "Ignore log and data files"
-```
-</details>
-
-<details>
-<summary>🔍 Windows Git bash </summary>
-
-```
-echo "# Kinetic energy in Joules given mass and velocity" > energy.py
-echo "mass = 2.0" >> energy.py
-echo "velocity = 5.0" >> energy.py
-git add energy.py
-git commit -m "Add energy.py with mass and velocity"
-echo "kinetic_energy = 0.5 * mass * velocity ** 2" >> energy.py
-echo "print(kinetic_energy)" >> energy.py
-git add energy.py
-git commit -m "Implement kinetic energy formula"
-git tag -a formula HEAD -m "First working version"
-sed -i 's|print(kinetic_energy)|print("The kinetic energy of an object with mass", mass, "k and velocity", velocity, "m/s is", kinetic_energy, "J")|g' energy.py
-git add energy.py
-git commit -m "Show result in human readable format"
-echo "*.log" > .gitignore
-echo "data/" >> .gitignore
-git add .gitignore
-git commit -m "Ignore log and data files"
-```
-</details>
 
 The above script should generate a local repository with a commit history. But you still need to add the remote repository:
 
@@ -330,4 +266,62 @@ git remote -v
 git push origin main
 ```
 
+- Refresh the GitHub page and confirm every file and all commits made it across.
+
+
+## ⚠️Solution to solve this PRACTICAL ⚠️
+
+
+<details>
+<summary>🔍 MacOS/Linux </summary>
+
+```
+cd ~/Desktop/free_fall
+echo "# Final velocity of a free falling object after given time" > velocity.py
+echo "gravity = 9.81" >> velocity.py
+echo "time = 2.0" >> velocity.py
+git add velocity.py
+git commit -m "Add velocity.py with gravity and time"
+echo "velocity = gravity * time" >> velocity.py
+echo "print(velocity)" >> velocity.py
+git add velocity.py
+git commit -m "Implement final velocity formula"
+sed -i '' 's|print(velocity)|print("After", time, "s a free falling object reaches", velocity, "m/s")|g' velocity.py
+git add velocity.py
+git commit -m "Show result in human readable format"
+echo "*.log" >> .gitignore
+echo "data/" >> .gitignore
+git add .gitignore
+git commit -m "Ignore log and data files"
+```
+</details>
+
+<details>
+<summary>🔍 Windows Git bash </summary>
+
+```
+cd ~/Desktop/free_fall
+echo "# Final velocity of a free falling object after given time" > velocity.py
+echo "gravity = 9.81" >> velocity.py
+echo "time = 2.0" >> velocity.py
+git add velocity.py
+git commit -m "Add velocity.py with gravity and time"
+echo "velocity = gravity * time" >> velocity.py
+echo "print(velocity)" >> velocity.py
+git add velocity.py
+git commit -m "Implement final velocity formula"
+sed -i 's|print(velocity)|print("After", time, "s a free falling object reaches", velocity, "m/s")|g' velocity.py
+git add velocity.py
+git commit -m "Show result in human readable format"
+echo "*.log" >> .gitignore
+echo "data/" >> .gitignore
+git add .gitignore
+git commit -m "Ignore log and data files"
+```
+</details>
+
+- Push your local changes to remote
+```
+git push origin main
+```
 - Refresh the GitHub page and confirm every file and all commits made it across.
