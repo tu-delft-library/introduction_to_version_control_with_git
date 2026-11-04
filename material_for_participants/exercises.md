@@ -145,7 +145,7 @@ nothing to commit, working tree clean
 </details>
 
 
-### 🚀 Optional challenge `gitignore`: The Order of Rules
+## 4 💪 The Order of Rules
 - Open `.gitignore` in nano
 - Add a new line `!*.png`
 - Check that the contents of `.gitignore` look like this
@@ -188,7 +188,34 @@ This will ignore all the `.csv` files, regardless of their position in the direc
 </details>
 
 
-## 4 💪 GitHub GUI 
+
+## 5 💪 Undoing the Latest Commit
+
+Make a mistake on purpose, then undo it safely.
+
+There are two ways to do this. 
+1. Hard reset: means deleting the last commit from history. This modifies your commit history as if the commit never happened.
+2. Revert: It is like an "undo" operation. It applies the reverse operation from the latest commit (removes what was added, and/or adds what was removed).
+
+### Hard reset:
+
+TODO
+
+### Reversing:
+- Delete the line `distance = 0.5 * gravity * time ** 2` from `distance.py`
+- Run `python distance.py` — what happens?
+- Stage `distance.py` and commit with the message `oops: accidentally deleted the formula`
+- Undo the commit using `git revert --no-edit HEAD`
+- Run `python distance.py` again — does it work now?
+- View the commit graph for all branches
+
+> Reversing a commit this way is safe when you've already pushed to remote. If you haven't pushed yet, a hard reset to the previous commit removes the commit entirely.
+
+
+## 6 💪 Amending history
+
+
+## 7 💪 GitHub GUI 
 
 - Browse to your `free_fall` repository on GitHub.
 - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number). You should see the history log.
@@ -197,7 +224,7 @@ This will ignore all the `.csv` files, regardless of their position in the direc
 - How would you get that same information in the shell? 
 
 
-## 5 💪 GitHub Timestamps 
+## 8 💪 GitHub Timestamps 
 
 - Go to the repo you just created on GitHub and check the timestamps of the files.  
 - How does GitHub record times, and why?  

@@ -40,13 +40,13 @@ Slides work better if you open them in your device: [slides](https://tud365.shar
 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) to welcome and introduce the session
 
 
-## 9:45 - Icebreaker - photos timeline - 5'
+## 9:45 - Icebreaker - photos timeline - 10'
 - Instructions for the icebreaker on [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b)
 - This icebreaker is a good bridge to talk about git as time travel tool
 
 > **REMEMBER TO START AUTOPUSH** instructions above 
 
-## 9:50 - Introduction to version control - 10'
+## 9:55 - Introduction to version control - 10'
 - 🎦 introduce git using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - What is version control and why should I use it?
   - Do it for your future self
@@ -55,7 +55,7 @@ Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gede
 - What is a git repo: 
     - folder with files + subfolders + `.git` hidden folder
 
-## 10:00 - Setting up git - 5'
+## 10:05 - Setting up git - 5'
 
 - Open a bash terminal:
     - Windows: Open *Git Bash* from the Windows start menu
@@ -103,7 +103,7 @@ And finally, let's check python
 python --version                # on Mac and Linux it may be python3 --version
 ```
 
-## 10:05 - Initialize a local Git repository - 5'
+## 10:10 - Initialize a local Git repository - 5'
 We use a tiny Python project with a single file `distance.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
@@ -121,7 +121,7 @@ ls -aF          # .git is a special subfolder. DO NOT TOUCH THIS
 ls .git         # some files and subfolders inside .git
 ```
 
-## 10:10 - “add → commit” cycles - 10'
+## 10:15 - “add → commit” cycles - 10'
 - Commands: `status, add, commit, log, diff`
 - Important: 
     - We will work with a small Python program in this course (a free fall calculator)
@@ -181,7 +181,7 @@ git log
 cat distance.py        # see contents of file
 ```
 
-## 10:20 - Working directory and staging area - 10'
+## 10:25 - Working directory and staging area - 10'
 > **NOTE** there might be confusion about staging area and working tree. Let's use slides to clarify this
 - 🎦 clarify staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 - Working directory -> staging area -> commit history (database)
@@ -215,7 +215,7 @@ git status
 git log
 ```
 
-## 10:30 - 1 💪 `bio Repository`  - 10'
+## 10:35 - 1 💪 `bio Repository`  - 10'
 
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
@@ -245,10 +245,10 @@ git diff --staged                   # show difference to staged area
 git commit -m "Add background"        # commit changes
 git log                             # display git history
 ```
-## 10:40 - Break - 15'
+## 10:45 - Break - 15'
 
 
-## 10:55 - git HEAD/TAG game - 5'
+## 11:00 - git HEAD/TAG game - 5'
     HEAD 
     - We use a physical object to represent the HEAD (a ball, a fruit)
     - Teacher will call HEAD~1, HEAD~5
@@ -266,7 +266,7 @@ git log                             # display git history
         - HEAD marker is passed hand by hand until it reaches the corresponding tag. 
 
 
-## 11:00 - Git history - 10'
+## 11:05 - Git history - 10'
 - Commands: `HEAD, HEAD~1, HEAD~2, log --oneline, show, restore, tag`
 - HEAD is the *most recent commit*
 
@@ -324,7 +324,7 @@ git restore distance.py              # restores to latest commit
 git status                       # working tree clean
 ```
 
-## 11:10 - 2 💪 Workflow and `history` - 10'
+## 11:15 - 2 💪 Workflow and `history` - 10'
 See `exercises.md`.
 
 #### Solution
@@ -350,7 +350,7 @@ At this time, the working copy still has the second line (and `git status` will 
 
 `I like ketchup`
 
-## 11:20 - Git ignore - 10'
+## 11:25 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
 
 ```console
@@ -380,11 +380,11 @@ touch more_plots/pluto.jpg           # once there is a file, folder is tracked. 
 rm -rf more_plots                   # changed my mind. Clean up!
 ```
 
-## 11:30 - 3 💪 Including Specific Files in `gitignore` - 10'
+## 11:35 - 3 - 4 💪 `gitignore` - 10'
 
-See `exercises.md`.
+Work on `exercises.md` 3 💪 Including Specific Files in `gitignore` and 4 💪 The Order of Rules
 
-#### Solution
+#### Solution 3
 ```console
 cd ~/Desktop/bio
 touch a.png b.png final.png
@@ -397,8 +397,137 @@ git status --ignored
 ```
 The exclamation point operator will include a previously excluded entry.
 
+#### Solution 4
 
-## 11:40 - 💪 Vevox - 10'
+TODO
+
+## 11:45 - Break - 15'
+
+## 12:00 - Modifying history - 10'
+TODO
+
+reset, reserve and amend
+
+## 12:10 - 5 - 6 💪 modifying history - 15'
+
+TODO
+
+## 12:25 - Check your SSH key - 5'
+- Why SSH key?
+    - go though the option of writing password everytime
+    - we can bypass this by adding a key
+    - tells github that is safe to communicate with your machine
+
+```console
+ssh -T git@github.com           # test the connection
+```
+You should see a message like
+```
+Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
+```
+If not, put your red sticky up and we'll help you.
+If needed point to instructions in the [carpentries website](https://swcarpentry.github.io/git-novice/07-github.html#create-an-ssh-key-pair)
+
+## 12:30 - Lunch break - 60'
+
+## 13:30 - Create remote repository - 10'
+- 🎦 continue mailing letter analogy to introduce remote repositories with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+- Explain push vs commit: 
+    - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
+    - Commit only updates your local repository.
+
+> **Let's go to GitHub**
+
+Create a new repository called `free_fall`
+- Public
+- Empty: no README, no .gitignore, no license
+- Copy SSH link
+
+```console
+git remote add origin git@github.com:[username]/free_fall.git # use SSH link
+git remote -v                                               # -v for verbose
+git push origin main            # explain push vs commit
+```
+Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy. `origin` is just a name. It is the convention everyone uses, so it is good to stick to it.
+
+Check that the local changes are visible in GitHub.
+
+Let's make another change locally:
+
+```console
+nano distance.py            # change gravity to 1.62 -> moon's gravity
+```
+Let's change gravity value to that of the Moon `gravity=1.62` 
+
+```python
+# Distance that an object free falls during a given time
+gravity = 1.62
+time = 5
+distance = 0.5 * gravity * time ** 2
+print("After", time, "s the free fall distance on the Moon is", distance, "m")
+```
+```console
+python distance.py             # Moon gravity: 20.25m
+git status
+git add distance.py
+git commit -m "Use Moon gravity"
+git log --oneline               # the local HEAD is one commit ahead of origin/main HEAD
+git push origin main            # uploads the new commit. Refresh GitHub to see it
+```
+
+
+## 13:40 - 💪  4 GitHub GUI + 5 GitHub Timestamps - 10'
+See `exercises.md`. There is an optional challenge under each numbered exercise.
+
+#### `GitHub GUI` solution:
+
+When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
+
+The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit to the clipboard. In the shell, git log will show you the full commit identifier for each commit.
+
+The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we’d need to checkout the repository at that particular time. We can do this with git checkout ID where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+
+#### `GitHub Timestamps` solution:
+
+GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+
+## 13:50 - Pulling a fresh copy of repo - 10'
+
+Experience loosing your local repo and getting your code back from remote:
+
+```console
+git status                      # ensure no uncommitted changes
+git push origin main            # push changes
+git pull origin main            # explain pull from remote
+ls -a                           # local files (including the ignored files)
+cd ..                           
+rm -rf free_fall/               # lose repository
+ls                              # free_fall directory is gone
+git status                      # make sure you are not inside a git repository
+git clone git@github.com:[username]/free_fall.git # NEW COMMAND! clone repository (copy SSH link from github)
+cd free_fall/
+ls
+ls -a                           # notice the difference: no .png files as they were not tracked
+python distance.py              # the program still runs
+git log --oneline               # files and history preserved. Beautiful!
+                                # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
+git tag -a formula [HASH] -m "First working version"
+git push --tags
+```
+Check the tag in GitHub (drop down menu that shows also branches)
+
+
+## 14:00 - TU Delft FAIR software guidelines - 10'
+🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+> Remember to talk about the most common licenses: MIT, Creative Commons, Apache
+
+
+## 14:10 LAB: Getting started with Collaboration - 30'
+see `PRACTICAL_collaboration.md` file 
+
+
+
+## 14:40 - 💪 Vevox - 15'
 
 ### Question 1: Places to Create Git Repositories
 
@@ -476,121 +605,13 @@ Answer 3 is the correct one. If you want to ignore only the .dat files inside a 
 
 Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
-## 11:55 - Check your SSH key - 5'
-- Why SSH key?
-    - go though the option of writing password everytime
-    - we can bypass this by adding a key
-    - tells github that is safe to communicate with your machine
 
-```console
-ssh -T git@github.com           # test the connection
-```
-You should see a message like
-```
-Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
-```
-If not, put your red sticky up and we'll help you.
-If needed point to instructions in the [carpentries website](https://swcarpentry.github.io/git-novice/07-github.html#create-an-ssh-key-pair)
-
-## 12:00 - Lunch break - 60'
-
-## 13:00 - Create remote repository - 10'
-- 🎦 continue mailing letter analogy to introduce remote repositories with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-- Explain push vs commit: 
-    - When we push changes, we’re interacting with a remote repository to update it with the changes we’ve made locally (often this corresponds to sharing the changes we’ve made with others). 
-    - Commit only updates your local repository.
-
-> **Let's go to GitHub**
-
-Create a new repository called `free_fall`
-- Public
-- Empty: no README, no .gitignore, no license
-- Copy SSH link
-
-```console
-git remote add origin git@github.com:[username]/free_fall.git # use SSH link
-git remote -v                                               # -v for verbose
-git push origin main            # explain push vs commit
-```
-Git automatically names that source `origin`. So `origin` = "the remote I cloned this from," which is usually your own copy. `origin` is just a name. It is the convention everyone uses, so it is good to stick to it.
-
-Check that the local changes are visible in GitHub.
-
-Let's make another change locally:
-
-```console
-nano distance.py            # change gravity to 1.62 -> moon's gravity
-```
-Let's change gravity value to that of the Moon `gravity=1.62` 
-
-```python
-# Distance that an object free falls during a given time
-gravity = 1.62
-time = 5
-distance = 0.5 * gravity * time ** 2
-print("After", time, "s the free fall distance on the Moon is", distance, "m")
-```
-```console
-python distance.py             # Moon gravity: 20.25m
-git status
-git add distance.py
-git commit -m "Use Moon gravity"
-git log --oneline               # the local HEAD is one commit ahead of origin/main HEAD
-git push origin main            # uploads the new commit. Refresh GitHub to see it
-```
+### Answer 5
+TODO
+Add question about reset/amend
 
 
-## 13:10 - 💪  4 GitHub GUI + 5 GitHub Timestamps - 10'
-See `exercises.md`. There is an optional challenge under each numbered exercise.
-
-#### `GitHub GUI` solution:
-
-When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
-
-The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit to the clipboard. In the shell, git log will show you the full commit identifier for each commit.
-
-The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we’d need to checkout the repository at that particular time. We can do this with git checkout ID where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
-
-#### `GitHub Timestamps` solution:
-
-GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
-
-## 13:20 - Pulling a fresh copy of repo - 10'
-
-Experience loosing your local repo and getting your code back from remote:
-
-```console
-git status                      # ensure no uncommitted changes
-git push origin main            # push changes
-git pull origin main            # explain pull from remote
-ls -a                           # local files (including the ignored files)
-cd ..                           
-rm -rf free_fall/               # lose repository
-ls                              # free_fall directory is gone
-git status                      # make sure you are not inside a git repository
-git clone git@github.com:[username]/free_fall.git # NEW COMMAND! clone repository (copy SSH link from github)
-cd free_fall/
-ls
-ls -a                           # notice the difference: no .png files as they were not tracked
-python distance.py              # the program still runs
-git log --oneline               # files and history preserved. Beautiful!
-                                # noticed that the tags are missing! If you want to preserve your tags you need to explicitly push them
-git tag -a formula [HASH] -m "First working version"
-git push --tags
-```
-Check the tag in GitHub (drop down menu that shows also branches)
-
-
-## 13:30 - TU Delft FAIR software guidelines - 10'
-🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-> Remember to talk about the most common licenses: MIT, Creative Commons, Apache
-
-
-## 13:40 LAB: Getting started with Collaboration - 40'
-see `PRACTICAL_collaboration.md` file 
-
-
-## 14:20 - Key points - 5'
+## 14:55 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -608,6 +629,6 @@ git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
 
-## 14:25 - Home assignment - 5'
+## 15:05 - Home assignment - 5'
 At home, go through the exercise in `PRACTICAL_putting_it_all_together.md` file. It should take less than 1 hour to finish it.
 
