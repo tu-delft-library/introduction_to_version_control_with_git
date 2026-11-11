@@ -380,7 +380,7 @@ touch more_plots/pluto.jpg           # once there is a file, folder is tracked. 
 rm -rf more_plots                   # changed my mind. Clean up!
 ```
 
-## 11:35 - 3 - 4 💪 `gitignore` - 10'
+## 11:35 - 3 💪 `gitignore` - 10'
 
 Work on `exercises.md` 3 💪 Including Specific Files in `gitignore` and 4 💪 The Order of Rules
 
@@ -397,9 +397,17 @@ git status --ignored
 ```
 The exclamation point operator will include a previously excluded entry.
 
-#### Solution 4
 
-TODO
+```console
+nano .gitignore                 # add !*.png
+git add .gitignore
+git status --ignored
+nano .gitignore                # add !final.png
+git status --ignored
+```
+
+
+The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.png` entry negates all of the previous `.png` files in the `.gitignore`, none of them will be ignored, and all `.png` files will be tracked.
 
 ## 11:45 - Break - 15'
 
@@ -408,7 +416,7 @@ TODO
 
 reset, reserve and amend
 
-## 12:10 - 5 - 6 💪 modifying history - 15'
+## 12:10 - 4 - 5 💪 Modifying history - 15'
 
 TODO
 
@@ -476,7 +484,7 @@ git push origin main            # uploads the new commit. Refresh GitHub to see 
 ```
 
 
-## 13:40 - 💪  4 GitHub GUI + 5 GitHub Timestamps - 10'
+## 13:40 - 💪  6 GitHub GUI + 7 GitHub Timestamps - 10'
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### `GitHub GUI` solution:
@@ -605,10 +613,6 @@ Answer 3 is the correct one. If you want to ignore only the .dat files inside a 
 
 Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
-
-### Answer 5
-TODO
-Add question about reset/amend
 
 
 ## 14:55 - Key points - 10'

@@ -131,38 +131,30 @@ nothing to commit, working tree clean
 - Add a line to ignore all the `png` files in your repository
 - Stage and commit `.gitignore`
 - Check the status of all files (including the ignored ones)
+- Open `.gitignore` in nano
 - Add a line afterwards to ask Git to track the file `final.png`
 - Check the status of all files (including the ignored ones) 
+  - Note that the file `final.png` is listed under `Untracked files`
+- Add a new line `!*.png`
+- Check that the contents of `.gitignore` look like this
+  ```console
+  *.png
+  !final.png
+  !*.png
+  ```
+- Check the status of all files (including the ignored ones)
+  - Note that all `png` files are now listed under `Untracked files`
+- Reflect: what is the effect of the last line `!*.png` on the ignore operation?
 
 <details>
 <summary>🔍 Click here for hints! </summary>
 
-- To open a (new) file for editing use `nano name_of_file`
 - Use the wildcard `*.extension` to ignore all the files of type `extension`
 - Find out what `!` (the exclamation point operator) does in a `.gitignore` file
 - To see the status of all files (including ignored ones) use `git status --ignored`
 
 </details>
 
-
-## 4 💪 The Order of Rules
-- Open `.gitignore` in nano
-- Add a new line `!*.png`
-- Check that the contents of `.gitignore` look like this
-```console
-*.png
-!final.png
-!*.png
-```
-- Check the status of all files (including the ignored ones)
-- Reflect: what is the effect of the last line `!*.png` on the ignore operation?
-
-<details>
-<summary>🔍 Click here to see the solution! </summary>
-
-The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.png` entry negates all of the previous `.png` files in the `.gitignore`, none of them will be ignored, and all `.png` files will be tracked.
-
-</details>
 
 ### 🚀 Optional challenge `gitignore`:  Ignoring all data Files in the repository
 Let us assume you have many `.csv` files in different subdirectories of your repository. For example, you might have:
@@ -189,7 +181,7 @@ This will ignore all the `.csv` files, regardless of their position in the direc
 
 
 
-## 5 💪 Undoing the Latest Commit
+## 4 💪 Undoing the Latest Commit
 
 Make a mistake on purpose, then undo it safely.
 
@@ -212,10 +204,10 @@ TODO
 > Reversing a commit this way is safe when you've already pushed to remote. If you haven't pushed yet, a hard reset to the previous commit removes the commit entirely.
 
 
-## 6 💪 Amending history
+## 5 💪 Amending history
 
-
-## 7 💪 GitHub GUI 
+TODO 
+## 6 💪 GitHub GUI 
 
 - Browse to your `free_fall` repository on GitHub.
 - Under the Code tab, find and click on the text that says “XX commits” (where “XX” is some number). You should see the history log.
@@ -224,7 +216,7 @@ TODO
 - How would you get that same information in the shell? 
 
 
-## 8 💪 GitHub Timestamps 
+## 7 💪 GitHub Timestamps 
 
 - Go to the repo you just created on GitHub and check the timestamps of the files.  
 - How does GitHub record times, and why?  
