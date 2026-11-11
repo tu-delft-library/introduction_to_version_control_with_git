@@ -96,25 +96,42 @@ You should now have 3 new commits. Run `git log --oneline` to confirm.
 We will soon produce files that should not be tracked: log files and raw data.
 
 - Run `status` to make sure there are changes in your working directory
-- Create a new empty file named `debug.log`
+- Create two new empty files named `debug.log` and `time.log`
 - Make a new directory named `data`
 - Inside the directory `data` add two files: `raw.csv` and `output.csv`
 - Run `status` and notice that Git wants to track them
-- Open your `.gitignore` file  with nano (it already exists from the in person session)
+- Open your `.gitignore` file with nano (it already exists from the in person session)
 - Add a rule at the bottom to ignore all `log` files
-- Add a rule at the bottom to ignore everything inside `data/`
-- Confirm with `status` that the `log` and `data` files are ignored (only `.gitignore` should be listed as modified)
-- Stage and commit the `.gitignore` file with the message `Ignore log and data files`
+- Confirm with `status` that the `log` files are ignored (only `.gitignore` should be listed as modified)
+- Stage and commit the `.gitignore` file with the message `Ignore log files`
 
 <details>
 <summary>🔍 Click here for hints! </summary>
 
-- To create an empty file use `touch name_of_file`
 - To create a new folder use `mkdir name_of_folder`
+- To create empty files use `touch name_of_file name_of_another_file`
 - Use the wildcard `*.extension` to indicate all files with a specific extension (e.g. csv, log, png, pdf)
-- Use wildcard `name_of_directory/` to indicate all files inside a directory
 - To check the status of the local git repo use `git status`
 </details>
+
+## Modify history
+
+We forgot to add the ignore rule for `data` files! Let's correct that and amend the history
+
+- Open your `.gitignore` file in nano 
+- Add a rule at the bottom to ignore everything inside `data/`
+- Confirm with `status` that the `data` files are ignored (only `.gitignore` should be listed as modified)
+- Stage `.gitignore` file 
+- **Amend** the previous commit:
+    - Execute the commit command with the `--amend` flag and a new message  `Ignore log and data files`
+
+<details> <summary>🔍 Click here for hints! </summary>
+
+- Use wildcard `name_of_directory/` to indicate all files inside a directory
+- To amend a previous commit use `git commit --amend -m "New message"`
+
+</details>
+
 
 ## Push to the remote
 
@@ -124,7 +141,7 @@ Your GitHub repository already exists, so we only need to send the new commits.
 - Refresh the GitHub page and confirm that `velocity.py` and all 4 new commits made it across
 - Run `git status` and confirm that your branch is up to date with `origin/main`
 
-You are done! Your history should now look like this (hashes will differ, and you will have more commits from the workshop below):
+You are done! Your history should now look like this:
 
 ```
 xxxxxxx (HEAD -> main, origin/main) Ignore log and data files
