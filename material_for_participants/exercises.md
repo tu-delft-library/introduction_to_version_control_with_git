@@ -123,7 +123,129 @@ nothing to commit, working tree clean
 
 </details>
 
-## 3 💪 Including Specific Files in `gitignore`
+
+## 3 💪 Undoing the Latest Commit
+
+Make a mistake on purpose, then undo it safely.
+
+There are two ways to do this. 
+1. Hard reset: means deleting the last commit from history. This modifies your commit history as if the commit never happened.
+2. Revert: It is like an "undo" operation. It applies the reverse operation from the latest commit (removes what was added, and/or adds what was removed).
+
+### Hard reset:
+Imagine you are trying out some ideas and you commit two experiments that you immediately regret. They only exist on your computer (you have not pushed them), so you can erase them completely.
+
+- Navigate to your `free_fall` repository and check that `git status` is clean
+- Change `time = 5` to `time = 60` in `distance.py`. Stage the file and commit with the message `Try one minute`
+- Change `gravity = 9.81` to `gravity = 24.79` (Jupiter!). Stage the file and commit with the message `Try Jupiter`
+- Display the history with `git log --oneline`. You should see your two experiments on top
+- Run `python distance.py`. Is this what you want?
+- Delete both experiments using a hard reset, going back to the commit you had before them
+- Display the history again. Where did the two commits go?
+- Check that `distance.py` is back to normal: run `cat distance.py` and `python distance.py` (it should print `After 5 s the free fall distance on Earth is 122.625 m`)
+- Run `git status`
+
+> ⚠️ `git reset --hard` also throws away any uncommitted changes in your working directory. Always run `git status` before using it.
+
+Reflections:
+- How many commits did you remove? How did you tell Git how far back to go?
+- What is the difference between `git restore distance.py` and `git reset --hard HEAD~2`?
+- Why is it a bad idea to hard reset commits that you have already pushed to a remote?
+
+<details>
+<summary>🔍 Click here for hints! </summary>
+
+- `HEAD~1` is the commit before `HEAD`, `HEAD~2` is two commits before `HEAD`, and so on
+- Count how many experiments are on top of your `git log --oneline`: that is the number of steps you need to go back
+- To hard reset use `git reset --hard HEAD~N`, replacing `N` with the number of commits you want to remove
+</details>
+
+### Reversing:
+- Delete the line `distance = 0.5 * gravity * time ** 2` from `distance.py`
+- Run `python distance.py` — what happens?
+- Stage `distance.py` and commit with the message `oops: accidentally deleted the formula`
+- Undo the commit using `git revert --no-edit HEAD`
+- Run `python distance.py` again — does it work now?
+- View the commit graph for all branches
+
+> Reversing a commit this way is safe when you've already pushed to remote. If you haven't pushed yet, a hard reset to the previous commit removes the commit entirely.
+
+### 🚀 Optional challenge: soft, mixed and hard
+`git reset` comes in three flavours: `--soft`, `--mixed` (the default) and `--hard`. They differ in how much they undo. Let's find out how!
+
+- In `distance.py`, change `time = 5` to `time = 10`. Stage the file and commit with the message `Try ten seconds`
+- Run `git reset --soft HEAD~1`. Look at `git log --oneline`, `git status` and `git diff --staged`. Where is your change now?
+- Stage and commit the change again. Run `git reset --mixed HEAD~1` and look at `git status`. Where is your change now?
+- Stage and commit the change once more. Run `git reset --hard HEAD~1` and look at `git status` and `cat distance.py`. Where is your change now?
+
+For each flavour, answer: is the commit removed from the history? Are the changes still in the staging area? Are the changes still in the working directory?
+
+<details>
+<summary>🔍 Click here to see the solution! </summary>
+
+| Flavour | Commit removed from history | Changes in staging area | Changes in working directory |
+|---|---|---|---|
+| `--soft` | yes | kept (staged) | kept |
+| `--mixed` (default) | yes | removed (unstaged) | kept |
+| `--hard` | yes | removed | removed ⚠️ |
+
+If you want to redo the commit differently (e.g. with a better message or fewer files), `--soft` or `--mixed` are the safer options. Use `--hard` only when you really want to throw the changes away.
+
+Even `--hard` is not completely final: `git reflog` lists the places where `HEAD` has been recently, including the commits you "deleted". For a while you can still go back to one of them with `git reset --hard [hash]`.
+</details>
+
+
+## 4 💪 Amending history
+
+Sometimes you notice a small mistake right after committing: a sloppy commit message, or a file you forgot to add. If you have not pushed yet, you can fix the latest commit with `git commit --amend` instead of making a new commit.
+
+- Navigate to your `bio` repository
+- Add a line to `me.md`: `My favourite food is [your favourite food]`
+- Stage the file and commit it with the vague message `wip` (work in progress)
+- Display the history with `git log --oneline`. Note the hash of your last commit
+- Replace the message of the last commit with something descriptive, e.g. `Add favourite food`. Do not make a new commit
+- Display the history again. How many commits are there? Did the hash change?
+- Create a new file `recipes.md` with one line about how to prepare your favourite food
+- Stage `recipes.md` and add it to the last commit, keeping the same message
+- Run `git log --oneline` and `git show --stat`. Is `recipes.md` part of the same commit as the new line in `me.md`?
+
+Reflections:
+- Why did the hash of the commit change after amending?
+- Why shouldn't you amend a commit that you have already pushed?
+
+<details>
+<summary>🔍 Click here for hints! </summary>
+
+- To replace the message of the latest commit (with nothing staged) use `git commit --amend -m "new message"`
+- To add changes to the latest commit, first stage them with `git add`, then run `git commit --amend`
+- Add the flag `--no-edit` to keep the existing commit message. If you use neither `-m` nor `--no-edit`, Git opens nano so you can edit the message
+- `git show --stat` lists the files changed in the latest commit
+</details>
+
+
+### 🚀 Optional challenge: Which tool should I use?
+You now know three ways to modify history: `reset`, `revert` and `amend`. For each situation, decide which one you would use:
+
+1. You made a typo in the message of your latest commit. You have not pushed it.
+2. You pushed a commit yesterday and your teammates have already pulled it. Today you discover that it contains a bug.
+3. You accidentally committed a debugging `print` (and nothing else) and you have not pushed it. You want it gone completely.
+4. You just committed, but forgot to include a file that belongs in this commit. You have not pushed it.
+5. A commit from three weeks ago, already pushed, introduced a bug.
+
+<details>
+<summary>🔍 Click here to see the solution! </summary>
+
+1. **amend**: `git commit --amend -m "corrected message"`
+2. **revert**: others already have the commit, so do not rewrite history. `git revert [hash]` adds a new commit that undoes it
+3. **reset**: `git reset --hard HEAD~1` removes the commit entirely
+4. **amend**: stage the file and run `git commit --amend --no-edit`
+5. **revert**: `git revert [hash]` also works for commits that are not the latest one
+
+Rule of thumb: if the commit only exists on your computer you can rewrite history (`reset`, `amend`). If it is already on the remote, use `revert`.
+</details>
+
+
+## 5 💪 Including Specific Files in `gitignore`
 
 - Navigate to your `bio` repository
 - Create three empty `.png` files using `touch a.png b.png final.png` 
@@ -180,34 +302,6 @@ This will ignore all the `.csv` files, regardless of their position in the direc
 </details>
 
 
-
-## 4 💪 Undoing the Latest Commit
-
-Make a mistake on purpose, then undo it safely.
-
-There are two ways to do this. 
-1. Hard reset: means deleting the last commit from history. This modifies your commit history as if the commit never happened.
-2. Revert: It is like an "undo" operation. It applies the reverse operation from the latest commit (removes what was added, and/or adds what was removed).
-
-### Hard reset:
-
-TODO
-
-### Reversing:
-- Delete the line `distance = 0.5 * gravity * time ** 2` from `distance.py`
-- Run `python distance.py` — what happens?
-- Stage `distance.py` and commit with the message `oops: accidentally deleted the formula`
-- Undo the commit using `git revert --no-edit HEAD`
-- Run `python distance.py` again — does it work now?
-- View the commit graph for all branches
-
-> Reversing a commit this way is safe when you've already pushed to remote. If you haven't pushed yet, a hard reset to the previous commit removes the commit entirely.
-
-
-## 5 💪 Amending history
-
-TODO 
-
 ## 6 💪 GitHub GUI 
 
 - Browse to your `free_fall` repository on GitHub.
@@ -222,4 +316,3 @@ TODO
 - Go to the repo you just created on GitHub and check the timestamps of the files.  
 - How does GitHub record times, and why?  
 - Hover over the timestamp, you can see the exact time at which the last change to the file occurred. 
-
