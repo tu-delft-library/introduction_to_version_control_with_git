@@ -425,7 +425,49 @@ git show                            # adition of time = 10
 
 ## 11:40 - 3 - 4 💪 Modifying history - 10'
 
-TODO Write solution for exercises 4 and 5
+### Solution 3
+
+```console
+cd ~/Desktop/bio
+nano me.txt        # I like pesto
+cat me.txt 
+git add me.txt 
+git commit -m "My favorite sauce"
+nano me.txt        # I prefer tea
+cat me.txt 
+git add me.txt 
+git commit -m "My warm drink preference"
+git status
+git log --oneline
+git reset --hard HEAD~2
+git log --oneline
+cat me.txt          
+```
+```
+My name is [name]
+I come from [country]
+I love to [hobby]
+I have a [field] background
+I like ketchup
+```
+
+
+
+### Solution 4
+```
+nano me.txt                                 # My favorite food is ajiaco
+git add me.txt  
+git add me.txt 
+git commit -m "wip"                         # vague commit message
+git log --oneline
+git commit --amend -m "Add favorite food"   # modify only the message
+git log --oneline                           # did hash change?
+nano recipe.md                              # Cut lots of potatoes
+git add recipe.md 
+git commit --amend --no-edit                # add changes / keep same message
+git log --oneline
+git show --stat                             # two files added in the same commit
+```
 
 ## 11:50 - Break - 15'
 
@@ -459,11 +501,11 @@ touch more_plots/pluto.jpg           # once there is a file, folder is tracked. 
 rm -rf more_plots                   # changed my mind. Clean up!
 ```
 
-## 12:15 - 4 💪 `gitignore` - 10'
+## 12:15 - 5 💪 `gitignore` - 10'
 
 Work on `exercises.md` 3 💪 Including Specific Files in `gitignore` and 4 💪 The Order of Rules
 
-#### Solution 4
+#### Solution 5
 ```console
 cd ~/Desktop/bio
 touch a.png b.png final.png
@@ -492,7 +534,7 @@ The `!` modifier will negate an entry from a previously defined ignore pattern. 
 
 ## 12:25 - Check your SSH key - 5'
 - Why SSH key?
-    - go though the option of writing password everytime
+    - go though the option of writing password every time
     - we can bypass this by adding a key
     - tells github that is safe to communicate with your machine
 
