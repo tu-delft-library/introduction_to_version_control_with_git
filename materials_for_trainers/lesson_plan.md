@@ -233,7 +233,7 @@ git init                            # initialise git
 nano me.md                         # create file and add three lines
     My name is [NAME]
     I come from [COUNTRY]
-    I love to [HOBBy]
+    I like to [HOBBY]
 git add me.md                      # add file
 git commit -m "Name, origin and hobby"  # commit changes
 nano me.md                         # add a fourth line
@@ -350,7 +350,86 @@ At this time, the working copy still has the second line (and `git status` will 
 
 `I like ketchup`
 
-## 11:25 - Git ignore - 10'
+
+## 11:25 - Modifying history - 15'
+
+There are multiple ways to modify history in git. We will learn about two options today. These modifications are only recommended when your changes are still in your local repository (as in not pushed - we will talk about pushing later today :) )
+
+Option one: `HARD RESET`. It means deleting the last commit from history. This modifies your commit history as if the commit never happened.
+
+This is different than `restore` in that you may have touched multiple files in one commit. With reset you ask git to forget all the changes made in the last commit (⚠️ all files and all changes in the working directory)
+
+```console
+cd ~/Desktop/free_fall              # make sure we are in free_fall
+git status                          # working tree clean
+git log --oneline                   # this is where we are. HEAD is the latest commit
+nano distance.py                    # change time to 20
+```
+```python
+time = 20
+```
+```
+python distance.py                  # new value of distance: 1962.0 m
+python distance.py >> test.txt      # save a record of this computation temporarily
+git add .                           # using add all, accidentally commits the log file
+git commit -m "Increase time"     
+git log --oneline                   # debug commit in history. But not pushed -> safe to reset
+git show                            # change to distance.py + log file committed
+ls                                  # shows distance.py and test.txt
+cat distance.py                     # time = 20
+git reset --hard HEAD~1             # go back one commit: the commit AND its changes are gone
+git log --oneline                   # the commit has disappeared from history
+ls                                  # no test.txt file
+cat distance.py                     # time = 5
+python distance.py                  # back to normal
+```
+```python
+After 5 s the free fall distance on Earth is 122.625 m
+```
+git status                          # clean
+```
+
+Option two: `AMEND`. Amend is to fix a small mistake in the *latest* commit.
+
+```console
+nano distance.py                    # change time to 20
+```
+```python
+time = 20
+```
+```
+git add distance.py
+git commit -m "Decrease time"             # typo in commit message
+git log --oneline                         # Not pushed -> we can still fix it
+git commit --amend -m "Increase time"     # replace the latest commit. 
+                                          # Nothing is staged, so only the message changes
+git log --oneline                         # still ONE commit, but look at the hash: it changed
+```
+
+With amend, we can also modify the changes stored in the latest commit. 
+```console
+nano distance.py                    # change time to 20
+```
+```python
+time = 10
+```
+```console
+git diff                            # changed time = 10
+git status                          # changes are staged
+git log --oneline                   
+git add distance.py
+git commit --amend --no-edit        # add staged changes to latest commit and keep message
+git log --oneline                   # still one commit, hash changed again
+git show                            # adition of time = 10 
+```
+
+## 11:40 - 3 - 4 💪 Modifying history - 10'
+
+TODO Write solution for exercises 4 and 5
+
+## 11:50 - Break - 15'
+
+## 12:05 - Git ignore - 10'
 Emphasize importance of `.ignore` file to keep repository clean.
 
 ```console
@@ -380,11 +459,11 @@ touch more_plots/pluto.jpg           # once there is a file, folder is tracked. 
 rm -rf more_plots                   # changed my mind. Clean up!
 ```
 
-## 11:35 - 3 💪 `gitignore` - 10'
+## 12:15 - 4 💪 `gitignore` - 10'
 
 Work on `exercises.md` 3 💪 Including Specific Files in `gitignore` and 4 💪 The Order of Rules
 
-#### Solution 3
+#### Solution 4
 ```console
 cd ~/Desktop/bio
 touch a.png b.png final.png
@@ -409,28 +488,7 @@ git status --ignored
 
 The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.png` entry negates all of the previous `.png` files in the `.gitignore`, none of them will be ignored, and all `.png` files will be tracked.
 
-## 11:45 - Break - 15'
 
-## 12:00 - Modifying history - 10'
-To modify git history we have three options:
-- reset: recommended from when you have not pushed. So only touches your local history
-    - forget it, go back one (or more) steps
-    - it deletes the commit (commits) entirely
-- reverse: recommended for when you already pushed
- - apply the opposite operation from the last commit:
-  - deleted lines are added and added lines are deleted
-  - it makes a new commit
- 
-- amend:
-    - modify commit message
-    - add changes + update message
-    - add changes + same message
-
-TODO add code along
-
-## 12:10 - 4 - 5 💪 Modifying history - 15'
-
-TODO Write solution for exercises 4 and 5
 
 ## 12:25 - Check your SSH key - 5'
 - Why SSH key?
@@ -496,20 +554,64 @@ git push origin main            # uploads the new commit. Refresh GitHub to see 
 ```
 
 
-## 13:40 - 💪  6 GitHub GUI + 7 GitHub Timestamps - 10'
+## 13:40 - 💪  6 GitHub history detective + 7 From issue to commit - 10'
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
-#### `GitHub GUI` solution:
+> These two exercises are quite packed for 10'. If the class is slow, let them finish the core steps of 6, do 7 together, and leave the optional challenges as homework.
 
-When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
+#### `GitHub history detective` solution:
 
-The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit to the clipboard. In the shell, git log will show you the full commit identifier for each commit.
+- **Changes in a commit**: click the commit message or the left-most button. Green shaded lines are additions and red ones are removals. In the shell: `git show [hash]` shows the changes of one commit, and `git diff ID1..ID2` (e.g. `git diff a3bf1e5..041e637`) shows the differences between two commits.
+- **Full hash**: the middle button (two overlapping squares) copies the full identifier of the commit to the clipboard. In the shell, `git log` shows the full hash. `git log --oneline` shows only the first 7 characters, which is what we normally use.
+- **Repository at that moment**: the right-most button (`<>`) lets you browse all of the files at the time of that commit. In the shell we would need to check out that commit with `git checkout ID`. If we do this, we need to remember to put the repository back to the right state afterwards!
+- **Revert commit**: the message body says `This reverts commit [hash]` and GitHub turns the hash into a link to the commit that was undone. In the shell: `git show HEAD` or `git log`.
+- **Blame**: shows, for every line, the last commit that changed it. In the shell: `git blame distance.py`. 
+    - `time = 5` points to `Add distance.py with variables`, the print line and `gravity` to `Use Moon gravity`
+    - If they did exercise 4, the `distance = ...` line points to the `Revert` commit, because it was the revert that put the line back!
+- **Timestamps**: GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). If you hover over the timestamp, you can see the exact time at which the commit was made.
 
-The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we’d need to checkout the repository at that particular time. We can do this with git checkout ID where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
+##### Optional challenge solution
+Pressing `y` turns the URL into a **permalink**: the branch name (`main`) is replaced by the full hash of the commit. It always shows the same lines of the same version of the file, while a link with `main` shows the latest version and can point to different lines after later commits. Use permalinks when referencing code in papers, issues or messages.
 
-#### `GitHub Timestamps` solution:
+#### `From issue to commit` solution:
 
-GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
+```console
+cd ~/Desktop/free_fall
+nano distance.py                    # add the two lines at the end
+python distance.py                  # speed is about 8.1 m/s on the Moon
+git add distance.py
+git commit -m "Print speed at impact, closes #1"    # use the number of your issue
+git push origin main                # the issue closes only when the commit reaches GitHub
+```
+Refresh the issue: it is now closed and its timeline shows the commit that closed it. In the commit page, `#1` is a link to the issue.
+
+GitHub closes the issue because the message contains a closing keyword (`close`, `fix`, `resolve` and their variations: `closes`, `fixed`, `resolves`...) followed by the issue number, and the commit reached the default branch (`main`). 
+
+Linking commits and issues makes it possible to find out *why* a change was made, and shows collaborators the status of a task without asking.
+
+Common difficulties:
+- wrong issue number in the message
+- forgot to push
+- forgot the quotes around the commit message. Without quotes, bash treats `#` as the start of a comment 
+
+##### Optional challenge solution
+Example `README.md`:
+````markdown
+# Free fall calculator
+
+Computes how far an object falls in a given time.
+
+- Distance fallen
+- Speed at impact
+
+## Usage
+```console
+python distance.py
+```
+````
+After pushing, GitHub shows the README below the file list. The About ⚙️ lets us add a description and topics, which make the repository easier to find.
+
+The README is for people who have never seen the project (including your future self): what is it, what does it do, how do I run it?
 
 ## 13:50 - Pulling a fresh copy of repo - 10'
 
