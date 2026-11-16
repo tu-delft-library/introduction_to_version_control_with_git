@@ -412,13 +412,25 @@ The `!` modifier will negate an entry from a previously defined ignore pattern. 
 ## 11:45 - Break - 15'
 
 ## 12:00 - Modifying history - 10'
-TODO
+To modify git history we have three options:
+- reset: recommended from when you have not pushed. So only touches your local history
+    - forget it, go back one (or more) steps
+    - it deletes the commit (commits) entirely
+- reverse: recommended for when you already pushed
+ - apply the opposite operation from the last commit:
+  - deleted lines are added and added lines are deleted
+  - it makes a new commit
+ 
+- amend:
+    - modify commit message
+    - add changes + update message
+    - add changes + same message
 
-reset, reserve and amend
+TODO add code along
 
 ## 12:10 - 4 - 5 💪 Modifying history - 15'
 
-TODO
+TODO Write solution for exercises 4 and 5
 
 ## 12:25 - Check your SSH key - 5'
 - Why SSH key?
