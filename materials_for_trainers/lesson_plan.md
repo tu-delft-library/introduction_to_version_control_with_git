@@ -386,6 +386,8 @@ python distance.py                  # back to normal
 ```python
 After 5 s the free fall distance on Earth is 122.625 m
 ```
+
+```
 git status                          # clean
 ```
 
@@ -397,6 +399,7 @@ nano distance.py                    # change time to 20
 ```python
 time = 20
 ```
+
 ```
 git add distance.py
 git commit -m "Decrease time"             # typo in commit message
@@ -410,9 +413,11 @@ With amend, we can also modify the changes stored in the latest commit.
 ```console
 nano distance.py                    # change time to 20
 ```
+
 ```python
 time = 10
 ```
+
 ```console
 git diff                            # changed time = 10
 git status                          # changes are staged
@@ -586,6 +591,7 @@ time = 5
 distance = 0.5 * gravity * time ** 2
 print("After", time, "s the free fall distance on the Moon is", distance, "m")
 ```
+
 ```console
 python distance.py             # Moon gravity: 20.25m
 git status
@@ -769,7 +775,12 @@ Answer 3 is the correct one. If you want to ignore only the .dat files inside a 
 
 Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
-
+### Answer 5
+Matching: 
+- Found a typo in the message of latest commit -> git commit --amend -m "corrected message"
+- Completely throw away my most recent commit -> git reset --hard HEAD~1
+- Forgot to include a file that belongs in the latest commit -> stage the file and run `git commit --amend --no-edit`
+- Discard edits to a file -> git restore <name_of_file>
 
 ## 14:55 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
