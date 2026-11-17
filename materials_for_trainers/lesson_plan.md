@@ -477,7 +477,7 @@ git show --stat                             # two files added in the same commit
 ## 11:50 - Break - 15'
 
 ## 12:05 - Git ignore - 10'
-Emphasize importance of `.ignore` file to keep repository clean.
+Emphasize importance of `.gitignore` file to keep repository clean.
 
 ```console
 git status                          # always check the status of git
