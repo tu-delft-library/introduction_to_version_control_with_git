@@ -1,6 +1,6 @@
 > Adapted from *Version Control with Git*, Software Carpentry / The Carpentries, licensed [CC-BY 4.0](https://swcarpentry.github.io/git-novice/LICENSE.html). 
 
-# 9:00 🚀 Prepare for take off - 20'
+## 9:00 - 🚀 Prepare for take off - 20'
 ### Room setup
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
 - Test the microphone
@@ -17,11 +17,11 @@ Make sure to set up the bash history forwarding before workshop day as explained
 Open another Terminal window. Let's call this the `hidden terminal` i.e. NOT to be shown during the workshop.
 
 On the `hidden terminal` forward only the last line of the history to `command.log`
-```bash
+```console
 tail -n 0 -f ~/.bash_history | tee -a <local-repo-directory>/material_for_participants/command.log
 ```
 Open another tab in the `hidden terminal`, `cd` to `<local-repo-directory>` and run autopush every 2-5 seconds
-```bash
+```console
 gitautopush --sleep 5 .
 ```
 #### Open vevox
@@ -32,6 +32,8 @@ gitautopush --sleep 5 .
 #### Open slides
 
 Slides work better if you open them in your device: [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+
+## 9:20 - Buffer - 10'
 
 ## 9:30 - Participants land - 5'
 ☕ Reminder them about coffee at the entrance of library
@@ -145,7 +147,7 @@ A brief comment of what we want to function to do. Then two variables: `gravity`
 gravity = 9.81
 time = 5
 ```
-```
+```console
 python distance.py              # runs but prints nothing. Code is just text that python interprets
 cat distance.py                 # see content of file 
 git status                  # shows untracked file
@@ -368,7 +370,7 @@ nano distance.py                    # change time to 20
 ```python
 time = 20
 ```
-```
+```console
 python distance.py                  # new value of distance: 1962.0 m
 python distance.py >> test.txt      # save a record of this computation temporarily
 git add .                           # using add all, accidentally commits the log file
@@ -383,11 +385,11 @@ ls                                  # no test.txt file
 cat distance.py                     # time = 5
 python distance.py                  # back to normal
 ```
-```python
+```text
 After 5 s the free fall distance on Earth is 122.625 m
 ```
 
-```
+```console
 git status                          # clean
 ```
 
@@ -400,7 +402,7 @@ nano distance.py                    # change time to 20
 time = 20
 ```
 
-```
+```console
 git add distance.py
 git commit -m "Decrease time"             # typo in commit message
 git log --oneline                         # Not pushed -> we can still fix it
@@ -448,7 +450,7 @@ git reset --hard HEAD~2
 git log --oneline
 cat me.txt          
 ```
-```
+```text
 My name is [name]
 I come from [country]
 I love to [hobby]
@@ -459,7 +461,7 @@ I like ketchup
 
 
 ### Solution 4
-```
+```console
 nano me.txt                                 # My favorite food is ajiaco
 git add me.txt  
 git add me.txt 
@@ -547,7 +549,7 @@ The `!` modifier will negate an entry from a previously defined ignore pattern. 
 ssh -T git@github.com           # test the connection
 ```
 You should see a message like
-```
+```text
 Hi [yourname]! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 If not, put your red sticky up and we'll help you.
@@ -692,7 +694,7 @@ Check the tag in GitHub (drop down menu that shows also branches)
 > Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
 
-## 14:10 LAB: Getting started with Collaboration - 30'
+## 14:10 - LAB: Getting started with Collaboration - 30'
 see `PRACTICAL_collaboration.md` file 
 
 
@@ -704,7 +706,7 @@ see `PRACTICAL_collaboration.md` file
 Alfredo has a local repository to store his favorite recipes. 
 Alfredo would also like to track information about desserts specifically.
 Alfredo creates a desserts project inside his recipes project with the following sequence of commands:
-```
+```console
 cd ~/Desktop    
 cd recipes      
 ls -a           
@@ -754,7 +756,7 @@ Answer 1 results in an error. You need to specify a file to restore. If you want
 
 ### Question 4: Ignoring all data Files in a Directory
 Assuming you have an empty `.gitignore` file, and given a directory structure that looks like:
-```console
+```text
 pictures/data/location/gps/a.dat
 pictures/data/location/gps/b.dat
 pictures/data/location/gps/c.dat
