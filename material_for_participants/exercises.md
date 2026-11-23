@@ -61,7 +61,7 @@ The staging area can hold changes from any number of files that you want to comm
 - Add a new a line `Ketchup enhances pasta`
 - Execute `git commit -m "My opinions about red sauce"`
 - Look at the contents of `me.md` (e.g. run `cat me.md`)
-- Inspect the changes in the working directory with `git diff`
+- Inspect the changes in the working tree with `git diff`
 - Execute `git restore me.md`
 - Look at the contents of `me.md` (e.g. run `cat me.md`)
 
@@ -104,7 +104,7 @@ $ git status
 On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git git restore <file>..." to discard changes in working directory)
+  (use "git git restore <file>..." to discard changes in working tree)
         modified:   me.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -168,12 +168,12 @@ I like ketchup
 - Stage and commit the change once more 
 - Run `git reset --hard HEAD~1` and look at `git status` and `cat me.md`. Where is your change now?
 
-For each flavour, answer: is the commit removed from the history? Are the changes still in the staging area? Are the changes still in the working directory?
+For each flavour, answer: is the commit removed from the history? Are the changes still in the staging area? Are the changes still in the working tree?
 
 <details>
 <summary>🔍 Click here to see the solution! </summary>
 
-| Flavour | Commit removed from history | Changes in staging area | Changes in working directory |
+| Flavour | Commit removed from history | Changes in staging area | Changes in working tree |
 |---|---|---|---|
 | `--soft` | yes | kept (staged) | kept |
 | `--mixed` (default) | yes | removed (unstaged) | kept |

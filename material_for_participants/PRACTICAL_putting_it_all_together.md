@@ -24,7 +24,7 @@ If something is off (the folder is missing, or the repo is a mess), jump to **�
 - To see which folder you are in use `pwd`
 </details>
 
-## Working directory → staging → history
+## working tree → staging → history
 
 - Create `velocity.py` in `nano` and add:
     - a comment describing the purpose of the script
@@ -65,12 +65,12 @@ You should now have 3 new commits. Run `git log --oneline` to confirm.
 - To create or edit a file use `nano name_of_file`
 - To stage file use `git add name_of_file`
 - To commit a file use `git commit -m "commit message"`
-- To see the changes in the working directory use `git diff name_of_file`
+- To see the changes in the working tree use `git diff name_of_file`
 - To see changes in the staging area use `git diff --staged name_of_file`
 </details>
 
 ## Time travel: restoring old versions
-- Run `status` to make sure there are changes in your working directory
+- Run `status` to make sure there are changes in your working tree
 - Look at your history with `log --oneline`
 - Use `show HEAD` to view the previous commit
 - Deliberately break the file: open `velocity.py` in nano, delete the second line (definition of gravity)
@@ -78,7 +78,7 @@ You should now have 3 new commits. Run `git log --oneline` to confirm.
 - Run `diff` to see the *unstaged* changes
 - Use `restore` to bring back the last **committed** version (discard your uncommitted edit)
 - Run the script. The script should print the whole human readable sentence `After 2.0 s a free falling ...` like it did before.
-- Now go back further: restore `velocity.py` as it existed at `HEAD~1` into your working directory
+- Now go back further: restore `velocity.py` as it existed at `HEAD~1` into your working tree
 - Run the script. The script should only show the number `19.62` no text around it.
 - Run `diff` to see the *unstaged* changes
 - Actually, we prefer the human readable version. Restore back to the latest version.
@@ -95,7 +95,7 @@ You should now have 3 new commits. Run `git log --oneline` to confirm.
 
 We will soon produce files that should not be tracked: log files and raw data.
 
-- Run `status` to make sure there are changes in your working directory
+- Run `status` to make sure there are changes in your working tree
 - Create two new empty files named `debug.log` and `time.log`
 - Make a new directory named `data`
 - Inside the directory `data` add two files: `raw.csv` and `output.csv`

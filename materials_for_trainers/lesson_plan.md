@@ -188,10 +188,10 @@ git log
 cat distance.py        # see contents of file
 ```
 
-## 10:25 - Working directory and staging area - 10'
+## 10:25 - working tree and staging area - 10'
 > **NOTE** there might be confusion about staging area and working tree. Let's use slides to clarify this
 - 🎦 clarify staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-- Working directory -> staging area -> commit history (database)
+- working tree -> staging area -> commit history (database)
 - Useful ANALOGIES: 
     - Mailing a letter:
         - Staging is like putting letter in envelop
@@ -214,7 +214,7 @@ print("After", time,"s the free fall distance on Earth is", distance, "m")
 python distance.py         # the program now behaves differently, not just the text
 git diff                    # replaced one line - with new line +
 git add distance.py
-git diff                    # no output   - diff only compares to working dir
+git diff                    # no output   - diff only compares to working tree
 git diff --staged           # changes in staging area
 git status
 git commit -m "Make output human readable" # Commit message: think why
@@ -245,9 +245,9 @@ git add me.md                      # add file
 git commit -m "Name, origin and hobby"  # commit changes
 nano me.md                         # add a fourth line
     I have a [FIELD] background
-git diff me.md                     # show differences to working directory
+git diff me.md                     # show differences to working tree
 git add me.md                      # stage
-git diff                            # no changes to working directory
+git diff                            # no changes to working tree
 git diff --staged                   # show difference to staged area
 git commit -m "Add background"        # commit changes
 git log                             # display git history
@@ -322,7 +322,7 @@ git tag -a formula [short_hash] -m "First working version" # add a tag -> easier
                                     # use the hash of "Implement free fall distance formula"
 git log --oneline
 git restore -s formula distance.py   # -s same as with the hash -> source
-python distance.py                   # restored file is in the working directory.
+python distance.py                   # restored file is in the working tree.
 git status                       # BUT restored file is not staged!
 ```
 If we wanted to make this restored version our new latest version, we would need to make a new commit with the restored changes. But for now, we just inspect it, run it and then get go back to the latest commit.
@@ -364,7 +364,7 @@ There are multiple ways to modify history in git. We will learn about two option
 
 Option one: `HARD RESET`. It means deleting the last commit from history. This modifies your commit history as if the commit never happened.
 
-This is different than `restore` in that you may have touched multiple files in one commit. With reset you ask git to forget all the changes made in the last commit (⚠️ all files and all changes in the working directory)
+This is different than `restore` in that you may have touched multiple files in one commit. With reset you ask git to forget all the changes made in the last commit (⚠️ all files and all changes in the working tree)
 
 ```console
 cd ~/Desktop/free_fall              # make sure we are in free_fall
@@ -753,7 +753,7 @@ Luckily, she has been keeping track of her project’s versions using Git! Which
 5. Both 2 and 4
 
 ### Answer 3
-The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what `HEAD` means.
+The restore command restores files from the repository, overwriting the files in your working tree. Answers 2 and 4 both restore the latest version in the repository of the file `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what `HEAD` means.
 
 Answer 3 gets the version of `data_cruncher.py` from the commit before `HEAD,` which is NOT what we wanted.
 
