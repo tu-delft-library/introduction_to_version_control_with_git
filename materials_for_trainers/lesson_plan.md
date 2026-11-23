@@ -4,7 +4,7 @@
 ### Room setup
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
 - Test the microphone
-- Write the edu.nl link pointing to `material_for_participants/links.md` document on the whiteboard 
+- Write on the white board the edu.nl link pointing to `material_for_participants` of this branch
     - Use dark marker on the board (not red)
 - Place the list of the participants on a table at the entrance so that they can check their name (roll call)
 - [Optional] bring jugs with water and snacks (if you brought any)
@@ -32,6 +32,9 @@ gitautopush --sleep 5 .
 #### Open slides
 
 Slides work better if you open them in your device: [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+
+#### Voice warm up
+- Example: https://www.youtube.com/watch?v=7eDcHZZn7hU
 
 ## 9:20 - Buffer - 10'
 
