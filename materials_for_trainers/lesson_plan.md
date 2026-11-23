@@ -693,13 +693,14 @@ Check the tag in GitHub (drop down menu that shows also branches)
 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
 > Remember to talk about the most common licenses: MIT, Creative Commons, Apache
 
+## 14:10 - Break - 15'
 
-## 14:10 - LAB: Getting started with Collaboration - 30'
+## 14:25 - LAB: Getting started with Collaboration - 30'
 see `PRACTICAL_collaboration.md` file 
 
 
 
-## 14:40 - 💪 Vevox - 15'
+## 14:55 - 💪 Vevox - 15'
 
 ### Question 1: Places to Create Git Repositories
 
@@ -786,7 +787,7 @@ You know multiple ways to modify git history. For each situation, decide which o
 - Forgot to include a file that belongs in the latest commit -> stage the file and run `git commit --amend --no-edit`
 - Discard edits to a file -> git restore <name_of_file>
 
-## 14:55 - Key points - 10'
+## 15:10 - Key points - 10'
 - point to the cheat sheet linked in the `links` document
 - revise the commands by asking to the class what the commands are 
 ```console
@@ -804,6 +805,6 @@ git push            # uploads local changes to remote
 git pull            # downloads changes from remote to local
 ```
 
-## 15:05 - Home assignment - 5'
+## 15:20 - Home assignment - 5'
 At home, go through the exercise in `PRACTICAL_putting_it_all_together.md` file. It should take less than 1 hour to finish it.
 
