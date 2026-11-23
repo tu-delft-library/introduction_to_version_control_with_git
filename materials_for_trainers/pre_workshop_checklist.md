@@ -46,8 +46,8 @@
 - Original instructions on setting up autopush can be found[here](https://github.com/4TUResearchData-Carpentries/workshop_notes)
 
 ## Clean up your system
-- Delete the `recipes` repo from your github
-- Delete `recipes` and `bio` from your `Desktop`
+- Delete the `free_fall` repo from your github
+- Delete `free_fall` and `bio` from your `Desktop`
 - Reset all global configurations by deleting the global configuration file:
 ```bash
 rm ~/.gitconfig
