@@ -8,8 +8,9 @@
 
 ## 1 💪 bio Repository 
 
-- Create a new Git repository on your computer called `bio`.
+- Create a new Git repository on your `Desktop` called `bio`.
     - **Remember to step out** of your current `free_fall` repository
+    - We recommend to make the new repository on your `Desktop`
 - Write a three-line biography for yourself in a file called `me.md`, commit your changes
 - Add a fourth line (e.g. your field of research or a hobby)
 - Display the differences between its *modified* state and its original state. 
@@ -24,7 +25,6 @@
 - To create a folder use `mkdir folder_name`
 - To initialize a repository, navigate to the folder that you want to turn into a repository and use `git init`
 - To open a (new) file for editing use `nano name_of_file`
-- To move a file to a different location use `mv source_path target_path`
 - To stage file use `git add name_of_file`
 - To commit a file use `git commit -m "commit message"`
 - To see git history use `git log`
@@ -38,7 +38,7 @@ The staging area can hold changes from any number of files that you want to comm
 
 - Navigate to your `bio` repository
 - Create a file called `timeline.md`
-- Add to it some of your PhD start date (e.g. september 2026)
+- Add in `timeline.md` your PhD start date (e.g. september 2026)
 - Modify `me.md` with a line `I am a [first/second/third] year PhD student`. Replace the text between `[]` accordingly.
 - Since the new line in biography and the timeline are related, commit the changes in a single commit. Do this by adding both files to the staging area BEFORE running the commit command.
 
@@ -119,6 +119,10 @@ $ git status
 On branch main
 nothing to commit, working tree clean
 ```
+```console
+$ cat me.md
+```
+The latest modification is gone
 
 </details>
 

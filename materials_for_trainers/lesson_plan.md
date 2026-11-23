@@ -302,6 +302,7 @@ git diff HEAD~1 distance.py        # diff between now and one commit before HEAD
 git diff HEAD~2 distance.py        # diff between now and two commits before HEAD
 git diff HEAD~3 distance.py        # fails. unknown revision
 git log --oneline                  # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
+git diff HEAD~2 distance.py        # accumulated diff vs show
 git show HEAD~2 distance.py        # shows changes made on that commit (rather than differences)
 git log --oneline                   # shows short hashes
 git diff [short_hash] distance.py  # use short hash to point to a specific commit
@@ -377,14 +378,13 @@ time = 20
 ```
 ```console
 python distance.py                  # new value of distance: 1962.0 m
-python distance.py >> test.txt      # save a record of this computation temporarily
+python distance.py > test.txt      # save a record of this computation temporarily
+cat test.txt                        # output saved in file instead of printed
 git add .                           # using add all, accidentally commits the log file
 git commit -m "Increase time"     
-git log --oneline                   # debug commit in history. But not pushed -> safe to reset
 git show                            # change to distance.py + log file committed
-ls                                  # shows distance.py and test.txt
-cat distance.py                     # time = 20
-git reset --hard HEAD~1             # go back one commit: the commit AND its changes are gone
+git log --oneline
+git reset --hard HEAD~1             # complete forget last commit
 git log --oneline                   # the commit has disappeared from history
 ls                                  # no test.txt file
 cat distance.py                     # time = 5
@@ -410,7 +410,8 @@ time = 20
 ```console
 git add distance.py
 git commit -m "Decrease time"             # typo in commit message
-git log --oneline                         # Not pushed -> we can still fix it
+git show                                  # see the change t =20 and message does not match
+git status                                # nothing staged. Only modify commit message
 git commit --amend -m "Increase time"     # replace the latest commit. 
                                           # Nothing is staged, so only the message changes
 git log --oneline                         # still ONE commit, but look at the hash: it changed
@@ -426,13 +427,11 @@ time = 10
 ```
 
 ```console
-git diff                            # changed time = 10
-git status                          # changes are staged
-git log --oneline                   
+git diff                            # changed time = 10                  
 git add distance.py
 git commit --amend --no-edit        # add staged changes to latest commit and keep message
 git log --oneline                   # still one commit, hash changed again
-git show                            # adition of time = 10 
+git show                            # addition of time = 10 (instead of time = 20)
 ```
 
 ## 11:40 - 3 - 4 💪 Modifying history - 10'
