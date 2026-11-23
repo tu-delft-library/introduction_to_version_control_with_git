@@ -70,7 +70,7 @@ Stage and commit the change
 $ git add time.py
 $ git commit -m "Add constants for free fall time"
 ```
-Confirm there are no uncommitted changes in your working directory
+Confirm there are no uncommitted changes in your working tree
 
 ```
 $ git status
@@ -127,7 +127,7 @@ Stage and commit the change
 $ git add time.py
 $ git commit -m "Add free fall time calculation"
 ```
-Confirm there are no uncommitted changes in your working directory
+Confirm there are no uncommitted changes in your working tree
 
 ```
 $ git status
@@ -181,7 +181,7 @@ Stage and commit the change
 $ git add time.py
 $ git commit -m "More readable rounded time value"
 ```
-Confirm there are no uncommitted changes in your working directory
+Confirm there are no uncommitted changes in your working tree
 
 ```
 $ git status

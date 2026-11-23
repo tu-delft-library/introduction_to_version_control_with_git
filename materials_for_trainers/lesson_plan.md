@@ -4,7 +4,7 @@
 ### Room setup
 - Make sure to plug your computer to electricity. Otherwise the display will feed electricity to the laptop and potentially turn itself off.
 - Test the microphone
-- Write the edu.nl link pointing to `material_for_participants/links.md` document on the whiteboard 
+- Write on the white board the edu.nl link pointing to `material_for_participants` of this branch
     - Use dark marker on the board (not red)
 - Place the list of the participants on a table at the entrance so that they can check their name (roll call)
 - [Optional] bring jugs with water and snacks (if you brought any)
@@ -32,6 +32,9 @@ gitautopush --sleep 5 .
 #### Open slides
 
 Slides work better if you open them in your device: [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
+
+#### Voice warm up
+- Example: https://www.youtube.com/watch?v=7eDcHZZn7hU
 
 ## 9:20 - Buffer - 10'
 
@@ -75,11 +78,10 @@ cd "/c/Users/[username]/OneDrive - Delft University of Technology/Bureaublad"
 > ✅ 🆘 Everyone found their desktop?
 ```console
 git version
-git help
-git config --list
 git config --global user.name "Name Lastname"
 git config --global user.email "netid@tudelft.nl"
 git config --global core.editor "nano -w"
+git config --global core.autocrlf  # stop and explain CRLF
 ```
 **CRLF** carriage return line feed. This concept originated from mechanical typewriters to separate the physical actions of moving to the left margin and advancing the paper. In our case it means `how Git handles line endings`
 
@@ -92,21 +94,24 @@ End of a line:
 git config --global core.autocrlf input              
 # for windows do
 git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
-git config --global init.defaultBranch main # in recent versions of git, main branch is default. But it's better to set this
+git config --global init.defaultbranch main # in recent versions of git, main branch is default. But it's better to set this
 ```
 **branches** Git can keep track of multiple lines of development like parallel timelines. These lines are called `branches`. We will work with branches in the next session. For now, it's only necessary to know that we only use one branch and it's called `main` 
 
 ```console
 git config --list --global
-git config --global --edit
+git config --global --edit      # edit manually in nano
 ```
 And finally, let's check python
 ```console
 python --version                # on Mac and Linux it may be python3 --version
 ```
+> ✅ 🆘 Everyone found python?
 
 ## 10:10 - Initialize a local Git repository - 5'
-We use a tiny Python project with a single file `distance.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
+> **NOTE** We use a tiny Python project with a single file `distance.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
+
+Key message:
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
@@ -183,10 +188,10 @@ git log
 cat distance.py        # see contents of file
 ```
 
-## 10:25 - Working directory and staging area - 10'
+## 10:25 - working tree and staging area - 10'
 > **NOTE** there might be confusion about staging area and working tree. Let's use slides to clarify this
 - 🎦 clarify staging area using [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20version%20control%20with%20Git.pptx?d=w582c916207804aac981699323fe83c38&csf=1&web=1&e=c4zb1b) 
-- Working directory -> staging area -> commit history (database)
+- working tree -> staging area -> commit history (database)
 - Useful ANALOGIES: 
     - Mailing a letter:
         - Staging is like putting letter in envelop
@@ -209,7 +214,7 @@ print("After", time,"s the free fall distance on Earth is", distance, "m")
 python distance.py         # the program now behaves differently, not just the text
 git diff                    # replaced one line - with new line +
 git add distance.py
-git diff                    # no output   - diff only compares to working dir
+git diff                    # no output   - diff only compares to working tree
 git diff --staged           # changes in staging area
 git status
 git commit -m "Make output human readable" # Commit message: think why
@@ -240,9 +245,9 @@ git add me.md                      # add file
 git commit -m "Name, origin and hobby"  # commit changes
 nano me.md                         # add a fourth line
     I have a [FIELD] background
-git diff me.md                     # show differences to working directory
+git diff me.md                     # show differences to working tree
 git add me.md                      # stage
-git diff                            # no changes to working directory
+git diff                            # no changes to working tree
 git diff --staged                   # show difference to staged area
 git commit -m "Add background"        # commit changes
 git log                             # display git history
@@ -297,6 +302,7 @@ git diff HEAD~1 distance.py        # diff between now and one commit before HEAD
 git diff HEAD~2 distance.py        # diff between now and two commits before HEAD
 git diff HEAD~3 distance.py        # fails. unknown revision
 git log --oneline                  # point to HEAD, HEAD~1, HEAD~2, HEAD~3 does not exist
+git diff HEAD~2 distance.py        # accumulated diff vs show
 git show HEAD~2 distance.py        # shows changes made on that commit (rather than differences)
 git log --oneline                   # shows short hashes
 git diff [short_hash] distance.py  # use short hash to point to a specific commit
@@ -317,7 +323,7 @@ git tag -a formula [short_hash] -m "First working version" # add a tag -> easier
                                     # use the hash of "Implement free fall distance formula"
 git log --oneline
 git restore -s formula distance.py   # -s same as with the hash -> source
-python distance.py                   # restored file is in the working directory.
+python distance.py                   # restored file is in the working tree.
 git status                       # BUT restored file is not staged!
 ```
 If we wanted to make this restored version our new latest version, we would need to make a new commit with the restored changes. But for now, we just inspect it, run it and then get go back to the latest commit.
@@ -359,7 +365,7 @@ There are multiple ways to modify history in git. We will learn about two option
 
 Option one: `HARD RESET`. It means deleting the last commit from history. This modifies your commit history as if the commit never happened.
 
-This is different than `restore` in that you may have touched multiple files in one commit. With reset you ask git to forget all the changes made in the last commit (⚠️ all files and all changes in the working directory)
+This is different than `restore` in that you may have touched multiple files in one commit. With reset you ask git to forget all the changes made in the last commit (⚠️ all files and all changes in the working tree)
 
 ```console
 cd ~/Desktop/free_fall              # make sure we are in free_fall
@@ -372,14 +378,13 @@ time = 20
 ```
 ```console
 python distance.py                  # new value of distance: 1962.0 m
-python distance.py >> test.txt      # save a record of this computation temporarily
+python distance.py > test.txt      # save a record of this computation temporarily
+cat test.txt                        # output saved in file instead of printed
 git add .                           # using add all, accidentally commits the log file
 git commit -m "Increase time"     
-git log --oneline                   # debug commit in history. But not pushed -> safe to reset
 git show                            # change to distance.py + log file committed
-ls                                  # shows distance.py and test.txt
-cat distance.py                     # time = 20
-git reset --hard HEAD~1             # go back one commit: the commit AND its changes are gone
+git log --oneline
+git reset --hard HEAD~1             # complete forget last commit
 git log --oneline                   # the commit has disappeared from history
 ls                                  # no test.txt file
 cat distance.py                     # time = 5
@@ -405,7 +410,8 @@ time = 20
 ```console
 git add distance.py
 git commit -m "Decrease time"             # typo in commit message
-git log --oneline                         # Not pushed -> we can still fix it
+git show                                  # see the change t =20 and message does not match
+git status                                # nothing staged. Only modify commit message
 git commit --amend -m "Increase time"     # replace the latest commit. 
                                           # Nothing is staged, so only the message changes
 git log --oneline                         # still ONE commit, but look at the hash: it changed
@@ -421,13 +427,11 @@ time = 10
 ```
 
 ```console
-git diff                            # changed time = 10
-git status                          # changes are staged
-git log --oneline                   
+git diff                            # changed time = 10                  
 git add distance.py
 git commit --amend --no-edit        # add staged changes to latest commit and keep message
 git log --oneline                   # still one commit, hash changed again
-git show                            # adition of time = 10 
+git show                            # addition of time = 10 (instead of time = 20)
 ```
 
 ## 11:40 - 3 - 4 💪 Modifying history - 10'
@@ -748,7 +752,7 @@ Luckily, she has been keeping track of her project’s versions using Git! Which
 5. Both 2 and 4
 
 ### Answer 3
-The restore command restores files from the repository, overwriting the files in your working directory. Answers 2 and 4 both restore the latest version in the repository of the file `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what `HEAD` means.
+The restore command restores files from the repository, overwriting the files in your working tree. Answers 2 and 4 both restore the latest version in the repository of the file `data_cruncher.py`. Answer 2 uses `HEAD` to indicate the latest, whereas answer 4 uses the unique ID of the last commit, which is what `HEAD` means.
 
 Answer 3 gets the version of `data_cruncher.py` from the commit before `HEAD,` which is NOT what we wanted.
 
