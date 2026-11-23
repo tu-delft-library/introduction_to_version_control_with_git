@@ -78,11 +78,10 @@ cd "/c/Users/[username]/OneDrive - Delft University of Technology/Bureaublad"
 > ✅ 🆘 Everyone found their desktop?
 ```console
 git version
-git help
-git config --list
 git config --global user.name "Name Lastname"
 git config --global user.email "netid@tudelft.nl"
 git config --global core.editor "nano -w"
+git config --global core.autocrlf  # stop and explain CRLF
 ```
 **CRLF** carriage return line feed. This concept originated from mechanical typewriters to separate the physical actions of moving to the left margin and advancing the paper. In our case it means `how Git handles line endings`
 
@@ -95,21 +94,24 @@ End of a line:
 git config --global core.autocrlf input              
 # for windows do
 git config --global core.autocrlf true  # For compatibility, line endings are converted to Unix style when you commit files.
-git config --global init.defaultBranch main # in recent versions of git, main branch is default. But it's better to set this
+git config --global init.defaultbranch main # in recent versions of git, main branch is default. But it's better to set this
 ```
 **branches** Git can keep track of multiple lines of development like parallel timelines. These lines are called `branches`. We will work with branches in the next session. For now, it's only necessary to know that we only use one branch and it's called `main` 
 
 ```console
 git config --list --global
-git config --global --edit
+git config --global --edit      # edit manually in nano
 ```
 And finally, let's check python
 ```console
 python --version                # on Mac and Linux it may be python3 --version
 ```
+> ✅ 🆘 Everyone found python?
 
 ## 10:10 - Initialize a local Git repository - 5'
-We use a tiny Python project with a single file `distance.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
+> **NOTE** We use a tiny Python project with a single file `distance.py`. It replaces the Carpentries `recipes` / `guacamole.md` example.
+
+Key message:
 - `git init` initializes a repository
 - Git stores all of its repository data in the `.git` directory
 
