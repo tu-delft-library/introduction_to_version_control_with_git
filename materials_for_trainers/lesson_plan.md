@@ -467,8 +467,8 @@ git commit -m "wip"                         # vague commit message
 git log --oneline
 git commit --amend -m "Add favorite food"   # modify only the message
 git log --oneline                           # did hash change?
-nano recipe.md                              # Cut lots of potatoes
-git add recipe.md 
+nano recipes.md                              # Cut lots of potatoes
+git add recipes.md 
 git commit --amend --no-edit                # add changes / keep same message
 git log --oneline
 git show --stat                             # two files added in the same commit
