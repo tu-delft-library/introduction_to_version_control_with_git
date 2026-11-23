@@ -777,8 +777,10 @@ Answer 3 is the correct one. If you want to ignore only the .dat files inside a 
 
 Answer 4 is an exception. Let's say if you ignore all files inside the folder `pictures/data/location/gps/` and then add the exception `!pictures/data/location/gps/info.txt`, it would achieve the goal for the current state of the repository. But it will not guarantee new files of other formats that are not `.dat` will be tracked.
 
+### Question 5: Matching ways to modify git history
+You know multiple ways to modify git history. For each situation, decide which one you would use
+
 ### Answer 5
-Matching: 
 - Found a typo in the message of latest commit -> git commit --amend -m "corrected message"
 - Completely throw away my most recent commit -> git reset --hard HEAD~1
 - Forgot to include a file that belongs in the latest commit -> stage the file and run `git commit --amend --no-edit`
