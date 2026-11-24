@@ -116,7 +116,7 @@ print("An object dropped from", height, "m reaches the ground after", time, "s")
 ```
 Save changes and exit nano.
 
-Run the script. You should see that the fall takes ~`1.4287928234324 seconds`
+Run the script. You should see that the fall takes ~`1.42... seconds`
 
 ```
 $ python time.py
@@ -236,6 +236,8 @@ Make these changes as **Partner One** contribution, following the same workflow 
 - Pull from remote
 - Create a `README.md` using `nano`
 - Copy paste the template below. Inside `nano`, check the suggestions between brackets [] and make changes accordingly.
+  - Use arrow keys to browse the text up or down
+  - Use arrow keys left/right to navigate long sentences
 
   ```
   # Free fall
@@ -251,7 +253,6 @@ Make these changes as **Partner One** contribution, following the same workflow 
   * Earth gravity (g = 9.81 m/s^2)
   * Drop height of 10 meters
   * Drop time of 5 seconds
-
   [Add one more circumstance you tested, e.g. the moon gravity]
 
   ## Requirements
@@ -259,10 +260,8 @@ Make these changes as **Partner One** contribution, following the same workflow 
   - Python modules
      - math
 
-
   ## How to run
   Clone this repository locally and run the script from a terminal with `python time.py` or `python distance.py`.
-
 
   ## Citation
   Use the citation in the `CITATION.cff` file to acknowledge this work.
@@ -276,7 +275,7 @@ Make these changes as **Partner One** contribution, following the same workflow 
 - Save changes and exit nano
 - Stage and commit the `README.md`
 - Push to remote
-- **Partner A** confirm the changes appear on GitHub
+
 - **Partner A** run `git pull` locally
 - **Partner A** run `git log --oneline` and confirm you see the `README.md` file locally
 
@@ -294,7 +293,7 @@ Make these changes as **Partner A** contribution
 - Save changes and exit nano
 - Stage and commit the `LICENSE` file
 - Push to remote
-- **Partner One** confirm the changes appear on GitHub
+
 - **Partner One** run `git pull` locally
 - **Partner One** run `git log --oneline` and confirm you see the `LICENSE` file locally
 
@@ -308,6 +307,6 @@ Decide who is going to perform this task:
 - Download the generated file and move it to the repository
 - Stage and commit the `CITATION.cff`
 - Push to remote
-- **Other partner** confirm the changes appear on GitHub
+
 - **Other partner** run `git pull` locally
 - **Other partner** run `git log --oneline` and confirm you see the `CITATION.cff` file locally
