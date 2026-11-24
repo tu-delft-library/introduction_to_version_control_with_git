@@ -341,13 +341,13 @@ See `exercises.md`.
 cd ~/Desktop/bio
 nano bio            
 # add line I like ketchup
-git add me.txt
-nano me.txt
+git add me.md
+nano me.md
 # add line `Ketchup enhances pasta`
 git commit -m "My opinions about red sauce"
-cat me.txt
+cat me.md
 git diff
-git restore me.txt
+git restore me.md
 ```
 
 The changes to the file from the second modification of `me.md` are only applied to the working copy, not the version in the staging area. The command `git add me.md` places the current version of `me.md` into the staging area.
@@ -440,35 +440,37 @@ git show                            # addition of time = 10 (instead of time = 2
 
 ```console
 cd ~/Desktop/bio
-nano me.txt        # I like pesto
-cat me.txt 
-git add me.txt 
+nano me.md        # I like pesto
+cat me.md 
+git add me.md 
 git commit -m "My favorite sauce"
-nano me.txt        # I prefer tea
-cat me.txt 
-git add me.txt 
+nano me.md        # I prefer tea
+cat me.md 
+git add me.md 
 git commit -m "My warm drink preference"
 git status
 git log --oneline
 git reset --hard HEAD~2
 git log --oneline
-cat me.txt          
+cat me.md          
 ```
 ```text
 My name is [name]
 I come from [country]
 I love to [hobby]
 I have a [field] background
+[optional] I am a first year PhD student
 I like ketchup
 ```
-
+```console
+git status
+```
 
 
 ### Solution 4
 ```console
-nano me.txt                                 # My favorite food is ajiaco
-git add me.txt  
-git add me.txt 
+nano me.md                                 # My favorite food is curry
+git add me.md  
 git commit -m "wip"                         # vague commit message
 git log --oneline
 git commit --amend -m "Add favorite food"   # modify only the message
@@ -486,10 +488,13 @@ git show --stat                             # two files added in the same commit
 Emphasize importance of `.gitignore` file to keep repository clean.
 
 ```console
+pwd                                 # where am i?
+~/Desktop/free_fal                  # potentially find my repo
 git status                          # always check the status of git
 ls                                  # what is inside this directory
+touch earth.png moon.png            # dummy plots: gravity of different planets
 mkdir plots                         # make new directory
-touch earth.png moon.png plots/mars.jpg plots/jupiter.jpg   # make dummy plots
+touch plots/mars.jpg plots/jupiter.jpg   # dummy plots: gravity of different planets
 ls                                  # lists generated plots
 ls plots                            # lists generated plots inside folder
 git status                          # images not recommended in git + distracting 
@@ -502,7 +507,7 @@ git add .gitignore                  # let's track this file. it won't ignore its
 git commit -m "Ignore png files and plots folder"
 git status                          # all clean
 ls                                  # files are in folder but not tracked by git
-git add a.png                       # if accidentally added, shows warning
+git add earth.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
 touch plots/pluto.jpg               # new file in ignored folder
 git status                          # nothing because plots folder is ignored
@@ -514,38 +519,36 @@ rm -rf more_plots                   # changed my mind. Clean up!
 
 ## 12:15 - 5 💪 `gitignore` - 10'
 
-Work on `exercises.md` 3 💪 Including Specific Files in `gitignore` and 4 💪 The Order of Rules
+Work on `exercises.md` 5 💪 Including Specific Files in `gitignore`
 
 #### Solution 5
 ```console
 cd ~/Desktop/bio
-touch a.png b.png final.png
-nano .gitignore                 # add *.png
+touch a.pdf b.pdf final.pdf
+nano .gitignore                 # add *.pdf
 git add .gitignore
 git commit -m "Add gitignore"
 git status --ignored
-nano .gitignore                # add !final.png
+nano .gitignore                # add !final.pdf
 git status --ignored
 ```
 The exclamation point operator will include a previously excluded entry.
 
-
 ```console
-nano .gitignore                 # add !*.png
+nano .gitignore                 # add !*.pdf
 git add .gitignore
 git status --ignored
-nano .gitignore                # add !final.png
+nano .gitignore                # add !final.pdf
 git status --ignored
 ```
 
-
-The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.png` entry negates all of the previous `.png` files in the `.gitignore`, none of them will be ignored, and all `.png` files will be tracked.
+The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.pdf` entry negates all of the previous `.pdf` files in the `.gitignore`, none of them will be ignored, and all `.pdf` files will be tracked.
 
 
 
 ## 12:25 - Check your SSH key - 5'
 - Why SSH key?
-    - go though the option of writing password every time
+    - normally we need write the password every time
     - we can bypass this by adding a key
     - tells github that is safe to communicate with your machine
 
@@ -575,6 +578,8 @@ Create a new repository called `free_fall`
 - Copy SSH link
 
 ```console
+pwd                         # where am i?            
+cd ~/Desktop/free_fall      # navigate to free_fall
 git remote add origin git@github.com:[username]/free_fall.git # use SSH link
 git remote -v                                               # -v for verbose
 git push origin main            # explain push vs commit
@@ -593,13 +598,13 @@ Let's change gravity value to that of the Moon `gravity=1.62`
 ```python
 # Distance that an object free falls during a given time
 gravity = 1.62
-time = 5
+time = 10
 distance = 0.5 * gravity * time ** 2
 print("After", time, "s the free fall distance on the Moon is", distance, "m")
 ```
 
 ```console
-python distance.py             # Moon gravity: 20.25m
+python distance.py             # Moon gravity: 81.0m
 git status
 git add distance.py
 git commit -m "Use Moon gravity"
@@ -608,64 +613,21 @@ git push origin main            # uploads the new commit. Refresh GitHub to see 
 ```
 
 
-## 13:40 - 💪  6 GitHub history detective + 7 From issue to commit - 10'
+## 13:40 -  6 💪 GitHub GUI + 7 💪 GitHub Timestamps  - 10'
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
-> These two exercises are quite packed for 10'. If the class is slow, let them finish the core steps of 6, do 7 together, and leave the optional challenges as homework.
+#### `GitHub GUI` solution:
 
-#### `GitHub history detective` solution:
+When you click on the left-most button, you’ll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with git diff. In particular, git diff ID1..ID2 where ID1 and ID2 are commit identifiers (e.g. git diff a3bf1e5..041e637) will show the differences between those two commits.
 
-- **Changes in a commit**: click the commit message or the left-most button. Green shaded lines are additions and red ones are removals. In the shell: `git show [hash]` shows the changes of one commit, and `git diff ID1..ID2` (e.g. `git diff a3bf1e5..041e637`) shows the differences between two commits.
-- **Full hash**: the middle button (two overlapping squares) copies the full identifier of the commit to the clipboard. In the shell, `git log` shows the full hash. `git log --oneline` shows only the first 7 characters, which is what we normally use.
-- **Repository at that moment**: the right-most button (`<>`) lets you browse all of the files at the time of that commit. In the shell we would need to check out that commit with `git checkout ID`. If we do this, we need to remember to put the repository back to the right state afterwards!
-- **Revert commit**: the message body says `This reverts commit [hash]` and GitHub turns the hash into a link to the commit that was undone. In the shell: `git show HEAD` or `git log`.
-- **Blame**: shows, for every line, the last commit that changed it. In the shell: `git blame distance.py`. 
-    - `time = 5` points to `Add distance.py with variables`, the print line and `gravity` to `Use Moon gravity`
-    - If they did exercise 4, the `distance = ...` line points to the `Revert` commit, because it was the revert that put the line back!
-- **Timestamps**: GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). If you hover over the timestamp, you can see the exact time at which the commit was made.
+The middle button (with the picture of two overlapping squares or pages) copies the full identifier of the commit to the clipboard. In the shell, git log will show you the full commit identifier for each commit.
 
-##### Optional challenge solution
-Pressing `y` turns the URL into a **permalink**: the branch name (`main`) is replaced by the full hash of the commit. It always shows the same lines of the same version of the file, while a link with `main` shows the latest version and can point to different lines after later commits. Use permalinks when referencing code in papers, issues or messages.
+The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we’d need to checkout the repository at that particular time. We can do this with git checkout ID where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
 
-#### `From issue to commit` solution:
+#### `GitHub Timestamps` solution:
 
-```console
-cd ~/Desktop/free_fall
-nano distance.py                    # add the two lines at the end
-python distance.py                  # speed is about 8.1 m/s on the Moon
-git add distance.py
-git commit -m "Print speed at impact, closes #1"    # use the number of your issue
-git push origin main                # the issue closes only when the commit reaches GitHub
-```
-Refresh the issue: it is now closed and its timeline shows the commit that closed it. In the commit page, `#1` is a link to the issue.
+GitHub displays timestamps in a human readable relative format (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 
-GitHub closes the issue because the message contains a closing keyword (`close`, `fix`, `resolve` and their variations: `closes`, `fixed`, `resolves`...) followed by the issue number, and the commit reached the default branch (`main`). 
-
-Linking commits and issues makes it possible to find out *why* a change was made, and shows collaborators the status of a task without asking.
-
-Common difficulties:
-- wrong issue number in the message
-- forgot to push
-- forgot the quotes around the commit message. Without quotes, bash treats `#` as the start of a comment 
-
-##### Optional challenge solution
-Example `README.md`:
-````markdown
-# Free fall calculator
-
-Computes how far an object falls in a given time.
-
-- Distance fallen
-- Speed at impact
-
-## Usage
-```console
-python distance.py
-```
-````
-After pushing, GitHub shows the README below the file list. The About ⚙️ lets us add a description and topics, which make the repository easier to find.
-
-The README is for people who have never seen the project (including your future self): what is it, what does it do, how do I run it?
 
 ## 13:50 - Pulling a fresh copy of repo - 10'
 
@@ -682,7 +644,6 @@ ls                              # free_fall directory is gone
 git status                      # make sure you are not inside a git repository
 git clone git@github.com:[username]/free_fall.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd free_fall/
-ls
 ls -a                           # notice the difference: no .png files as they were not tracked
 python distance.py              # the program still runs
 git log --oneline               # files and history preserved. Beautiful!
@@ -702,7 +663,13 @@ Check the tag in GitHub (drop down menu that shows also branches)
 ## 14:25 - LAB: Getting started with Collaboration - 30'
 see `PRACTICAL_collaboration.md` file 
 
+> **The basic collaborative workflow** is: `git pull` → make changes → `git add` → `git commit` → `git push`. Why does it matter that you pull *before* you start editing, rather than only before you push?
 
+Example of license file
+```text
+MIT License
+Copyright (c) 2026 C. Tobon Gomez, Delft, the Netherlands
+```
 
 ## 14:55 - 💪 Vevox - 15'
 
