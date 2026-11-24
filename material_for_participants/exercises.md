@@ -219,25 +219,25 @@ If you want to redo the commit differently (e.g. with a better message or fewer 
 ## 5 💪 Including Specific Files in `gitignore`
 
 - Navigate to your `bio` repository
-- Create three empty `.png` files using `touch a.png b.png final.png` 
+- Create three empty `.pdf` files using `touch a.pdf b.pdf final.pdf` 
 - Create and edit a `.gitignore` file with nano
-- Add a line to ignore all the `png` files in your repository
+- Add a line to ignore all the `pdf` files in your repository
 - Stage and commit `.gitignore`
 - Check the status of all files (including the ignored ones)
 - Open `.gitignore` in nano
-- Add a line afterwards to ask Git to track the file `final.png`
+- Add a line afterwards to ask Git to track the file `final.pdf`
 - Check the status of all files (including the ignored ones) 
-  - Note that the file `final.png` is listed under `Untracked files`
-- Add a new line `!*.png`
+  - Note that the file `final.pdf` is listed under `Untracked files`
+- Add a new line `!*.pdf`
 - Check that the contents of `.gitignore` look like this
   ```console
-  *.png
-  !final.png
-  !*.png
+  *.pdf
+  !final.pdf
+  !*.pdf
   ```
 - Check the status of all files (including the ignored ones)
-  - Note that all `png` files are now listed under `Untracked files`
-- Reflect: what is the effect of the last line `!*.png` on the ignore operation?
+  - Note that all `pdf` files are now listed under `Untracked files`
+- Reflect: what is the effect of the last line `!*.pdf` on the ignore operation?
 
 <details>
 <summary>🔍 Click here for hints! </summary>
