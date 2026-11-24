@@ -488,10 +488,13 @@ git show --stat                             # two files added in the same commit
 Emphasize importance of `.gitignore` file to keep repository clean.
 
 ```console
+pwd                                 # where am i?
+~/Desktop/free_fal                  # potentially find my repo
 git status                          # always check the status of git
 ls                                  # what is inside this directory
+touch earth.png moon.png            # dummy plots: gravity of different planets
 mkdir plots                         # make new directory
-touch earth.png moon.png plots/mars.jpg plots/jupiter.jpg   # make dummy plots
+touch plots/mars.jpg plots/jupiter.jpg   # dummy plots: gravity of different planets
 ls                                  # lists generated plots
 ls plots                            # lists generated plots inside folder
 git status                          # images not recommended in git + distracting 
@@ -504,7 +507,7 @@ git add .gitignore                  # let's track this file. it won't ignore its
 git commit -m "Ignore png files and plots folder"
 git status                          # all clean
 ls                                  # files are in folder but not tracked by git
-git add a.png                       # if accidentally added, shows warning
+git add earth.png                       # if accidentally added, shows warning
 git status --ignored                # status of ignored files
 touch plots/pluto.jpg               # new file in ignored folder
 git status                          # nothing because plots folder is ignored
@@ -516,38 +519,36 @@ rm -rf more_plots                   # changed my mind. Clean up!
 
 ## 12:15 - 5 💪 `gitignore` - 10'
 
-Work on `exercises.md` 3 💪 Including Specific Files in `gitignore` and 4 💪 The Order of Rules
+Work on `exercises.md` 5 💪 Including Specific Files in `gitignore`
 
 #### Solution 5
 ```console
 cd ~/Desktop/bio
-touch a.png b.png final.png
-nano .gitignore                 # add *.png
+touch a.pdf b.pdf final.pdf
+nano .gitignore                 # add *.pdf
 git add .gitignore
 git commit -m "Add gitignore"
 git status --ignored
-nano .gitignore                # add !final.png
+nano .gitignore                # add !final.pdf
 git status --ignored
 ```
 The exclamation point operator will include a previously excluded entry.
 
-
 ```console
-nano .gitignore                 # add !*.png
+nano .gitignore                 # add !*.pdf
 git add .gitignore
 git status --ignored
-nano .gitignore                # add !final.png
+nano .gitignore                # add !final.pdf
 git status --ignored
 ```
 
-
-The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.png` entry negates all of the previous `.png` files in the `.gitignore`, none of them will be ignored, and all `.png` files will be tracked.
+The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.pdf` entry negates all of the previous `.pdf` files in the `.gitignore`, none of them will be ignored, and all `.pdf` files will be tracked.
 
 
 
 ## 12:25 - Check your SSH key - 5'
 - Why SSH key?
-    - go though the option of writing password every time
+    - normally we need write the password every time
     - we can bypass this by adding a key
     - tells github that is safe to communicate with your machine
 
