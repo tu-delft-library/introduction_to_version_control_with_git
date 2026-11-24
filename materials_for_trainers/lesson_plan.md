@@ -613,7 +613,7 @@ git push origin main            # uploads the new commit. Refresh GitHub to see 
 ```
 
 
-## 13:40 - 💪  6 💪 GitHub GUI + 7 💪 GitHub Timestamps  - 10'
+## 13:40 -  6 💪 GitHub GUI + 7 💪 GitHub Timestamps  - 10'
 See `exercises.md`. There is an optional challenge under each numbered exercise.
 
 #### `GitHub GUI` solution:
@@ -644,7 +644,6 @@ ls                              # free_fall directory is gone
 git status                      # make sure you are not inside a git repository
 git clone git@github.com:[username]/free_fall.git # NEW COMMAND! clone repository (copy SSH link from github)
 cd free_fall/
-ls
 ls -a                           # notice the difference: no .png files as they were not tracked
 python distance.py              # the program still runs
 git log --oneline               # files and history preserved. Beautiful!
@@ -664,7 +663,13 @@ Check the tag in GitHub (drop down menu that shows also branches)
 ## 14:25 - LAB: Getting started with Collaboration - 30'
 see `PRACTICAL_collaboration.md` file 
 
+> **The basic collaborative workflow** is: `git pull` → make changes → `git add` → `git commit` → `git push`. Why does it matter that you pull *before* you start editing, rather than only before you push?
 
+Example of license file
+```text
+MIT License
+Copyright (c) 2026 C. Tobon Gomez, Delft, the Netherlands
+```
 
 ## 14:55 - 💪 Vevox - 15'
 
