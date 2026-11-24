@@ -341,13 +341,13 @@ See `exercises.md`.
 cd ~/Desktop/bio
 nano bio            
 # add line I like ketchup
-git add me.txt
-nano me.txt
+git add me.md
+nano me.md
 # add line `Ketchup enhances pasta`
 git commit -m "My opinions about red sauce"
-cat me.txt
+cat me.md
 git diff
-git restore me.txt
+git restore me.md
 ```
 
 The changes to the file from the second modification of `me.md` are only applied to the working copy, not the version in the staging area. The command `git add me.md` places the current version of `me.md` into the staging area.
@@ -440,35 +440,37 @@ git show                            # addition of time = 10 (instead of time = 2
 
 ```console
 cd ~/Desktop/bio
-nano me.txt        # I like pesto
-cat me.txt 
-git add me.txt 
+nano me.md        # I like pesto
+cat me.md 
+git add me.md 
 git commit -m "My favorite sauce"
-nano me.txt        # I prefer tea
-cat me.txt 
-git add me.txt 
+nano me.md        # I prefer tea
+cat me.md 
+git add me.md 
 git commit -m "My warm drink preference"
 git status
 git log --oneline
 git reset --hard HEAD~2
 git log --oneline
-cat me.txt          
+cat me.md          
 ```
 ```text
 My name is [name]
 I come from [country]
 I love to [hobby]
 I have a [field] background
+[optional] I am a first year PhD student
 I like ketchup
 ```
-
+```console
+git status
+```
 
 
 ### Solution 4
 ```console
-nano me.txt                                 # My favorite food is ajiaco
-git add me.txt  
-git add me.txt 
+nano me.md                                 # My favorite food is curry
+git add me.md  
 git commit -m "wip"                         # vague commit message
 git log --oneline
 git commit --amend -m "Add favorite food"   # modify only the message

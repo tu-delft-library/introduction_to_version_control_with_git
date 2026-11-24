@@ -141,13 +141,14 @@ The latest modification is gone
 - Display the git history
 - Imagine you decide to delete the last two bits of personal information from git history. 
   - Completely delete the last two commits using a hard reset
-- Display the history again. Where did the two commits go?
+- Display the history again. What happened to the lats two commits?
 - Check that `me.md` looks similar to this (assuming you finished exercises 1 and 2):
 ```
 My name is [name]
 I come from [country]
 I love to [hobby]
 I have a [field] background
+[optional] I am a first year PhD student
 I like ketchup
 ```
 - Run `git status`
@@ -160,19 +161,21 @@ I like ketchup
 
 
 ### 🚀 Optional challenge: soft, mixed and hard
-`git reset` comes in three flavours: `--soft`, `--mixed` (the default) and `--hard`. They differ in how much they undo. Let's find out how!
+`git reset` comes in three flavours: `--soft`, `--mixed` (the default) and `--hard`. They differ in how much they undo. 
+
+For each flavour, answer: is the commit removed from the history? Are the changes still in the staging area? Are the changes still in the working tree?
 
 - In `me.md`, change the second line
 - Stage the file and commit
 - Display the git history
 - Run `git reset --soft HEAD~1`
 - Look at `git log --oneline`, `git status` and `git diff --staged`. Where is your change now?
-- Stage and commit the change again 
+- Commit the change again 
 - Run `git reset --mixed HEAD~1` and look at `git status`. Where is your change now?
 - Stage and commit the change once more 
 - Run `git reset --hard HEAD~1` and look at `git status` and `cat me.md`. Where is your change now?
 
-For each flavour, answer: is the commit removed from the history? Are the changes still in the staging area? Are the changes still in the working tree?
+
 
 <details>
 <summary>🔍 Click here to see the solution! </summary>
@@ -199,7 +202,7 @@ If you want to redo the commit differently (e.g. with a better message or fewer 
 - Create a new file `recipes.md` with one line about how to prepare your favorite food
 - Stage `recipes.md` and add it to the last commit, keeping **the same message**
 - Display the history again
-- Run `git show` to see the changes added to the last commit. Is `recipes.md` part of the same commit as the new line in `me.md`?
+- Run `git show --stat` to see the changes added to the last commit. Is `recipes.md` part of the same commit as the new line in `me.md`?
 
 
 <details>
