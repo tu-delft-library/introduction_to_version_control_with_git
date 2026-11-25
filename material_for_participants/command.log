@@ -1,4 +1,0 @@
-gitautopush --sleep 5 .
-git version
-clear
-echo
