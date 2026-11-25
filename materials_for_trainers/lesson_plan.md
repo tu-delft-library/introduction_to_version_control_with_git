@@ -24,6 +24,8 @@ Open another tab in the `hidden terminal`, `cd` to `<local-repo-directory>` and 
 ```console
 gitautopush --sleep 5 .
 ```
+> > ⚠️ **Watch out:** DO NOT CLOSE THE TERMINALS because that will cause the whole history to be dumped in `bashrc` history and it will contaminate the `command.log`
+
 #### Open vevox
 - Open vevox in different browser tab [TuDelft Vevox](https://tudelft.vevox.com/#/meetings)
 - Open `Introduction to Version Control with Git`
